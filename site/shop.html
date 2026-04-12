@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eleganza | المتجر</title>
+  <meta name="description" content="تصفحي فساتين Eleganza مع فلتر واضح بين المنتجات المنتظمة وقطع Exclusive 2026." />
+  <meta property="og:title" content="Eleganza Shop" />
+  <meta property="og:description" content="منتجات منتظمة وقطع Exclusive 2026 داخل متجر فاخر واضح البنية." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero-lifestyle.jpg" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/products.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body data-page="shop">
+  <div data-site-header></div>
+
+  <main class="page-products">
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero__panel">
+          <span class="eyebrow">Shop</span>
+          <h1>متجر مصمم للوضوح<br />وليس للازدحام</h1>
+          <p>
+            الفرق بين القطع المنتظمة والقطع الحصرية ظاهر بصرياً من أول بطاقة. اختاري نوع
+            التجربة التي تناسبك ثم تابعي إلى التفاصيل أو افتحي WhatsApp مباشرة.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="shell">
+        <div class="filter-row" data-shop-filters>
+          <button class="filter-button is-selected" type="button" data-filter="all">الكل</button>
+          <button class="filter-button" type="button" data-filter="exclusive">Exclusive 2026</button>
+          <button class="filter-button" type="button" data-filter="regular">Regular</button>
+        </div>
+
+        <div class="products-grid" data-shop-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>
+

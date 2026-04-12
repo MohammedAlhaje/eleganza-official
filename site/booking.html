@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eleganza | الحجز والطلب</title>
+  <meta name="description" content="ابدئي طلباً أو حجزاً خاصاً لمنتجات Eleganza عبر نموذج يجهز رسالة WhatsApp كاملة." />
+  <meta property="og:title" content="Eleganza Booking" />
+  <meta property="og:description" content="نموذج طلب مخصص لبدء الحجز أو الطلب عبر WhatsApp مع جمع البيانات الأساسية." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/ss257-front.webp" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/products.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body data-page="booking">
+  <div data-site-header></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero__panel">
+          <span class="eyebrow">Booking & Order</span>
+          <h1>ابدئي طلبك<br />بطريقة مرتبة وواضحة</h1>
+          <p>
+            هذا النموذج لا ينشئ طلباً داخلياً. مهمته تجهيز رسالة WhatsApp منسقة تتضمن اسم
+            القطعة، الكود، المقاس، المدينة، وملاحظات العميلة قبل بدء التواصل.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="shell booking-grid">
+        <div class="surface-card">
+          <span class="eyebrow">How It Works</span>
+          <h2>خطوات مختصرة</h2>
+          <ul class="process-list">
+            <li>اختاري القطعة من القائمة أو ادخلي إلى النموذج من صفحة المنتج مباشرة.</li>
+            <li>أدخلي المقاس والمدينة وبيانات التواصل الأساسية.</li>
+            <li>يفتح الموقع WhatsApp برسالة جاهزة تسهل بدء المحادثة فوراً.</li>
+          </ul>
+        </div>
+
+        <div class="form-shell">
+          <form data-booking-form>
+            <label class="field">
+              <span>الاسم</span>
+              <input type="text" name="customerName" required placeholder="الاسم الكامل" />
+            </label>
+            <label class="field">
+              <span>رقم التواصل</span>
+              <input type="text" name="phone" required placeholder="رقم الهاتف أو واتساب" />
+            </label>
+            <label class="field">
+              <span>المنتج</span>
+              <select name="product" data-booking-product></select>
+            </label>
+            <label class="field">
+              <span>المقاس</span>
+              <select name="size">
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="تفصيل خاص">تفصيل خاص</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>المدينة</span>
+              <input type="text" name="city" required placeholder="مثال: طرابلس" />
+            </label>
+            <label class="field">
+              <span>ملاحظات إضافية</span>
+              <textarea name="notes" placeholder="لون بديل، موعد المناسبة، أو أي ملاحظة تساعد فريق Eleganza"></textarea>
+            </label>
+
+            <div class="button-row">
+              <button class="button button--gold" type="submit">فتح WhatsApp برسالة جاهزة</button>
+            </div>
+            <p class="form-note">
+              للقطع الحصرية، يتم اعتماد الحجز النهائي بعد التحقق من التوفر الجغرافي وتأكيد
+              شروط الدفع والتنفيذ أثناء المحادثة.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>
+

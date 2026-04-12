@@ -51,6 +51,13 @@ cd /path/to/eleganza-site
 - Build command: فارغ
 - Build output directory: `site`
 
+## GitHub Pages
+
+- المشروع يحتوي أيضاً على workflow جاهز للنشر التلقائي عبر GitHub Pages من مجلد `site`.
+- بعد رفع المستودع، سيُنشأ deploy تلقائي من branch `main`.
+- الرابط المتوقع يكون بصيغة:
+  - `https://<github-username>.github.io/<repo-name>/`
+
 ## أسماء مشروع Cloudflare المقترحة
 
 1. `eleganza`

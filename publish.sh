@@ -2,6 +2,7 @@
 set -euo pipefail
 
 REPO_NAME="${1:-eleganza-site}"
+OWNER="$(gh api user -q .login)"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "GitHub CLI غير مثبت."
@@ -31,8 +32,16 @@ else
   git push -u origin main
 fi
 
+gh api \
+  --method POST \
+  -H "Accept: application/vnd.github+json" \
+  "repos/${OWNER}/${REPO_NAME}/pages" \
+  -f build_type=workflow >/dev/null 2>&1 || true
+
 echo
 echo "تم رفع المستودع إلى GitHub."
+echo "GitHub Pages URL المتوقع:"
+echo "https://${OWNER}.github.io/${REPO_NAME}/"
 echo "الخطوة التالية في Cloudflare Pages:"
 echo "1. Connect to Git"
 echo "2. اختر المستودع: $REPO_NAME"

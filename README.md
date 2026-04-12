@@ -32,14 +32,16 @@ python3 -m http.server 8080
 
 ```bash
 cd /path/to/eleganza-site
-git init
-git branch -M main
-git add .
-git commit -m "Initial Eleganza static site"
-gh repo create eleganza-site --public --source=. --remote=origin --push
+./publish.sh eleganza-site
 ```
 
 إذا كان اسم `eleganza-site` محجوزاً على GitHub، استخدم اسماً قريباً.
+
+يمكنك أيضاً تمرير اسم مختلف:
+
+```bash
+./publish.sh eleganza-official
+```
 
 ## Cloudflare Pages
 
@@ -61,4 +63,3 @@ gh repo create eleganza-site --public --source=. --remote=origin --push
 - التكامل الحالي مع WhatsApp يعتمد رسالة جاهزة، ويستخدم `wa.me` مباشرة إذا تم تعريف رقم المتجر.
 - إذا تُرك الرقم فارغاً، سيفتح الموقع WhatsApp برسالة جاهزة دون توجيهها إلى رقم محدد.
 - الموقع لا يحتوي على checkout backend أو قاعدة بيانات، وهو مناسب جداً لخطة Pages المجانية.
-

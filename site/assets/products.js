@@ -1,6 +1,10 @@
 window.ELEGANZA_CONFIG = {
   brandName: "ELEGANZA",
   brandArabic: "إيليجانزا",
+  brandTagline: "دار فساتين سهرة فاخرة",
+  brandAuthority: "موزع معتمد من براند شارون سعيد في ليبيا",
+  logoSrc: "assets/images/brand-mark-320.png",
+  logoAlt: "شعار إيليجانزا الرسمي",
   facebookUrl: "https://www.facebook.com/EleganzaOfficiall/",
   whatsappNumber: "",
   whatsappDefaultNote:
@@ -214,4 +218,3 @@ window.ELEGANZA_PRODUCTS = [
     ]
   }
 ];
-

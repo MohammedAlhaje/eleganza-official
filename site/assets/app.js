@@ -81,8 +81,14 @@
       <div class="topbar">
         <div class="shell topbar__inner">
           <a class="brand" href="index.html" aria-label="Eleganza home">
-            <span class="brand__latin">${escapeHtml(config.brandName || "ELEGANZA")}</span>
-            <span class="brand__arabic">${escapeHtml(config.brandArabic || "إيليجانزا")}</span>
+            <span class="brand__mark">
+              <img src="${escapeHtml(config.logoSrc || "assets/images/brand-mark-320.png")}" alt="${escapeHtml(config.logoAlt || "Eleganza logo")}" />
+            </span>
+            <span class="brand__copy">
+              <span class="brand__latin">${escapeHtml(config.brandName || "ELEGANZA")}</span>
+              <span class="brand__arabic">${escapeHtml(config.brandArabic || "إيليجانزا")}</span>
+              <span class="brand__tagline">${escapeHtml(config.brandTagline || "دار فساتين سهرة فاخرة")}</span>
+            </span>
           </a>
           <nav class="site-nav" aria-label="Main navigation">
             ${navLink("home", "index.html", "الرئيسية")}
@@ -93,7 +99,7 @@
             ${navLink("contact", "contact.html", "التواصل")}
           </nav>
           <div class="topbar__actions">
-            <a class="button button--ghost" href="${escapeHtml(config.facebookUrl)}" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="button button--ghost" href="${escapeHtml(config.facebookUrl)}" target="_blank" rel="noreferrer">Facebook الرسمي</a>
             <a class="button button--gold" href="booking.html">ابدئي الطلب</a>
           </div>
         </div>
@@ -111,13 +117,22 @@
     target.innerHTML = `
       <footer class="site-footer">
         <div class="shell site-footer__grid">
-          <div>
-            <span class="eyebrow">Luxury Evening Couture</span>
-            <h2 class="site-footer__title">${escapeHtml(config.brandName || "ELEGANZA")}</h2>
-            <p class="site-footer__text">
-              تجربة رقمية فاخرة لعرض فساتين السهرة، مع فصل واضح بين الطلب المباشر والقطع الحصرية
-              ضمن مجموعة Exclusive 2026.
-            </p>
+          <div class="site-footer__brand">
+            <span class="site-footer__mark">
+              <img src="${escapeHtml(config.logoSrc || "assets/images/brand-mark-320.png")}" alt="${escapeHtml(config.logoAlt || "Eleganza logo")}" />
+            </span>
+            <div>
+              <span class="eyebrow">Official Eleganza Identity</span>
+              <h2 class="site-footer__title">${escapeHtml(config.brandName || "ELEGANZA")}</h2>
+              <p class="site-footer__text">
+                ${escapeHtml(config.brandTagline || "دار فساتين سهرة فاخرة")}، مع حضور بصري مستمد من
+                الشعار الرسمي على Facebook وخدمة حجز خاصة للقطع الحصرية ضمن Exclusive 2026.
+              </p>
+              <p class="site-footer__text">
+                ${escapeHtml(config.brandAuthority || "موزع معتمد في ليبيا")} ويظل Facebook المرجع
+                الاجتماعي الرسمي للهوية والمحتوى.
+              </p>
+            </div>
           </div>
           <div>
             <strong class="site-footer__heading">روابط سريعة</strong>

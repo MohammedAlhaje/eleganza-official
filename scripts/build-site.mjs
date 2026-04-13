@@ -9,14 +9,14 @@ const overridesPath = path.join(projectRoot, "data", "overrides.json");
 const siteDir = path.join(projectRoot, "site");
 
 const FILTER_GROUPS = [
-  { key: "availability", label: "التوفر" },
-  { key: "silhouette", label: "Silhouette" },
-  { key: "neckline", label: "Neckline" },
-  { key: "hemlineTrain", label: "Hemline/Train" },
-  { key: "sleeves", label: "Sleeves" },
-  { key: "fabric", label: "Fabric" },
-  { key: "hotFeatures", label: "Hot Features" },
-  { key: "colors", label: "Color" }
+  { key: "availability", label: { ar: "التوفر", en: "Availability" } },
+  { key: "silhouette", label: { ar: "القصّة", en: "Silhouette" } },
+  { key: "neckline", label: { ar: "الياقة", en: "Neckline" } },
+  { key: "hemlineTrain", label: { ar: "الطول والذيل", en: "Hemline / Train" } },
+  { key: "sleeves", label: { ar: "الأكمام", en: "Sleeves" } },
+  { key: "fabric", label: { ar: "القماش", en: "Fabric" } },
+  { key: "hotFeatures", label: { ar: "السمات البارزة", en: "Key Features" } },
+  { key: "colors", label: { ar: "اللون", en: "Color" } }
 ];
 
 const SORT_OPTIONS = [
@@ -39,6 +39,41 @@ const SIZE_GUIDE_ROWS = [
   ["US 18", "43 in", "36¼ in", "45¾ in", "61 in"],
   ["US 20", "45 in", "38½ in", "47¾ in", "61 in"]
 ];
+
+const UI_TRANSLATIONS = {
+  "NEW IN": { ar: "الجديد", en: "New In" },
+  CATEGORIES: { ar: "الفئات", en: "Categories" },
+  OCCASION: { ar: "المناسبة", en: "Occasion" },
+  SALE: { ar: "العروض", en: "Sale" },
+  "EVENING DRESSES": { ar: "فساتين السهرة", en: "Evening Dresses" },
+  "WEDDING DRESSES": { ar: "فساتين الزفاف", en: "Wedding Dresses" },
+  "BRIDESMAID DRESSES": { ar: "فساتين الوصيفات", en: "Bridesmaid Dresses" },
+  "All Dresses": { ar: "جميع الفساتين", en: "All Dresses" },
+  "Best Sellers": { ar: "الأكثر طلباً", en: "Best Sellers" },
+  "New Arrivals": { ar: "وصل حديثاً", en: "New Arrivals" },
+  "Ready To Ship": { ar: "جاهز للشحن", en: "Ready To Ship" },
+  "Made To Order": { ar: "يصنع عند الطلب", en: "Made To Order" },
+  "Trending Now": { ar: "الرائج الآن", en: "Trending Now" },
+  "SHOP BY STYLE": { ar: "التسوق حسب الأسلوب", en: "Shop by Style" },
+  "SHOP BY COLOR": { ar: "التسوق حسب اللون", en: "Shop by Color" },
+  "SHOP BY TRENDS": { ar: "التسوق حسب الاتجاه", en: "Shop by Trends" },
+  "SHOP BY FABRIC": { ar: "التسوق حسب القماش", en: "Shop by Fabric" },
+  "SHOP BY NECKLINE": { ar: "التسوق حسب الياقة", en: "Shop by Neckline" },
+  "SHOP BY SILHOUETTE": { ar: "التسوق حسب القصّة", en: "Shop by Silhouette" },
+  "SHOP BY SLEEVE": { ar: "التسوق حسب الأكمام", en: "Shop by Sleeve" },
+  "SHOP BY LENGTH": { ar: "التسوق حسب الطول", en: "Shop by Length" },
+  "SHOP BY TRAIN": { ar: "التسوق حسب الذيل", en: "Shop by Train" },
+  "2026 Evening Dresses": { ar: "مجموعة 2026", en: "2026 Evening Dresses" },
+  "2025 Evening Dresses": { ar: "مجموعة 2025", en: "2025 Evening Dresses" },
+  "Wedding Dresses": { ar: "فساتين الزفاف", en: "Wedding Dresses" },
+  "Plus Size": { ar: "المقاسات الممتدة", en: "Plus Size" },
+  "Cocktail Dresses": { ar: "فساتين الكوكتيل", en: "Cocktail Dresses" },
+  "Arabic Evening Dresses": { ar: "فساتين السهرة العربية", en: "Arabic Evening Dresses" },
+  "Middle East Collection": { ar: "تشكيلة الشرق الأوسط", en: "Middle East Collection" },
+  "Turkish Evening Gowns": { ar: "فساتين السهرة التركية", en: "Turkish Evening Gowns" },
+  "Modest Evening Dresses": { ar: "فساتين السهرة المحتشمة", en: "Modest Evening Dresses" },
+  "Luxury Evening Dresses": { ar: "فساتين السهرة الفاخرة", en: "Luxury Evening Dresses" }
+};
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -65,6 +100,60 @@ function escapeHtml(value = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function isLabelObject(value) {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function toLabel(value) {
+  if (isLabelObject(value)) {
+    return value;
+  }
+
+  return UI_TRANSLATIONS[value] || { en: String(value || "") };
+}
+
+function labelText(value, locale = "ar") {
+  const label = toLabel(value);
+  return label[locale] || label.ar || label.en || "";
+}
+
+function renderLabel(value, className = "ui-copy", variant = "stacked") {
+  const label = toLabel(value);
+  const ar = label.ar || "";
+  const en = label.en || "";
+
+  if (ar && en) {
+    if (variant === "inline") {
+      return `
+        <span class="${className} ${className}--inline">
+          <span class="${className}__ar">${escapeHtml(ar)}</span>
+          <span class="${className}__divider" aria-hidden="true">/</span>
+          <span class="${className}__en">${escapeHtml(en)}</span>
+        </span>
+      `;
+    }
+
+    return `
+      <span class="${className} ${className}--stacked">
+        <span class="${className}__ar">${escapeHtml(ar)}</span>
+        <span class="${className}__en">${escapeHtml(en)}</span>
+      </span>
+    `;
+  }
+
+  const single = ar || en;
+  return `<span class="${className} ${className}--single">${escapeHtml(single)}</span>`;
+}
+
+function editorialHeading(primary, secondary = "") {
+  return `
+    <div class="editorial-heading">
+      <span class="editorial-heading__eyebrow">${renderLabel(primary, "ui-copy", "inline")}</span>
+      ${secondary ? `<p class="editorial-heading__text">${renderLabel(secondary, "ui-copy")}</p>` : ""}
+    </div>
+  `;
 }
 
 function serializeJson(value) {
@@ -140,7 +229,7 @@ function buildWhatsAppUrl(config, product, extras = {}) {
   const number = (config.whatsappNumber || "").replace(/\D/g, "");
   const lines = [
     `مرحباً فريق ${config.brandArabic}`,
-    extras.intent || (product.isExclusive ? config.secondaryCTA : config.primaryCTA),
+    labelText(extras.intent || (product.isExclusive ? config.secondaryCTA : config.primaryCTA), "ar"),
     `القطعة: ${product.title}`,
     `Handle: ${product.handle}`
   ];
@@ -263,11 +352,13 @@ function buildFilterGroups(products) {
 }
 
 function renderAnnouncement(config) {
-  const items = [...config.announcementMessages, ...config.announcementMessages, ...config.announcementMessages];
+  const items = config.announcementMessages;
   return `
     <section class="announcement-bar" aria-label="Brand announcements">
-      <div class="announcement-bar__track">
-        ${items.map((item) => `<span class="announcement-bar__item">${escapeHtml(item)}</span>`).join("")}
+      <div class="announcement-bar__viewport">
+        <div class="announcement-bar__track">
+          ${items.map((item) => `<span class="announcement-bar__item">${renderLabel(item, "micro-copy", "inline")}</span>`).join("")}
+        </div>
       </div>
     </section>
   `;
@@ -283,7 +374,7 @@ function renderDesktopNavigation(prefix, navigation) {
       if (!hasGroups) {
         return `
           <li class="navigation__menuitem">
-            <a class="navigation__menulink" href="${escapeHtml(itemHref)}">${escapeHtml(item.label)}</a>
+            <a class="navigation__menulink" href="${escapeHtml(itemHref)}">${renderLabel(item.label, "nav-copy")}</a>
           </li>
         `;
       }
@@ -292,7 +383,7 @@ function renderDesktopNavigation(prefix, navigation) {
         return `
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="${escapeHtml(itemHref)}">
-              ${escapeHtml(item.label)}
+              ${renderLabel(item.label, "nav-copy")}
               <span class="nav-icon">${icon("chevronDown")}</span>
             </a>
             <div class="megamenu">
@@ -302,7 +393,10 @@ function renderDesktopNavigation(prefix, navigation) {
                     (group) => `
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="${escapeHtml(group.slug ? toInternalHref(prefix, routeForCollection(group.slug)) : "#")}">${escapeHtml(group.label)}</a>
+                          <a href="${escapeHtml(group.slug ? toInternalHref(prefix, routeForCollection(group.slug)) : "#")}">${renderLabel(
+                            group.label,
+                            "menu-copy"
+                          )}</a>
                         </h4>
                         <ul class="megamenu__list">
                           ${group.items
@@ -311,7 +405,7 @@ function renderDesktopNavigation(prefix, navigation) {
                                 <li class="megamenu__listitem">
                                   <a class="megamenu__listlink" href="${escapeHtml(
                                     entry.slug ? toInternalHref(prefix, routeForCollection(entry.slug)) : "#"
-                                  )}">${escapeHtml(entry.label)}</a>
+                                  )}">${renderLabel(entry.label, "menu-copy", "inline")}</a>
                                 </li>
                               `
                             )
@@ -330,7 +424,7 @@ function renderDesktopNavigation(prefix, navigation) {
       return `
         <li class="navigation__menuitem navigation__menuitem--dropdown">
           <a class="navigation__menulink" href="${escapeHtml(itemHref)}">
-            ${escapeHtml(item.label)}
+            ${renderLabel(item.label, "nav-copy")}
             <span class="nav-icon">${icon("chevronDown")}</span>
           </a>
           <div class="dropdown">
@@ -342,7 +436,7 @@ function renderDesktopNavigation(prefix, navigation) {
                       <a class="dropdown__link" href="${escapeHtml(
                         group.slug ? toInternalHref(prefix, routeForCollection(group.slug)) : "#"
                       )}">
-                        ${escapeHtml(group.label)}
+                        ${renderLabel(group.label, "menu-copy", "inline")}
                         <span class="nav-icon">${icon("chevronRight")}</span>
                       </a>
                       <ul class="dropdown dropdown--nested">
@@ -352,7 +446,7 @@ function renderDesktopNavigation(prefix, navigation) {
                               <li class="dropdown__item">
                                 <a class="dropdown__link" href="${escapeHtml(
                                   entry.slug ? toInternalHref(prefix, routeForCollection(entry.slug)) : "#"
-                                )}">${escapeHtml(entry.label)}</a>
+                                )}">${renderLabel(entry.label, "menu-copy", "inline")}</a>
                               </li>
                             `
                           )
@@ -376,20 +470,25 @@ function renderMobileNavigation(prefix, navigation) {
       (item, index) => `
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>${escapeHtml(item.label)}</span>
+            ${renderLabel(item.label, "nav-copy")}
             <span class="nav-icon">${icon("chevronDown")}</span>
           </button>
           <div class="mobile-nav__panel">
             <a class="mobile-nav__root-link" href="${escapeHtml(
               item.slug ? toInternalHref(prefix, routeForCollection(item.slug)) : "#"
-            )}">عرض ${escapeHtml(item.label)}</a>
+            )}">${renderLabel(
+              labelText(item.label, "en")
+                ? { ar: `عرض ${labelText(item.label, "ar") || labelText(item.label, "en")}`, en: `View ${labelText(item.label, "en")}` }
+                : { ar: `عرض ${labelText(item.label, "ar") || labelText(item.label, "en")}` },
+              "menu-copy"
+            )}</a>
             ${item.groups
               .map(
                 (group) => `
                   <div class="mobile-nav__subgroup">
                     <a class="mobile-nav__heading" href="${escapeHtml(
                       group.slug ? toInternalHref(prefix, routeForCollection(group.slug)) : "#"
-                    )}">${escapeHtml(group.label)}</a>
+                    )}">${renderLabel(group.label, "menu-copy", "inline")}</a>
                     <ul class="mobile-nav__items">
                       ${group.items
                         .map(
@@ -397,7 +496,7 @@ function renderMobileNavigation(prefix, navigation) {
                             <li>
                               <a href="${escapeHtml(
                                 entry.slug ? toInternalHref(prefix, routeForCollection(entry.slug)) : "#"
-                              )}">${escapeHtml(entry.label)}</a>
+                              )}">${renderLabel(entry.label, "menu-copy", "inline")}</a>
                             </li>
                           `
                         )
@@ -429,35 +528,36 @@ function renderHeader(prefix, config, navigation) {
                 ${icon("menu")}
               </button>
             </div>
-            <div class="large-search">
-              <form action="${escapeHtml(allHref)}" method="get" class="header-search-form">
-                <div class="header-search-form__inner">
-                  <label class="visually-hidden" for="header-search">Search</label>
-                  <input class="header-search" id="header-search" type="text" name="q" placeholder="يبحث" />
-                  <button class="icon-button" type="submit" aria-label="Search">${icon("search")}</button>
-                </div>
-              </form>
+            <div class="header-utility">
+              <ul class="header-actions">
+                <li>
+                  <a href="${escapeHtml(aboutHref)}">
+                    ${renderLabel(config.utilityShowroom, "action-copy")}
+                    <span class="nav-icon">${icon("user")}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="${escapeHtml(reservationHref)}">
+                    ${renderLabel(config.utilityReservation, "action-copy")}
+                    <span class="nav-icon">${icon("bag")}</span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="theme__logo">
               <a href="${escapeHtml(toInternalHref(prefix, "ar/"))}">
                 <img src="${escapeHtml(`${prefix}${config.logoPath}`)}" alt="${escapeHtml(config.logoAlt)}" />
               </a>
             </div>
-            <div class="cart--container">
-              <ul class="header-actions">
-                <li>
-                  <a href="${escapeHtml(aboutHref)}">
-                    <span>دار</span>
-                    <span class="nav-icon">${icon("user")}</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="${escapeHtml(reservationHref)}">
-                    <span>حجز</span>
-                    <span class="nav-icon">${icon("bag")}</span>
-                  </a>
-                </li>
-              </ul>
+            <div class="large-search">
+              <form action="${escapeHtml(allHref)}" method="get" class="header-search-form">
+                <span class="header-search-form__label">${renderLabel(config.searchLabel, "micro-copy", "inline")}</span>
+                <div class="header-search-form__inner">
+                  <label class="visually-hidden" for="header-search">Search</label>
+                  <input class="header-search" id="header-search" type="text" name="q" placeholder="${escapeHtml(config.searchPlaceholder)}" />
+                  <button class="icon-button" type="submit" aria-label="Search">${icon("search")}</button>
+                </div>
+              </form>
             </div>
           </div>
         </header>
@@ -473,7 +573,7 @@ function renderHeader(prefix, config, navigation) {
         <div class="mobile-drawer__overlay js-mobile-menu-close"></div>
         <aside class="mobile-drawer__panel" aria-label="Mobile navigation">
           <div class="mobile-drawer__header">
-            <strong>${escapeHtml(config.brandName)}</strong>
+            <strong>${renderLabel({ ar: config.brandArabic, en: config.brandName }, "brand-copy")}</strong>
             <button class="icon-button js-mobile-menu-close" type="button" aria-label="Close navigation">${icon("close")}</button>
           </div>
           <div class="mobile-nav">
@@ -497,32 +597,37 @@ function renderFooter(prefix, config, navigation) {
     <section class="newsletter__section">
       <div class="newsletter__section-container">
         <div class="newsletter__section-content">
-          <h2>${escapeHtml(config.newsletterHeading)}</h2>
-          <p>${escapeHtml(config.newsletterText)}</p>
+          <span class="newsletter__eyebrow">${renderLabel({ ar: "قائمة خاصة", en: "Private List" }, "micro-copy", "inline")}</span>
+          <h2>${renderLabel(config.newsletterHeading, "display-copy")}</h2>
+          <p>${renderLabel(config.newsletterText, "ui-copy")}</p>
         </div>
         <form class="newsletter__form" action="#" method="post" data-newsletter-form>
           <label class="visually-hidden" for="newsletter-email">Email</label>
           <input id="newsletter-email" class="newsletter__input" type="email" placeholder="أدخل عنوان بريدك الإلكتروني" />
-          <button class="newsletter__submit" type="submit">ينضم</button>
+          <button class="newsletter__submit" type="submit">${renderLabel(config.newsletterButton, "button-copy")}</button>
         </form>
       </div>
     </section>
     <footer class="footer-section">
       <div class="footer-grid">
         <div>
-          <h3>${escapeHtml(config.brandName)}</h3>
+          <h3>${renderLabel({ ar: config.brandArabic, en: config.brandName }, "display-copy")}</h3>
           <p>${escapeHtml(config.brandTagline)}</p>
           <p>${escapeHtml(config.brandAuthority)}</p>
         </div>
         <div>
-          <h4>المجموعات</h4>
+          <h4>${renderLabel({ ar: "المجموعات", en: "Collections" }, "menu-copy", "inline")}</h4>
           <ul class="footer-links">
             ${navigation
               .slice(0, 4)
               .map(
                 (item) => `
                   <li>
-                    <a href="${escapeHtml(item.slug ? toInternalHref(prefix, routeForCollection(item.slug)) : "#")}">${escapeHtml(item.label)}</a>
+                    <a href="${escapeHtml(item.slug ? toInternalHref(prefix, routeForCollection(item.slug)) : "#")}">${renderLabel(
+                      item.label,
+                      "menu-copy",
+                      "inline"
+                    )}</a>
                   </li>
                 `
               )
@@ -530,9 +635,9 @@ function renderFooter(prefix, config, navigation) {
           </ul>
         </div>
         <div>
-          <h4>الحجز</h4>
+          <h4>${renderLabel({ ar: "الحجز", en: "Reservation" }, "menu-copy", "inline")}</h4>
           <ul class="footer-links">
-            <li><a href="${escapeHtml(toInternalHref(prefix, routeForReservation()))}">${escapeHtml(config.reservationHeading)}</a></li>
+            <li><a href="${escapeHtml(toInternalHref(prefix, routeForReservation()))}">${renderLabel(config.reservationHeading, "menu-copy")}</a></li>
             <li><a href="${escapeHtml(config.facebookUrl)}" target="_blank" rel="noreferrer">Facebook</a></li>
           </ul>
         </div>
@@ -587,27 +692,28 @@ function renderProductCard(product, prefix) {
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="${escapeHtml(product.handle)}">
-          عرض سريع
+          ${renderLabel({ ar: "عرض سريع", en: "Quick View" }, "micro-copy", "inline")}
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">${renderLabel(product.isExclusive ? product.availabilityLabel : { ar: "قطعة منسقة", en: "Curated Piece" }, "micro-copy", "inline")}</div>
         <a href="${escapeHtml(productHref)}"><h2>${escapeHtml(product.title)}</h2></a>
         <div class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">
-          ${escapeHtml(product.availabilityLabel)}
+          ${renderLabel(product.availabilityLabel, "micro-copy", "inline")}
         </div>
         ${renderProductSwatches(product)}
         <div class="product-card__actions">
-          <a class="button button--ghost" href="${escapeHtml(productHref)}">${escapeHtml(product.reservationLabel)}</a>
-          <a class="button button--dark" href="${escapeHtml(reservationHref)}">${escapeHtml(
-            product.isExclusive ? "Book This Piece" : "Request Reservation"
-          )}</a>
+          <a class="button button--dark" href="${escapeHtml(reservationHref)}">${renderLabel(product.reservationLabel, "button-copy")}</a>
+          <a class="button button--text" href="${escapeHtml(productHref)}">${renderLabel({ ar: "استكشفي القطعة", en: "View Piece" }, "micro-copy", "inline")}</a>
         </div>
       </div>
     </article>
   `;
 }
 
-function renderHero(homepage, prefix) {
+function renderHero(homepage, prefix, config) {
+  const featuredTarget = homepage.featuredSections?.[0]?.slug ? toInternalHref(prefix, routeForCollection(homepage.featuredSections[0].slug)) : "#";
+  const reservationHref = toInternalHref(prefix, routeForReservation());
   return `
     <section class="slideshow-section" data-slideshow>
       <div class="slideshow" data-slides>
@@ -631,6 +737,17 @@ function renderHero(homepage, prefix) {
             `
           )
           .join("")}
+      </div>
+      <div class="slideshow__editorial">
+        <div class="hero-panel">
+          <span class="hero-panel__eyebrow">${renderLabel(config.heroKicker, "micro-copy", "inline")}</span>
+          <h1>${renderLabel(config.heroTitle, "display-copy")}</h1>
+          <p>${renderLabel(config.heroText, "ui-copy")}</p>
+          <div class="hero-panel__actions">
+            <a class="button button--dark" href="${escapeHtml(featuredTarget)}">${renderLabel(config.heroPrimaryCTA, "button-copy")}</a>
+            <a class="button button--ghost" href="${escapeHtml(reservationHref)}">${renderLabel(config.heroSecondaryCTA, "button-copy")}</a>
+          </div>
+        </div>
       </div>
       <div class="slideshow__dots">
         ${homepage.heroSlides
@@ -656,9 +773,13 @@ function renderFeaturedSection(section, prefix) {
   return `
     <section class="global__section">
       <div class="section-heading-row">
-        <h2 class="section-heading"><a href="${escapeHtml(
-          toInternalHref(prefix, routeForCollection(section.slug))
-        )}">${escapeHtml(section.heading)}</a></h2>
+        <div>
+          <span class="section-heading__eyebrow">${renderLabel(section.kicker || { ar: "اختيار منسق", en: "Curated Selection" }, "micro-copy", "inline")}</span>
+          <h2 class="section-heading"><a href="${escapeHtml(
+            toInternalHref(prefix, routeForCollection(section.slug))
+          )}">${renderLabel(section.heading, "display-copy")}</a></h2>
+          ${section.summary ? `<p class="section-heading__summary">${escapeHtml(section.summary)}</p>` : ""}
+        </div>
       </div>
       ${content}
     </section>
@@ -687,6 +808,10 @@ function renderSecondaryBanner(homepage, prefix) {
             </div>
           </div>
         </a>
+        <div class="secondary-banner__copy">
+          <span class="section-heading__eyebrow">${renderLabel({ ar: "قطع محدودة", en: "Limited Pieces" }, "micro-copy", "inline")}</span>
+          <h2>${renderLabel({ ar: "تصاميم تستحق موعداً خاصاً", en: "Pieces worthy of a private appointment" }, "display-copy")}</h2>
+        </div>
       </article>
     </section>
   `;
@@ -706,7 +831,8 @@ function renderReviews(homepage) {
   return `
     <section class="reviews-carousel" data-carousel>
       <div class="reviews-carousel__header">
-        <h2>${escapeHtml(homepage.reviews.heading)}</h2>
+        <span class="section-heading__eyebrow">${renderLabel({ ar: "آراء عميلات الدار", en: "Atelier Notes" }, "micro-copy", "inline")}</span>
+        <h2>${renderLabel({ ar: "تجارب هادئة تشبه زيارة المشغل", en: "Feedback shaped like a private showroom visit" }, "display-copy")}</h2>
         <p>${escapeHtml(`${homepage.reviews.rating.toFixed(2)} ★ (${homepage.reviews.count})`)}</p>
       </div>
       <div class="reviews-carousel__track">
@@ -729,7 +855,7 @@ function renderReviews(homepage) {
 function renderBreadcrumb(prefix, parts) {
   const base = [
     {
-      label: "الرئيسية",
+      label: { ar: "الرئيسية", en: "Home" },
       href: toInternalHref(prefix, "ar/")
     }
   ];
@@ -741,8 +867,8 @@ function renderBreadcrumb(prefix, parts) {
         ${items
           .map((item, index) =>
             item.href && index !== items.length - 1
-              ? `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`
-              : `<span>${escapeHtml(item.label)}</span>`
+              ? `<a href="${escapeHtml(item.href)}">${renderLabel(item.label, "micro-copy", "inline")}</a>`
+              : `<span>${renderLabel(item.label, "micro-copy", "inline")}</span>`
           )
           .join('<span class="separator"> / </span>')}
       </div>
@@ -754,7 +880,7 @@ function renderFilters(filterGroups) {
   return `
     <form class="collection-sidebar" data-collection-sidebar>
       <div class="collection__page-sort">
-        <label class="collection-sort__label" for="collection-sort">ترتيب حسب</label>
+        <label class="collection-sort__label" for="collection-sort">${renderLabel({ ar: "ترتيب العرض", en: "Sort By" }, "micro-copy", "inline")}</label>
         <select id="collection-sort" class="collection-sort__select" data-collection-sort>
           ${SORT_OPTIONS.map((option) => `<option value="${option.value}">${escapeHtml(option.label)}</option>`).join("")}
         </select>
@@ -764,7 +890,7 @@ function renderFilters(filterGroups) {
           (group) => `
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>${escapeHtml(group.label)}</span>
+                ${renderLabel(group.label, "menu-copy", "inline")}
                 <span class="nav-icon">${icon("chevronDown")}</span>
               </button>
               <div class="filter-group__panel">
@@ -791,19 +917,21 @@ function renderFilters(filterGroups) {
 function renderCollectionPage(collection, prefix) {
   const filterGroups = buildFilterGroups(collection.products);
   const firstPageProducts = collection.products.slice(0, collection.pageSize);
+  const collectionLabel = UI_TRANSLATIONS[collection.title] || { en: collection.title };
 
   return `
     ${renderBreadcrumb(prefix, [{ label: collection.title }])}
     <section class="collection__page">
       <div class="collection__mobile-toolbar">
-        <button class="button button--ghost js-filter-open" type="button">منقي</button>
-        <span class="collection__results-count">${collection.products.length} قطعة</span>
+        <button class="button button--ghost js-filter-open" type="button">${renderLabel({ ar: "الفلاتر", en: "Filters" }, "button-copy")}</button>
+        <span class="collection__results-count">${escapeHtml(`${collection.products.length} قطعة`)}</span>
       </div>
       <div class="collection-layout">
         ${renderFilters(filterGroups)}
         <div class="collection__page--productContent">
           <header class="collection-header">
-            <h1>${escapeHtml(collection.title)}</h1>
+            <span class="section-heading__eyebrow">${renderLabel({ ar: "مجموعة منسقة", en: "Curated Collection" }, "micro-copy", "inline")}</span>
+            <h1>${renderLabel(collectionLabel, "display-copy")}</h1>
             <p>${escapeHtml(collection.description || `Curated selection for ${collection.title}`)}</p>
           </header>
           <div class="product-loop collection__page-products" data-collection-grid>
@@ -874,7 +1002,7 @@ function renderProductOptions(product) {
         product.colors.length
           ? `
             <div class="swatches__container">
-              <p class="swatches__option-name">Color: <span>${escapeHtml(product.colors[0])}</span></p>
+              <p class="swatches__option-name">${renderLabel({ ar: "اللون", en: "Color" }, "micro-copy", "inline")} <span>${escapeHtml(product.colors[0])}</span></p>
               <div class="swatches__row">
                 ${product.colors
                   .map(
@@ -896,9 +1024,13 @@ function renderProductOptions(product) {
           ? `
             <div class="swatches__container">
               <div class="size-chart">
-                <button class="button-as-link js-size-chart-open" type="button">حجم الرسم البياني</button>
+                <button class="button-as-link js-size-chart-open" type="button">${renderLabel(
+                  { ar: "دليل المقاسات", en: "Measurement Guide" },
+                  "micro-copy",
+                  "inline"
+                )}</button>
               </div>
-              <p class="swatches__option-name">Size: <span>${escapeHtml(product.sizes[0])}</span></p>
+              <p class="swatches__option-name">${renderLabel({ ar: "المقاس", en: "Size" }, "micro-copy", "inline")} <span>${escapeHtml(product.sizes[0])}</span></p>
               <div class="swatches__row swatches__row--sizes">
                 ${product.sizes
                   .map(
@@ -925,7 +1057,7 @@ function renderSizeGuide() {
       <div class="size-guide__overlay js-size-chart-close"></div>
       <div class="size-guide__panel">
         <button class="icon-button size-guide__close js-size-chart-close" type="button" aria-label="Close size guide">${icon("close")}</button>
-        <h3>Measurement Guide</h3>
+        <h3>${renderLabel({ ar: "دليل القياسات", en: "Measurement Guide" }, "display-copy")}</h3>
         <table>
           <thead>
             <tr>
@@ -948,33 +1080,37 @@ function renderSizeGuide() {
 function renderReservationForm(product, prefix, config) {
   return `
     <form class="reservation-form" data-reservation-form data-product-handle="${escapeHtml(product.handle)}">
+      <div class="reservation-form__intro">
+        <span class="section-heading__eyebrow">${renderLabel({ ar: "طلب خاص", en: "Private Request" }, "micro-copy", "inline")}</span>
+        <h3>${renderLabel(config.reservationHeading, "display-copy")}</h3>
+      </div>
       <div class="reservation-form__grid">
         <label>
-          <span>الاسم الكامل</span>
+          <span>${renderLabel({ ar: "الاسم الكامل", en: "Full Name" }, "micro-copy")}</span>
           <input type="text" name="name" required />
         </label>
         <label>
-          <span>رقم الهاتف</span>
+          <span>${renderLabel({ ar: "رقم الهاتف", en: "Phone Number" }, "micro-copy")}</span>
           <input type="tel" name="phone" required />
         </label>
         <label>
-          <span>المدينة</span>
+          <span>${renderLabel({ ar: "المدينة", en: "City" }, "micro-copy")}</span>
           <input type="text" name="city" required />
         </label>
         <label>
-          <span>المقاس</span>
+          <span>${renderLabel({ ar: "المقاس", en: "Size" }, "micro-copy")}</span>
           <select name="size" required>
             ${reservationSizeOptions(product)}
           </select>
         </label>
         <label class="reservation-form__full">
-          <span>ملاحظات</span>
+          <span>${renderLabel({ ar: "ملاحظات", en: "Notes" }, "micro-copy")}</span>
           <textarea name="notes" rows="4"></textarea>
         </label>
       </div>
       <div class="reservation-form__actions">
-        <p>${escapeHtml(config.reservationNote)}</p>
-        <button class="button button--dark" type="submit">${escapeHtml(config.submitLabel)}</button>
+        <p>${renderLabel(config.reservationNote, "ui-copy")}</p>
+        <button class="button button--dark" type="submit">${renderLabel(config.submitLabel, "button-copy")}</button>
       </div>
     </form>
   `;
@@ -984,9 +1120,9 @@ function renderProductTabs(config, product) {
   return `
     <div class="product__tabs-container" data-tabs>
       <ul class="product__tabs">
-        <li class="product__tab-trigger is-active"><button type="button" data-tab-trigger="details">تفاصيل</button></li>
-        <li class="product__tab-trigger"><button type="button" data-tab-trigger="shipping">وقت الشحن</button></li>
-        <li class="product__tab-trigger"><button type="button" data-tab-trigger="reservation">سياسة الحجز</button></li>
+        <li class="product__tab-trigger is-active"><button type="button" data-tab-trigger="details">${renderLabel({ ar: "تفاصيل", en: "Details" }, "micro-copy", "inline")}</button></li>
+        <li class="product__tab-trigger"><button type="button" data-tab-trigger="shipping">${renderLabel({ ar: "التجهيز والشحن", en: "Fulfilment" }, "micro-copy", "inline")}</button></li>
+        <li class="product__tab-trigger"><button type="button" data-tab-trigger="reservation">${renderLabel({ ar: "سياسة الحجز", en: "Reservation Policy" }, "micro-copy", "inline")}</button></li>
       </ul>
       <div class="tabbed__product-content is-active" data-tab-panel="details">${product.bodyHtml}</div>
       <div class="tabbed__product-content" data-tab-panel="shipping">${config.shippingTabHtml}</div>
@@ -1003,7 +1139,10 @@ function renderRelatedProducts(related, prefix) {
   return `
     <section class="global__section related-products">
       <div class="section-heading-row">
-        <h2 class="section-heading">قد يعجبك أيضاً</h2>
+        <div>
+          <span class="section-heading__eyebrow">${renderLabel({ ar: "اقتراحات الدار", en: "Atelier Suggestions" }, "micro-copy", "inline")}</span>
+          <h2 class="section-heading">${renderLabel({ ar: "قد يعجبك أيضاً", en: "You May Also Like" }, "display-copy")}</h2>
+        </div>
       </div>
       <div class="featured__collection-carousel" data-carousel>
         ${related.map((product) => renderProductCard(product, prefix)).join("")}
@@ -1013,6 +1152,7 @@ function renderRelatedProducts(related, prefix) {
 }
 
 function renderProductPage(product, related, prefix, config) {
+  const collectionLabel = product.collectionTitles[0] ? UI_TRANSLATIONS[product.collectionTitles[0]] || { en: product.collectionTitles[0] } : null;
   return `
     ${renderBreadcrumb(prefix, [
       {
@@ -1024,25 +1164,26 @@ function renderProductPage(product, related, prefix, config) {
     <section class="product__section">
       ${renderProductGallery(product)}
       <div class="product__section-information">
+        ${collectionLabel ? `<span class="section-heading__eyebrow">${renderLabel(collectionLabel, "micro-copy", "inline")}</span>` : ""}
         <h1>${escapeHtml(product.title)}</h1>
         <div class="availability-copy availability-copy--product ${product.isExclusive ? "availability-copy--exclusive" : ""}">
-          ${escapeHtml(product.availabilityLabel)}
+          ${renderLabel(product.availabilityLabel, "micro-copy", "inline")}
         </div>
         <p class="product__lede">${escapeHtml(product.bodyText)}</p>
         <div class="product__section--custom_liquid">
           <div class="custom-productiontime">
             <div class="time-desc">
-              <div class="top-desc">مدة التنفيذ</div>
+              <div class="top-desc">${renderLabel({ ar: "مدة التنفيذ", en: "Lead Time" }, "micro-copy", "inline")}</div>
               <hr />
               <div class="bot-desc">15-20 يوماً</div>
             </div>
             <div class="time-desc">
-              <div class="top-desc">الشحن السريع</div>
+              <div class="top-desc">${renderLabel({ ar: "التجهيز والشحن", en: "Dispatch Window" }, "micro-copy", "inline")}</div>
               <hr />
               <div class="bot-desc">(3-5 أيام عمل)</div>
             </div>
             <div class="time-desc">
-              <div class="top-desc">Made for you</div>
+              <div class="top-desc">${renderLabel({ ar: "صُنع خصيصاً لك", en: "Made for you" }, "micro-copy", "inline")}</div>
               <hr />
               <div class="bot-desc">تجربة حجز خاصة</div>
             </div>
@@ -1050,17 +1191,19 @@ function renderProductPage(product, related, prefix, config) {
         </div>
         ${renderProductOptions(product)}
         <div class="product-cta-row">
-          <a class="button button--ghost" href="${escapeHtml(toInternalHref(prefix, routeForReservation(product.handle)))}">${escapeHtml(
-            product.reservationLabel
+          <a class="button button--dark" href="${escapeHtml(toInternalHref(prefix, routeForReservation(product.handle)))}">${renderLabel(
+            product.reservationLabel,
+            "button-copy"
           )}</a>
-          <a class="button button--dark" href="${escapeHtml(buildWhatsAppUrl(config, product))}" target="_blank" rel="noreferrer">${escapeHtml(
-            product.isExclusive ? "Book This Piece" : "Request Reservation"
+          <a class="button button--ghost" href="${escapeHtml(buildWhatsAppUrl(config, product))}" target="_blank" rel="noreferrer">${renderLabel(
+            { ar: "متابعة عبر واتساب", en: "Continue on WhatsApp" },
+            "button-copy"
           )}</a>
         </div>
         ${renderReservationForm(product, prefix, config)}
         ${renderProductTabs(config, product)}
         <div class="share-icons">
-          <span>مشاركة:</span>
+          <span>${renderLabel({ ar: "مشاركة", en: "Share" }, "micro-copy", "inline")}</span>
           <a href="https://www.facebook.com/sharer.php?u=${encodeURIComponent(product.handle)}" target="_blank" rel="noreferrer">Facebook</a>
           <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(product.title)}" target="_blank" rel="noreferrer">X</a>
         </div>
@@ -1073,9 +1216,13 @@ function renderProductPage(product, related, prefix, config) {
       product: {
         handle: product.handle,
         title: product.title,
+        bodyText: product.bodyText,
         colors: product.colors,
         sizes: product.sizes,
-        isExclusive: product.isExclusive
+        isExclusive: product.isExclusive,
+        availabilityLabel: product.availabilityLabel,
+        reservationLabel: product.reservationLabel,
+        primaryMedia: product.primaryMedia
       }
     })}</script>
   `;
@@ -1086,11 +1233,12 @@ function renderReservationPage(prefix, config) {
     ${renderBreadcrumb(prefix, [{ label: config.reservationHeading }])}
     <section class="reservation-page">
       <div class="reservation-page__intro">
-        <h1>${escapeHtml(config.reservationHeading)}</h1>
-        <p>${escapeHtml(config.reservationNote)}</p>
+        <span class="section-heading__eyebrow">${renderLabel({ ar: "موعد خاص", en: "Private Appointment" }, "micro-copy", "inline")}</span>
+        <h1>${renderLabel(config.reservationHeading, "display-copy")}</h1>
+        <p>${renderLabel(config.reservationNote, "ui-copy")}</p>
       </div>
       <div class="reservation-page__card" data-reservation-summary>
-        <h2>القطعة المختارة</h2>
+        <h2>${renderLabel({ ar: "القطعة المختارة", en: "Selected Piece" }, "display-copy")}</h2>
         <div class="reservation-summary__content" data-reservation-selected>
           <p>اختاري القطعة أولاً للمتابعة إلى تجربة الحجز الخاصة.</p>
         </div>
@@ -1098,30 +1246,31 @@ function renderReservationPage(prefix, config) {
       <form class="reservation-form reservation-form--standalone" data-reservation-form data-product-handle="">
         <div class="reservation-form__grid">
           <label>
-            <span>الاسم الكامل</span>
+            <span>${renderLabel({ ar: "الاسم الكامل", en: "Full Name" }, "micro-copy")}</span>
             <input type="text" name="name" required />
           </label>
           <label>
-            <span>رقم الهاتف</span>
+            <span>${renderLabel({ ar: "رقم الهاتف", en: "Phone Number" }, "micro-copy")}</span>
             <input type="tel" name="phone" required />
           </label>
           <label>
-            <span>المدينة</span>
+            <span>${renderLabel({ ar: "المدينة", en: "City" }, "micro-copy")}</span>
             <input type="text" name="city" required />
           </label>
           <label>
-            <span>المقاس</span>
+            <span>${renderLabel({ ar: "المقاس", en: "Size" }, "micro-copy")}</span>
             <select name="size" required data-reservation-size-select>
               <option value="">اختاري القطعة أولاً</option>
             </select>
           </label>
           <label class="reservation-form__full">
-            <span>ملاحظات</span>
+            <span>${renderLabel({ ar: "ملاحظات", en: "Notes" }, "micro-copy")}</span>
             <textarea name="notes" rows="4"></textarea>
           </label>
         </div>
         <div class="reservation-form__actions">
-          <button class="button button--dark" type="submit">${escapeHtml(config.submitLabel)}</button>
+          <p>${renderLabel(config.reservationNote, "ui-copy")}</p>
+          <button class="button button--dark" type="submit">${renderLabel(config.submitLabel, "button-copy")}</button>
         </div>
       </form>
     </section>
@@ -1146,7 +1295,7 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Anek+Tamil:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="${escapeHtml(`${prefix}assets/styles.css`)}" />
   </head>
   <body class="${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
@@ -1160,11 +1309,19 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
     <script>
       window.__ELEGANZA_CONFIG__ = ${serializeJson({
         brandArabic: config.brandArabic,
+        brandName: config.brandName,
         whatsappNumber: config.whatsappNumber,
         catalogPath: `${prefix}assets/data/catalog.json`,
         siteRoot: prefix,
+        availabilityLabel: config.availabilityLabel,
+        exclusiveLabel: config.exclusiveLabel,
         primaryCTA: config.primaryCTA,
-        secondaryCTA: config.secondaryCTA
+        secondaryCTA: config.secondaryCTA,
+        viewLabel: config.viewLabel,
+        quickViewLabel: config.quickViewLabel,
+        submitLabel: config.submitLabel,
+        reservationHeading: config.reservationHeading,
+        reservationNote: config.reservationNote
       })};
     </script>
     <script src="${escapeHtml(`${prefix}assets/app.js`)}" defer></script>
@@ -1192,7 +1349,7 @@ function buildHomeDocument(homepage, featuredSections, config, navigation) {
   const relativePath = path.join("ar", "index.html");
   const prefix = relativePrefix(relativePath);
   const content = `
-    ${renderHero(homepage, prefix)}
+    ${renderHero(homepage, prefix, config)}
     ${renderFeaturedSection(featuredSections[0], prefix)}
     ${renderSecondaryBanner(homepage, prefix)}
     ${renderFeaturedSection(featuredSections[1], prefix)}
@@ -1247,8 +1404,8 @@ function buildReservationDocument(config, navigation) {
 
   return renderDocument({
     relativePath,
-    title: `${config.reservationHeading} | ${config.brandName}`,
-    description: config.reservationNote,
+    title: `${labelText(config.reservationHeading, "en") || labelText(config.reservationHeading, "ar")} | ${config.brandName}`,
+    description: labelText(config.reservationNote, "ar"),
     mainClass: "page-reservation",
     content,
     config,
@@ -1288,7 +1445,12 @@ function main() {
     const collection = collections.find((entry) => entry.slug === section.slug);
     return {
       ...section,
-      products: (collection?.products || []).slice(0, index === 0 ? 8 : 10)
+      kicker:
+        index === 0
+          ? { ar: "Exclusive Pieces 2026", en: "Exclusive Pieces 2026" }
+          : { ar: "اختيار هادئ للسهرة", en: "Evening Edit" },
+      summary: collection?.description || "",
+      products: (collection?.products || []).slice(0, index === 0 ? 4 : 6)
     };
   });
 

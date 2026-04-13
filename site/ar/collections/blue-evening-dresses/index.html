@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Anek+Tamil:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../../assets/styles.css" />
   </head>
   <body class="page-collection" data-page-type="page-collection">
@@ -17,8 +17,28 @@
       
     
     <section class="announcement-bar" aria-label="Brand announcements">
-      <div class="announcement-bar__track">
-        <span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span><span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span><span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span>
+      <div class="announcement-bar__viewport">
+        <div class="announcement-bar__track">
+          <span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">مشغل الحجز الخاص</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">VIP Reservation Atelier</span>
+        </span>
+      </span><span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      </span><span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">صُنع خصيصاً لك</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Made for you</span>
+        </span>
+      </span>
+        </div>
       </div>
     </section>
   
@@ -31,35 +51,52 @@
                 <svg viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20v2H0zm0 5h20v2H0zm0 5h20v2H0z"/></svg>
               </button>
             </div>
-            <div class="large-search">
-              <form action="../../../ar/collections/all/" method="get" class="header-search-form">
-                <div class="header-search-form__inner">
-                  <label class="visually-hidden" for="header-search">Search</label>
-                  <input class="header-search" id="header-search" type="text" name="q" placeholder="يبحث" />
-                  <button class="icon-button" type="submit" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M14.3 12.6h-.9l-.3-.3a7.2 7.2 0 1 0-.8.8l.3.3v.9l5.7 5.7 1.7-1.7-5.7-5.7Zm-6.9 0a5.1 5.1 0 1 1 0-10.2 5.1 5.1 0 0 1 0 10.2Z"/></svg></button>
-                </div>
-              </form>
+            <div class="header-utility">
+              <ul class="header-actions">
+                <li>
+                  <a href="../../../ar/">
+                    
+      <span class="action-copy action-copy--stacked">
+        <span class="action-copy__ar">الدار</span>
+        <span class="action-copy__en">Maison</span>
+      </span>
+    
+                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 9a3.4 3.4 0 1 0 0-6.8A3.4 3.4 0 0 0 10 9Zm0 2.2c-3.6 0-6.6 2.5-6.6 5.6V20h2.2v-3.2c0-1.2 1.4-3.4 4.4-3.4s4.4 2.2 4.4 3.4V20h2.2v-3.2c0-3.1-3-5.6-6.6-5.6Z"/></svg></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../../../ar/reservation/">
+                    
+      <span class="action-copy action-copy--stacked">
+        <span class="action-copy__ar">الحجز</span>
+        <span class="action-copy__en">Reservation</span>
+      </span>
+    
+                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6V5a5 5 0 1 1 10 0v1h3l-1.2 12H3.2L2 6h3Zm2 0h6V5a3 3 0 1 0-6 0v1Z"/></svg></span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="theme__logo">
               <a href="../../../ar/">
                 <img src="../../../assets/images/brand-mark-320.png" alt="شعار إيليجانزا الرسمي" />
               </a>
             </div>
-            <div class="cart--container">
-              <ul class="header-actions">
-                <li>
-                  <a href="../../../ar/">
-                    <span>دار</span>
-                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 9a3.4 3.4 0 1 0 0-6.8A3.4 3.4 0 0 0 10 9Zm0 2.2c-3.6 0-6.6 2.5-6.6 5.6V20h2.2v-3.2c0-1.2 1.4-3.4 4.4-3.4s4.4 2.2 4.4 3.4V20h2.2v-3.2c0-3.1-3-5.6-6.6-5.6Z"/></svg></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="../../../ar/reservation/">
-                    <span>حجز</span>
-                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6V5a5 5 0 1 1 10 0v1h3l-1.2 12H3.2L2 6h3Zm2 0h6V5a3 3 0 1 0-6 0v1Z"/></svg></span>
-                  </a>
-                </li>
-              </ul>
+            <div class="large-search">
+              <form action="../../../ar/collections/all/" method="get" class="header-search-form">
+                <span class="header-search-form__label">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">البحث</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Search</span>
+        </span>
+      </span>
+                <div class="header-search-form__inner">
+                  <label class="visually-hidden" for="header-search">Search</label>
+                  <input class="header-search" id="header-search" type="text" name="q" placeholder="ابحثي عن القطعة أو السلسلة" />
+                  <button class="icon-button" type="submit" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M14.3 12.6h-.9l-.3-.3a7.2 7.2 0 1 0-.8.8l.3.3v.9l5.7 5.7 1.7-1.7-5.7-5.7Zm-6.9 0a5.1 5.1 0 1 1 0-10.2 5.1 5.1 0 0 1 0 10.2Z"/></svg></button>
+                </div>
+              </form>
             </div>
           </div>
         </header>
@@ -69,7 +106,12 @@
               
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/2026-evening-dresses/">
-              NEW IN
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">الجديد</span>
+        <span class="nav-copy__en">New In</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -77,40 +119,81 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/new-arrivals/">CATEGORIES</a>
+                          <a href="../../../ar/collections/new-arrivals/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">الفئات</span>
+        <span class="menu-copy__en">Categories</span>
+      </span>
+    </a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/new-arrivals/">New Arrivals</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">وصل حديثاً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New Arrivals</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/2026-evening-dresses/">2026 Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2026</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2026 Evening Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/2025-new-collection/">2025 Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/2025-new-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2025</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2025 Evening Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/ss-series/">SS Series</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/ss-series/"><span class="menu-copy menu-copy--single">SS Series</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/sf-evening-dress/">SF Series</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/sf-evening-dress/"><span class="menu-copy menu-copy--single">SF Series</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-dress/">Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/plus-size-evening-dresses/">Plus Size</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/plus-size-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المقاسات الممتدة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Plus Size</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                         </ul>
@@ -122,7 +205,7 @@
         
         <li class="navigation__menuitem navigation__menuitem--dropdown">
           <a class="navigation__menulink" href="../../../ar/collections/luxury-evening-dresses/">
-            فساتين السهرة
+            <span class="nav-copy nav-copy--single">فساتين السهرة</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </a>
           <div class="dropdown">
@@ -130,33 +213,63 @@
               
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="../../../ar/collections/hot-selling/">
-                        🔥 FEATURED
+                        <span class="menu-copy menu-copy--single">🔥 FEATURED</span>
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/all/">All Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/all/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جميع الفساتين</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">All Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/hot-selling/">Best Sellers</a>
+                                <a class="dropdown__link" href="../../../ar/collections/hot-selling/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكثر طلباً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Best Sellers</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/new-arrivals/">New In</a>
+                                <a class="dropdown__link" href="../../../ar/collections/new-arrivals/"><span class="menu-copy menu-copy--single">New In</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/ready-to-ship/">Ready To Ship</a>
+                                <a class="dropdown__link" href="../../../ar/collections/ready-to-ship/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جاهز للشحن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Ready To Ship</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/made-to-order/">Made To Order</a>
+                                <a class="dropdown__link" href="../../../ar/collections/made-to-order/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">يصنع عند الطلب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Made To Order</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/trending-now/">Trending Now</a>
+                                <a class="dropdown__link" href="../../../ar/collections/trending-now/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الرائج الآن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Trending Now</span>
+        </span>
+      </a>
                               </li>
                             
                       </ul>
@@ -164,49 +277,85 @@
                   
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="#">
-                        SHOP BY STYLE
+                        
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب الأسلوب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Style</span>
+        </span>
+      
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/arabic-evening-dresses-1/">Arabic Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/arabic-evening-dresses-1/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة العربية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Arabic Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/middle-east-collection/">Middle East Collection</a>
+                                <a class="dropdown__link" href="../../../ar/collections/middle-east-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">تشكيلة الشرق الأوسط</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Middle East Collection</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/turkish-evening-gowns/">Turkish Evening Gowns</a>
+                                <a class="dropdown__link" href="../../../ar/collections/turkish-evening-gowns/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة التركية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Turkish Evening Gowns</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/modest-evening-dresses/">Modest Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/modest-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة المحتشمة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Modest Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/luxury-evening-dresses/">Luxury Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/luxury-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة الفاخرة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Luxury Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/mermaid-style/">Mermaid Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/mermaid-style/"><span class="menu-copy menu-copy--single">Mermaid Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/a-line-dresses/">A-Line Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/a-line-dresses/"><span class="menu-copy menu-copy--single">A-Line Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/ball-gown-evening-dress/">Ball Gown Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/ball-gown-evening-dress/"><span class="menu-copy menu-copy--single">Ball Gown Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/sheath-evening-dresses/">Sheath Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/sheath-evening-dresses/"><span class="menu-copy menu-copy--single">Sheath Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/high-low-evening-dresses/">High Low Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/high-low-evening-dresses/"><span class="menu-copy menu-copy--single">High Low Evening Dresses</span></a>
                               </li>
                             
                       </ul>
@@ -214,37 +363,43 @@
                   
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="#">
-                        SHOP BY COLOR
+                        
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Color</span>
+        </span>
+      
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/black-evening-dresses/">Black</a>
+                                <a class="dropdown__link" href="../../../ar/collections/black-evening-dresses/"><span class="menu-copy menu-copy--single">Black</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/red-evening-dress/">Red</a>
+                                <a class="dropdown__link" href="../../../ar/collections/red-evening-dress/"><span class="menu-copy menu-copy--single">Red</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/sage-green-dress/">Green</a>
+                                <a class="dropdown__link" href="../../../ar/collections/sage-green-dress/"><span class="menu-copy menu-copy--single">Green</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/pink-evening-dresses/">Pink</a>
+                                <a class="dropdown__link" href="../../../ar/collections/pink-evening-dresses/"><span class="menu-copy menu-copy--single">Pink</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/gold-evening-dresses/">Gold</a>
+                                <a class="dropdown__link" href="../../../ar/collections/gold-evening-dresses/"><span class="menu-copy menu-copy--single">Gold</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/blue-evening-dresses/">Blue</a>
+                                <a class="dropdown__link" href="../../../ar/collections/blue-evening-dresses/"><span class="menu-copy menu-copy--single">Blue</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/champagne-dresses/">Champagne</a>
+                                <a class="dropdown__link" href="../../../ar/collections/champagne-dresses/"><span class="menu-copy menu-copy--single">Champagne</span></a>
                               </li>
                             
                       </ul>
@@ -256,7 +411,7 @@
       
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/wedding-dress/">
-              فساتين حفلة موسيقية
+              <span class="nav-copy nav-copy--single">فساتين حفلة موسيقية</span>
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -264,32 +419,37 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/wedding-dress/">WEDDING DRESSES</a>
+                          <a href="../../../ar/collections/wedding-dress/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">فساتين الزفاف</span>
+        <span class="menu-copy__en">Wedding Dresses</span>
+      </span>
+    </a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/ball-gown-wedding-dress/">Ball Gown Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/ball-gown-wedding-dress/"><span class="menu-copy menu-copy--single">Ball Gown Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/mermaid-wedding-dresses/">Mermaid Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/mermaid-wedding-dresses/"><span class="menu-copy menu-copy--single">Mermaid Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/3d-floral-wedding-dresses/">3D Floral Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/3d-floral-wedding-dresses/"><span class="menu-copy menu-copy--single">3D Floral Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/long-sleeve-wedding-dress/">Long Sleeve Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/long-sleeve-wedding-dress/"><span class="menu-copy menu-copy--single">Long Sleeve Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/luxury-beaded-wedding-dresses-1/">Luxury Beaded Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/luxury-beaded-wedding-dresses-1/"><span class="menu-copy menu-copy--single">Luxury Beaded Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/a-line-wedding-dresses/">A-Line Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/a-line-wedding-dresses/"><span class="menu-copy menu-copy--single">A-Line Wedding Dresses</span></a>
                                 </li>
                               
                         </ul>
@@ -301,7 +461,12 @@
         
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/short-party-cocktail-dresses/">
-              OCCASION
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">المناسبة</span>
+        <span class="nav-copy__en">Occasion</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -309,28 +474,34 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/formal-party-dresses/">SHOP BY OCCASION</a>
+                          <a href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">SHOP BY OCCASION</span></a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/formal-party-dresses/">Formal Party Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">Formal Party Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-guest-dresses/">Wedding Guest Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-guest-dresses/"><span class="menu-copy menu-copy--single">Wedding Guest Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/gala-dresses/">Gala Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/gala-dresses/"><span class="menu-copy menu-copy--single">Gala Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/red-carpet-dresses/">Red Carpet Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/red-carpet-dresses/"><span class="menu-copy menu-copy--single">Red Carpet Dresses</span></a>
                                 </li>
                               
                         </ul>
@@ -342,7 +513,12 @@
         
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/clearance-promotion/">
-              SALE
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">العروض</span>
+        <span class="nav-copy__en">Sale</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -350,20 +526,20 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/clearance-promotion/">EXCLUSIVE SALE PICKS</a>
+                          <a href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">EXCLUSIVE SALE PICKS</span></a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/clearance-promotion/">Final Sale Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">Final Sale Evening Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/under-199/">Under $199</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/under-199/"><span class="menu-copy menu-copy--single">Under $199</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/last-chance-sizes/">Last Chance Sizes</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/last-chance-sizes/"><span class="menu-copy menu-copy--single">Last Chance Sizes</span></a>
                                 </li>
                               
                         </ul>
@@ -381,53 +557,110 @@
         <div class="mobile-drawer__overlay js-mobile-menu-close"></div>
         <aside class="mobile-drawer__panel" aria-label="Mobile navigation">
           <div class="mobile-drawer__header">
-            <strong>ELEGANZA</strong>
+            <strong>
+      <span class="brand-copy brand-copy--stacked">
+        <span class="brand-copy__ar">إيليجانزا</span>
+        <span class="brand-copy__en">ELEGANZA</span>
+      </span>
+    </strong>
             <button class="icon-button js-mobile-menu-close" type="button" aria-label="Close navigation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 4.4 1.4-1.4L10 8.6 15.6 3 17 4.4 11.4 10 17 15.6 15.6 17 10 11.4 4.4 17 3 15.6 8.6 10Z"/></svg></button>
           </div>
           <div class="mobile-nav">
             
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>NEW IN</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">الجديد</span>
+        <span class="nav-copy__en">New In</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/2026-evening-dresses/">عرض NEW IN</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/2026-evening-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض الجديد</span>
+        <span class="menu-copy__en">View New In</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/new-arrivals/">CATEGORIES</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الفئات</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Categories</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/new-arrivals/">New Arrivals</a>
+                              <a href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">وصل حديثاً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New Arrivals</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/2026-evening-dresses/">2026 Evening Dresses</a>
+                              <a href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2026</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2026 Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/2025-new-collection/">2025 Evening Dresses</a>
+                              <a href="../../../ar/collections/2025-new-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2025</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2025 Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ss-series/">SS Series</a>
+                              <a href="../../../ar/collections/ss-series/"><span class="menu-copy menu-copy--single">SS Series</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sf-evening-dress/">SF Series</a>
+                              <a href="../../../ar/collections/sf-evening-dress/"><span class="menu-copy menu-copy--single">SF Series</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/wedding-dress/">Wedding Dresses</a>
+                              <a href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/plus-size-evening-dresses/">Plus Size</a>
+                              <a href="../../../ar/collections/plus-size-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المقاسات الممتدة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Plus Size</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                              <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                     </ul>
@@ -438,120 +671,197 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>فساتين السهرة</span>
+            <span class="nav-copy nav-copy--single">فساتين السهرة</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/luxury-evening-dresses/">عرض فساتين السهرة</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/luxury-evening-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض فساتين السهرة</span>
+        <span class="menu-copy__en">View فساتين السهرة</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/hot-selling/">🔥 FEATURED</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/hot-selling/"><span class="menu-copy menu-copy--single">🔥 FEATURED</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/all/">All Dresses</a>
+                              <a href="../../../ar/collections/all/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جميع الفساتين</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">All Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/hot-selling/">Best Sellers</a>
+                              <a href="../../../ar/collections/hot-selling/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكثر طلباً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Best Sellers</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/new-arrivals/">New In</a>
+                              <a href="../../../ar/collections/new-arrivals/"><span class="menu-copy menu-copy--single">New In</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ready-to-ship/">Ready To Ship</a>
+                              <a href="../../../ar/collections/ready-to-ship/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جاهز للشحن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Ready To Ship</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/made-to-order/">Made To Order</a>
+                              <a href="../../../ar/collections/made-to-order/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">يصنع عند الطلب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Made To Order</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/trending-now/">Trending Now</a>
+                              <a href="../../../ar/collections/trending-now/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الرائج الآن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Trending Now</span>
+        </span>
+      </a>
                             </li>
                           
                     </ul>
                   </div>
                 
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="#">SHOP BY STYLE</a>
+                    <a class="mobile-nav__heading" href="#">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب الأسلوب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Style</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/arabic-evening-dresses-1/">Arabic Evening Dresses</a>
+                              <a href="../../../ar/collections/arabic-evening-dresses-1/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة العربية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Arabic Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/middle-east-collection/">Middle East Collection</a>
+                              <a href="../../../ar/collections/middle-east-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">تشكيلة الشرق الأوسط</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Middle East Collection</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/turkish-evening-gowns/">Turkish Evening Gowns</a>
+                              <a href="../../../ar/collections/turkish-evening-gowns/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة التركية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Turkish Evening Gowns</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/modest-evening-dresses/">Modest Evening Dresses</a>
+                              <a href="../../../ar/collections/modest-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة المحتشمة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Modest Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/luxury-evening-dresses/">Luxury Evening Dresses</a>
+                              <a href="../../../ar/collections/luxury-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة الفاخرة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Luxury Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/mermaid-style/">Mermaid Evening Dresses</a>
+                              <a href="../../../ar/collections/mermaid-style/"><span class="menu-copy menu-copy--single">Mermaid Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/a-line-dresses/">A-Line Evening Dresses</a>
+                              <a href="../../../ar/collections/a-line-dresses/"><span class="menu-copy menu-copy--single">A-Line Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ball-gown-evening-dress/">Ball Gown Evening Dresses</a>
+                              <a href="../../../ar/collections/ball-gown-evening-dress/"><span class="menu-copy menu-copy--single">Ball Gown Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sheath-evening-dresses/">Sheath Evening Dresses</a>
+                              <a href="../../../ar/collections/sheath-evening-dresses/"><span class="menu-copy menu-copy--single">Sheath Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/high-low-evening-dresses/">High Low Evening Dresses</a>
+                              <a href="../../../ar/collections/high-low-evening-dresses/"><span class="menu-copy menu-copy--single">High Low Evening Dresses</span></a>
                             </li>
                           
                     </ul>
                   </div>
                 
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="#">SHOP BY COLOR</a>
+                    <a class="mobile-nav__heading" href="#">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Color</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/black-evening-dresses/">Black</a>
+                              <a href="../../../ar/collections/black-evening-dresses/"><span class="menu-copy menu-copy--single">Black</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/red-evening-dress/">Red</a>
+                              <a href="../../../ar/collections/red-evening-dress/"><span class="menu-copy menu-copy--single">Red</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sage-green-dress/">Green</a>
+                              <a href="../../../ar/collections/sage-green-dress/"><span class="menu-copy menu-copy--single">Green</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/pink-evening-dresses/">Pink</a>
+                              <a href="../../../ar/collections/pink-evening-dresses/"><span class="menu-copy menu-copy--single">Pink</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/gold-evening-dresses/">Gold</a>
+                              <a href="../../../ar/collections/gold-evening-dresses/"><span class="menu-copy menu-copy--single">Gold</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/blue-evening-dresses/">Blue</a>
+                              <a href="../../../ar/collections/blue-evening-dresses/"><span class="menu-copy menu-copy--single">Blue</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/champagne-dresses/">Champagne</a>
+                              <a href="../../../ar/collections/champagne-dresses/"><span class="menu-copy menu-copy--single">Champagne</span></a>
                             </li>
                           
                     </ul>
@@ -562,38 +872,49 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>فساتين حفلة موسيقية</span>
+            <span class="nav-copy nav-copy--single">فساتين حفلة موسيقية</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/wedding-dress/">عرض فساتين حفلة موسيقية</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/wedding-dress/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض فساتين حفلة موسيقية</span>
+        <span class="menu-copy__en">View فساتين حفلة موسيقية</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/wedding-dress/">WEDDING DRESSES</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/ball-gown-wedding-dress/">Ball Gown Wedding Dresses</a>
+                              <a href="../../../ar/collections/ball-gown-wedding-dress/"><span class="menu-copy menu-copy--single">Ball Gown Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/mermaid-wedding-dresses/">Mermaid Wedding Dresses</a>
+                              <a href="../../../ar/collections/mermaid-wedding-dresses/"><span class="menu-copy menu-copy--single">Mermaid Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/3d-floral-wedding-dresses/">3D Floral Wedding Dresses</a>
+                              <a href="../../../ar/collections/3d-floral-wedding-dresses/"><span class="menu-copy menu-copy--single">3D Floral Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/long-sleeve-wedding-dress/">Long Sleeve Wedding Dresses</a>
+                              <a href="../../../ar/collections/long-sleeve-wedding-dress/"><span class="menu-copy menu-copy--single">Long Sleeve Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/luxury-beaded-wedding-dresses-1/">Luxury Beaded Wedding Dresses</a>
+                              <a href="../../../ar/collections/luxury-beaded-wedding-dresses-1/"><span class="menu-copy menu-copy--single">Luxury Beaded Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/a-line-wedding-dresses/">A-Line Wedding Dresses</a>
+                              <a href="../../../ar/collections/a-line-wedding-dresses/"><span class="menu-copy menu-copy--single">A-Line Wedding Dresses</span></a>
                             </li>
                           
                     </ul>
@@ -604,34 +925,50 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>OCCASION</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">المناسبة</span>
+        <span class="nav-copy__en">Occasion</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/short-party-cocktail-dresses/">عرض OCCASION</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/short-party-cocktail-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض المناسبة</span>
+        <span class="menu-copy__en">View Occasion</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/formal-party-dresses/">SHOP BY OCCASION</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">SHOP BY OCCASION</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/formal-party-dresses/">Formal Party Dresses</a>
+                              <a href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">Formal Party Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/wedding-guest-dresses/">Wedding Guest Dresses</a>
+                              <a href="../../../ar/collections/wedding-guest-dresses/"><span class="menu-copy menu-copy--single">Wedding Guest Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                              <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/gala-dresses/">Gala Dresses</a>
+                              <a href="../../../ar/collections/gala-dresses/"><span class="menu-copy menu-copy--single">Gala Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/red-carpet-dresses/">Red Carpet Dresses</a>
+                              <a href="../../../ar/collections/red-carpet-dresses/"><span class="menu-copy menu-copy--single">Red Carpet Dresses</span></a>
                             </li>
                           
                     </ul>
@@ -642,26 +979,36 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>SALE</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">العروض</span>
+        <span class="nav-copy__en">Sale</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/clearance-promotion/">عرض SALE</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/clearance-promotion/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض العروض</span>
+        <span class="menu-copy__en">View Sale</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/clearance-promotion/">EXCLUSIVE SALE PICKS</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">EXCLUSIVE SALE PICKS</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/clearance-promotion/">Final Sale Evening Dresses</a>
+                              <a href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">Final Sale Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/under-199/">Under $199</a>
+                              <a href="../../../ar/collections/under-199/"><span class="menu-copy menu-copy--single">Under $199</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/last-chance-sizes/">Last Chance Sizes</a>
+                              <a href="../../../ar/collections/last-chance-sizes/"><span class="menu-copy menu-copy--single">Last Chance Sizes</span></a>
                             </li>
                           
                     </ul>
@@ -687,20 +1034,37 @@
     
     <section class="breadcrumb">
       <div class="breadcrumb__inner">
-        <a href="../../../ar/">الرئيسية</a><span class="separator"> / </span><span>Blue Evening Dresses</span>
+        <a href="../../../ar/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">الرئيسية</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Home</span>
+        </span>
+      </a><span class="separator"> / </span><span><span class="micro-copy micro-copy--single">Blue Evening Dresses</span></span>
       </div>
     </section>
   
     <section class="collection__page">
       <div class="collection__mobile-toolbar">
-        <button class="button button--ghost js-filter-open" type="button">منقي</button>
+        <button class="button button--ghost js-filter-open" type="button">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">الفلاتر</span>
+        <span class="button-copy__en">Filters</span>
+      </span>
+    </button>
         <span class="collection__results-count">14 قطعة</span>
       </div>
       <div class="collection-layout">
         
     <form class="collection-sidebar" data-collection-sidebar>
       <div class="collection__page-sort">
-        <label class="collection-sort__label" for="collection-sort">ترتيب حسب</label>
+        <label class="collection-sort__label" for="collection-sort">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">ترتيب العرض</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Sort By</span>
+        </span>
+      </label>
         <select id="collection-sort" class="collection-sort__select" data-collection-sort>
           <option value="featured">متميز</option><option value="title-ascending">أبجديا، من الألف إلى الياء</option><option value="title-descending">أبجديا، ZA</option><option value="created-descending">التاريخ، الجديد إلى القديم</option><option value="created-ascending">التاريخ، القديم إلى الجديد</option>
         </select>
@@ -708,7 +1072,13 @@
       
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>التوفر</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التوفر</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Availability</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -724,7 +1094,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Silhouette</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">القصّة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Silhouette</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -752,7 +1128,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Neckline</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الياقة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Neckline</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -828,7 +1210,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Hemline/Train</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الطول والذيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Hemline / Train</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -844,7 +1232,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Sleeves</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكمام</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Sleeves</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -896,7 +1290,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Fabric</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">القماش</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Fabric</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -930,7 +1330,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Hot Features</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">السمات البارزة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Key Features</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -994,7 +1400,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Color</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Color</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -1102,7 +1514,14 @@
   
         <div class="collection__page--productContent">
           <header class="collection-header">
-            <h1>Blue Evening Dresses</h1>
+            <span class="section-heading__eyebrow">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">مجموعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Collection</span>
+        </span>
+      </span>
+            <h1><span class="display-copy display-copy--single">Blue Evening Dresses</span></h1>
             <p>Discover our Blue Evening Dresses collection, featuring timeless and elegant designs perfect for special occasions.</p>
           </header>
           <div class="product-loop collection__page-products" data-collection-grid>
@@ -1120,13 +1539,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="glamorous-pink-strapless-sequin-tiered-evening-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/glamorous-pink-strapless-sequin-tiered-evening-dress/"><h2>Glamorous Pink Strapless Sequin Tiered Evening Dress SS612</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1152,8 +1590,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/glamorous-pink-strapless-sequin-tiered-evening-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-pink-strapless-sequin-tiered-evening-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-pink-strapless-sequin-tiered-evening-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/glamorous-pink-strapless-sequin-tiered-evening-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1171,13 +1620,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-pearls-off-shoulder-blue-evening-dress-sf404">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-pearls-off-shoulder-blue-evening-dress-sf404/"><h2>Elegant Pearls Off Shoulder Blue Evening Dress SF404</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1199,8 +1667,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-pearls-off-shoulder-blue-evening-dress-sf404/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-pearls-off-shoulder-blue-evening-dress-sf404">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-pearls-off-shoulder-blue-evening-dress-sf404">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-pearls-off-shoulder-blue-evening-dress-sf404/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1218,13 +1697,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap/"><h2>Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1242,8 +1740,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1261,13 +1770,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-gray-blue-beaded-evening-dress-with-cape-sleeves">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-gray-blue-beaded-evening-dress-with-cape-sleeves/"><h2>Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1285,8 +1813,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-gray-blue-beaded-evening-dress-with-cape-sleeves/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-gray-blue-beaded-evening-dress-with-cape-sleeves">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-gray-blue-beaded-evening-dress-with-cape-sleeves">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-gray-blue-beaded-evening-dress-with-cape-sleeves/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1304,13 +1843,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt/"><h2>Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1332,8 +1890,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1351,13 +1920,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf/"><h2>Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1379,8 +1967,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1398,13 +1997,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker/"><h2>Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1422,8 +2040,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1441,13 +2070,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves/"><h2>Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1465,8 +2113,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1484,13 +2143,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress/"><h2>Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1508,8 +2186,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1527,13 +2216,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress/"><h2>Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1551,8 +2259,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1570,13 +2289,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress/"><h2>Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1598,8 +2336,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1617,13 +2366,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="glamorous-red-layered-ruffle-off-shoulder-prom-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/glamorous-red-layered-ruffle-off-shoulder-prom-dress/"><h2>Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1661,8 +2429,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/glamorous-red-layered-ruffle-off-shoulder-prom-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-red-layered-ruffle-off-shoulder-prom-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-red-layered-ruffle-off-shoulder-prom-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/glamorous-red-layered-ruffle-off-shoulder-prom-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1680,13 +2459,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-blue-strapless-ruched-evening-dress-with-scarf">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-blue-strapless-ruched-evening-dress-with-scarf/"><h2>Luxury Blue Strapless Ruched Evening Dress with Scarf SF036</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1704,8 +2502,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-blue-strapless-ruched-evening-dress-with-scarf/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-blue-strapless-ruched-evening-dress-with-scarf">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-blue-strapless-ruched-evening-dress-with-scarf">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-blue-strapless-ruched-evening-dress-with-scarf/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1723,13 +2532,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape/"><h2>Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1763,8 +2591,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1774,56 +2613,112 @@
         </div>
       </div>
     </section>
-    <script id="page-data" type="application/json">{"type":"collection","collection":{"slug":"blue-evening-dresses","title":"Blue Evening Dresses","pageSize":14},"products":[{"handle":"glamorous-pink-strapless-sequin-tiered-evening-dress","title":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48088663195905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_90162524-98a1-4e44-8013-07c10346a110.jpg?v=1773455927","alt":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48088663228673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/3_a99d683d-0070-4fe8-b7f7-321a5cef4a11.jpg?v=1773456166","alt":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","width":1440,"height":1440,"position":2},"colors":["Light Blue","Yellow","Pink"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeves"],"fabric":["Tulle"],"hotFeatures":["Sequin","Beading"],"colors":["Light Blue","Yellow","Pink"]}},{"handle":"elegant-pearls-off-shoulder-blue-evening-dress-sf404","title":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":45886179836161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_a18f744e-1dfe-44b9-b467-cfa6b1199a89.jpg?v=1753156793","alt":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","width":1440,"height":1440,"position":1},"hoverMedia":{"id":44444667609345,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/dazzabridal_media_202409281922_3467032904607031192_65874749644.jpg?v=1753156793","alt":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","width":1440,"height":1800,"position":2},"colors":["Blue","Pink"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Off Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Blue","Pink"]}},{"handle":"luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap","title":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47198983356673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_54f19ced-0cad-4944-8221-c07702f023bb.jpg?v=1765437361","alt":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47198983323905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_dd693d27-8b7c-49d0-a50d-4c8ea6af902b.jpg?v=1765437361","alt":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","width":1610,"height":1611,"position":2},"colors":["Navy Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Velvet"],"hotFeatures":["Cap"],"colors":["Navy Blue"]}},{"handle":"luxury-gray-blue-beaded-evening-dress-with-cape-sleeves","title":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48166695043329,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_059d7a20-c361-41f2-8844-646a7dd6b51e.jpg?v=1774945122","alt":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48166695010561,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2-1_98e625ee-1848-40a1-a420-bf8163b613c5.jpg?v=1774945122","alt":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","width":1440,"height":1440,"position":2},"colors":["Gray Blue"],"sizes":["US 6","US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Turtle"],"hemlineTrain":["Sweep Train"],"sleeves":["Cape Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["Gray Blue"]}},{"handle":"elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt","title":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48166555713793,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/4_0863eb86-d2d0-4031-acd5-d502bf31e25f.jpg?v=1774943351","alt":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48166555681025,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/4-1.jpg?v=1774943351","alt":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","width":1440,"height":1440,"position":2},"colors":["Gradient Blue","Gradient Green"],"sizes":["US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Asymmetric"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Overskirt"],"colors":["Gradient Blue","Gradient Green"]}},{"handle":"bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf","title":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48141846544641,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_f0f597f3-8937-4abf-913e-19404a1c8b1d.jpg?v=1774423548","alt":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48141846642945,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_199578947___1768151879_1.jpg?v=1774423923","alt":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","width":1440,"height":1920,"position":2},"colors":["Navy Blue","Caramel"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Off-Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Off-Shoulder"],"fabric":["Tulle"],"hotFeatures":["Scarf"],"colors":["Navy Blue","Caramel"]}},{"handle":"glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker","title":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48141474332929,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_d76d33e4-ab55-4d3e-b8fd-d6fd7c0284e7.jpg?v=1774418626","alt":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48141474300161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_d3e88018-e54c-4178-89de-8d1ed4f00b8f.jpg?v=1774418625","alt":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","width":1440,"height":1440,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Strapless"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Beading","Choker"],"colors":["Blue"]}},{"handle":"glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves","title":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48104792785153,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A4289.jpg?v=1773825316","alt":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48104792719617,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_a35b4aba-b366-4127-b4e4-0ef7bd1928c0.jpg?v=1773825315","alt":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","width":1440,"height":1440,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Tulle"],"hotFeatures":["Sequin"],"colors":["Blue"]}},{"handle":"luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress","title":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48073993781505,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1400_0663194e-ee6b-43d4-9e3b-e654c14e0d89.jpg?v=1773216144","alt":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48073993814273,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_209839671_Charbel_Karam_1763556832_1.jpg?v=1773216144","alt":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","width":1440,"height":1920,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Asymmetry"],"hemlineTrain":["Sweep Train"],"sleeves":["Cape Sleeve"],"fabric":["Chiffon"],"hotFeatures":["Ruffles"],"colors":["Blue"]}},{"handle":"luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress","title":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48073763488001,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1400_6efaa5b3-c943-4694-ab6b-359e71660e1f.jpg?v=1773214971","alt":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48073763520769,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_209839671_Charbel_Karam_1763654400_1.jpg?v=1773214971","alt":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","width":1440,"height":1920,"position":2},"colors":["Royal Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Sqaure"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Velvet"],"hotFeatures":["Ruching"],"colors":["Royal Blue"]}},{"handle":"elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress","title":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48069963677953,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_2813ada8-2579-4e81-bc8a-e5e848c5e25b.jpg?v=1773198734","alt":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48069963743489,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_764e8a81-36dd-4343-b063-52c86c5bee9f.jpg?v=1773198734","alt":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","width":1440,"height":1440,"position":2},"colors":["champagne","Blue"],"sizes":["US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["V-neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["champagne","Blue"]}},{"handle":"glamorous-red-layered-ruffle-off-shoulder-prom-dress","title":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":48055866687745,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A6771.jpg?v=1773026728","alt":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48055867113729,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/fv11610-13.jpg?v=1773026727","alt":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","width":1440,"height":1440,"position":2},"colors":["Navy Blue","White","Light Blue","Red","Pink","Lilac"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":[],"neckline":[],"hemlineTrain":[],"sleeves":[],"fabric":[],"hotFeatures":[],"colors":["Navy Blue","White","Light Blue","Red","Pink","Lilac"]}},{"handle":"luxury-blue-strapless-ruched-evening-dress-with-scarf","title":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47986641371393,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_ee8a534f-3366-4cce-a466-8e65022da516.jpg?v=1772527483","alt":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","width":1611,"height":1611,"position":1},"hoverMedia":{"id":47986641404161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_1239423155_Said_Mhamad_Photography_20251007044608_1.jpg?v=1772527483","alt":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","width":1440,"height":1920,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Scarf"],"colors":["Blue"]}},{"handle":"luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape","title":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47985574510849,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_ab3f5fe5-533c-42ef-8f5b-f23ea3dd2d76.jpg?v=1772521409","alt":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47985574543617,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_fa43c1cb-1911-408e-9ee5-64a166618b17.jpg?v=1772521409","alt":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","width":1440,"height":1440,"position":2},"colors":["Beige","Pink","Dusty Pink","Red","Blue"],"sizes":["US 6","US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Asymmetric"],"hemlineTrain":["Sweep Train"],"sleeves":["Cap Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["Beige","Pink","Dusty Pink","Red","Blue"]}}]}</script>
+    <script id="page-data" type="application/json">{"type":"collection","collection":{"slug":"blue-evening-dresses","title":"Blue Evening Dresses","pageSize":14},"products":[{"handle":"glamorous-pink-strapless-sequin-tiered-evening-dress","title":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48088663195905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_90162524-98a1-4e44-8013-07c10346a110.jpg?v=1773455927","alt":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48088663228673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/3_a99d683d-0070-4fe8-b7f7-321a5cef4a11.jpg?v=1773456166","alt":"Glamorous Pink Strapless Sequin Tiered Evening Dress SS612","width":1440,"height":1440,"position":2},"colors":["Light Blue","Yellow","Pink"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeves"],"fabric":["Tulle"],"hotFeatures":["Sequin","Beading"],"colors":["Light Blue","Yellow","Pink"]}},{"handle":"elegant-pearls-off-shoulder-blue-evening-dress-sf404","title":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":45886179836161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_a18f744e-1dfe-44b9-b467-cfa6b1199a89.jpg?v=1753156793","alt":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","width":1440,"height":1440,"position":1},"hoverMedia":{"id":44444667609345,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/dazzabridal_media_202409281922_3467032904607031192_65874749644.jpg?v=1753156793","alt":"Elegant Pearls Off Shoulder Blue Evening Dress SF404","width":1440,"height":1800,"position":2},"colors":["Blue","Pink"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Off Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Blue","Pink"]}},{"handle":"luxury-navy-blue-velvet-lace-sleeve-evening-dress-with-cap","title":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47198983356673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_54f19ced-0cad-4944-8221-c07702f023bb.jpg?v=1765437361","alt":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47198983323905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_dd693d27-8b7c-49d0-a50d-4c8ea6af902b.jpg?v=1765437361","alt":"Luxury Navy Blue Velvet Lace Sleeve Evening Dress with Cap SF443","width":1610,"height":1611,"position":2},"colors":["Navy Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Velvet"],"hotFeatures":["Cap"],"colors":["Navy Blue"]}},{"handle":"luxury-gray-blue-beaded-evening-dress-with-cape-sleeves","title":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48166695043329,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_059d7a20-c361-41f2-8844-646a7dd6b51e.jpg?v=1774945122","alt":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48166695010561,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2-1_98e625ee-1848-40a1-a420-bf8163b613c5.jpg?v=1774945122","alt":"Luxury Gray Blue Beaded Evening Dress with Cape Sleeves SS235","width":1440,"height":1440,"position":2},"colors":["Gray Blue"],"sizes":["US 6","US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Turtle"],"hemlineTrain":["Sweep Train"],"sleeves":["Cape Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["Gray Blue"]}},{"handle":"elegant-gradient-blue-draped-beaded-evening-dress-with-overskirt","title":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48166555713793,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/4_0863eb86-d2d0-4031-acd5-d502bf31e25f.jpg?v=1774943351","alt":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48166555681025,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/4-1.jpg?v=1774943351","alt":"Elegant Gradient Blue Draped Beaded Evening Dress with Overskirt SS293","width":1440,"height":1440,"position":2},"colors":["Gradient Blue","Gradient Green"],"sizes":["US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Asymmetric"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Overskirt"],"colors":["Gradient Blue","Gradient Green"]}},{"handle":"bohemian-navy-blue-off-the-shoulder-ruffled-tulle-evening-dress-with-scarf","title":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48141846544641,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_f0f597f3-8937-4abf-913e-19404a1c8b1d.jpg?v=1774423548","alt":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48141846642945,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_199578947___1768151879_1.jpg?v=1774423923","alt":"Bohemian Navy Blue Off-the-Shoulder Ruffled Tulle Evening Dress with Scarf SF215","width":1440,"height":1920,"position":2},"colors":["Navy Blue","Caramel"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Off-Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Off-Shoulder"],"fabric":["Tulle"],"hotFeatures":["Scarf"],"colors":["Navy Blue","Caramel"]}},{"handle":"glamorous-blue-mermaid-evening-dress-with-beaded-cape-sleeve-and-choker","title":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48141474332929,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_d76d33e4-ab55-4d3e-b8fd-d6fd7c0284e7.jpg?v=1774418626","alt":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48141474300161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_d3e88018-e54c-4178-89de-8d1ed4f00b8f.jpg?v=1774418625","alt":"Glamorous Blue Mermaid Beaded Evening Dress with Cape Sleeve and Choker SS506","width":1440,"height":1440,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Strapless"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Beading","Choker"],"colors":["Blue"]}},{"handle":"glamorous-blue-crystal-beaded-evening-dress-with-puff-sleeves","title":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48104792785153,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A4289.jpg?v=1773825316","alt":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48104792719617,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_a35b4aba-b366-4127-b4e4-0ef7bd1928c0.jpg?v=1773825315","alt":"Glamorous Blue Crystal Beaded Evening Dress with Puff Sleeves SS080","width":1440,"height":1440,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Tulle"],"hotFeatures":["Sequin"],"colors":["Blue"]}},{"handle":"luxury-blue-cold-shoulder-cross-neck-flowy-cape-evening-dress","title":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48073993781505,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1400_0663194e-ee6b-43d4-9e3b-e654c14e0d89.jpg?v=1773216144","alt":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48073993814273,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_209839671_Charbel_Karam_1763556832_1.jpg?v=1773216144","alt":"Luxury Blue Cold Shoulder Cross Neck Flowy Cape Evening Dress SF067","width":1440,"height":1920,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Asymmetry"],"hemlineTrain":["Sweep Train"],"sleeves":["Cape Sleeve"],"fabric":["Chiffon"],"hotFeatures":["Ruffles"],"colors":["Blue"]}},{"handle":"luxury-royal-blue-cold-shoulder-ruched-fitted-evening-dress","title":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48073763488001,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1400_6efaa5b3-c943-4694-ab6b-359e71660e1f.jpg?v=1773214971","alt":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48073763520769,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_209839671_Charbel_Karam_1763654400_1.jpg?v=1773214971","alt":"Luxury Royal Blue Cold Shoulder Ruched Fitted Evening Dress SF064","width":1440,"height":1920,"position":2},"colors":["Royal Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Sqaure"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Velvet"],"hotFeatures":["Ruching"],"colors":["Royal Blue"]}},{"handle":"elegant-champagne-notched-collar-beaded-long-sleeve-evening-dress","title":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48069963677953,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_2813ada8-2579-4e81-bc8a-e5e848c5e25b.jpg?v=1773198734","alt":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48069963743489,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_764e8a81-36dd-4343-b063-52c86c5bee9f.jpg?v=1773198734","alt":"Elegant Champagne Notched Collar Beaded Long Sleeve Evening Dress SS419","width":1440,"height":1440,"position":2},"colors":["champagne","Blue"],"sizes":["US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["V-neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["champagne","Blue"]}},{"handle":"glamorous-red-layered-ruffle-off-shoulder-prom-dress","title":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":48055866687745,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A6771.jpg?v=1773026728","alt":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","width":1440,"height":1440,"position":1},"hoverMedia":{"id":48055867113729,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/fv11610-13.jpg?v=1773026727","alt":"Glamorous Red Layered Ruffle Off-Shoulder Prom Dress SH151","width":1440,"height":1440,"position":2},"colors":["Navy Blue","White","Light Blue","Red","Pink","Lilac"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":[],"neckline":[],"hemlineTrain":[],"sleeves":[],"fabric":[],"hotFeatures":[],"colors":["Navy Blue","White","Light Blue","Red","Pink","Lilac"]}},{"handle":"luxury-blue-strapless-ruched-evening-dress-with-scarf","title":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47986641371393,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_ee8a534f-3366-4cce-a466-8e65022da516.jpg?v=1772527483","alt":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","width":1611,"height":1611,"position":1},"hoverMedia":{"id":47986641404161,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_1239423155_Said_Mhamad_Photography_20251007044608_1.jpg?v=1772527483","alt":"Luxury Blue Strapless Ruched Evening Dress with Scarf SF036","width":1440,"height":1920,"position":2},"colors":["Blue"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-Line"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Tulle"],"hotFeatures":["Scarf"],"colors":["Blue"]}},{"handle":"luxury-dusty-pink-one-shoulder-beaded-fitted-evening-dress-with-cape","title":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47985574510849,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_ab3f5fe5-533c-42ef-8f5b-f23ea3dd2d76.jpg?v=1772521409","alt":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47985574543617,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_fa43c1cb-1911-408e-9ee5-64a166618b17.jpg?v=1772521409","alt":"Luxury Dusty Pink One-Shoulder Beaded Fitted Evening Dress with Cape SS016","width":1440,"height":1440,"position":2},"colors":["Beige","Pink","Dusty Pink","Red","Blue"],"sizes":["US 6","US 8","US 10","US 12","US 14","US 16","US 18"],"filters":{"availability":["available"],"silhouette":["Mermaid"],"neckline":["Asymmetric"],"hemlineTrain":["Sweep Train"],"sleeves":["Cap Sleeve"],"fabric":["Tulle"],"hotFeatures":["Beading"],"colors":["Beige","Pink","Dusty Pink","Red","Blue"]}}]}</script>
   
       </main>
       
     <section class="newsletter__section">
       <div class="newsletter__section-container">
         <div class="newsletter__section-content">
-          <h2>انضمي إلى قائمة Eleganza الخاصة</h2>
-          <p>اشتركي لتصلك تحديثات المقتنيات الجديدة، جلسات الحجز الخاصة، والتنبيهات المحدودة قبل الإطلاق العام.</p>
+          <span class="newsletter__eyebrow">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قائمة خاصة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Private List</span>
+        </span>
+      </span>
+          <h2>
+      <span class="display-copy display-copy--stacked">
+        <span class="display-copy__ar">انضمي إلى القائمة الخاصة</span>
+        <span class="display-copy__en">Join the private list</span>
+      </span>
+    </h2>
+          <p>
+      <span class="ui-copy ui-copy--stacked">
+        <span class="ui-copy__ar">استقبلي تحديثات الإطلاقات الجديدة، الدعوات الهادئة، والتنبيهات المحدودة قبل الإتاحة العامة.</span>
+        <span class="ui-copy__en">Receive quiet updates on new arrivals, limited releases, and private atelier appointments.</span>
+      </span>
+    </p>
         </div>
         <form class="newsletter__form" action="#" method="post" data-newsletter-form>
           <label class="visually-hidden" for="newsletter-email">Email</label>
           <input id="newsletter-email" class="newsletter__input" type="email" placeholder="أدخل عنوان بريدك الإلكتروني" />
-          <button class="newsletter__submit" type="submit">ينضم</button>
+          <button class="newsletter__submit" type="submit">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">انضمي الآن</span>
+        <span class="button-copy__en">Join the List</span>
+      </span>
+    </button>
         </form>
       </div>
     </section>
     <footer class="footer-section">
       <div class="footer-grid">
         <div>
-          <h3>ELEGANZA</h3>
-          <p>دار المقتنيات الخاصة وفساتين السهرة الرفيعة</p>
-          <p>VIP Reservation Atelier</p>
+          <h3>
+      <span class="display-copy display-copy--stacked">
+        <span class="display-copy__ar">إيليجانزا</span>
+        <span class="display-copy__en">ELEGANZA</span>
+      </span>
+    </h3>
+          <p>دار فساتين السهرة والمقتنيات الخاصة</p>
+          <p>Private Reservation Atelier</p>
         </div>
         <div>
-          <h4>المجموعات</h4>
+          <h4>
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المجموعات</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Collections</span>
+        </span>
+      </h4>
           <ul class="footer-links">
             
                   <li>
-                    <a href="../../../ar/collections/2026-evening-dresses/">NEW IN</a>
+                    <a href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الجديد</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New In</span>
+        </span>
+      </a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/luxury-evening-dresses/">فساتين السهرة</a>
+                    <a href="../../../ar/collections/luxury-evening-dresses/"><span class="menu-copy menu-copy--single">فساتين السهرة</span></a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/wedding-dress/">فساتين حفلة موسيقية</a>
+                    <a href="../../../ar/collections/wedding-dress/"><span class="menu-copy menu-copy--single">فساتين حفلة موسيقية</span></a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/short-party-cocktail-dresses/">OCCASION</a>
+                    <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المناسبة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Occasion</span>
+        </span>
+      </a>
                   </li>
                 
           </ul>
         </div>
         <div>
-          <h4>الحجز</h4>
+          <h4>
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الحجز</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Reservation</span>
+        </span>
+      </h4>
           <ul class="footer-links">
-            <li><a href="../../../ar/reservation/">جلسة الحجز الخاصة</a></li>
+            <li><a href="../../../ar/reservation/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">جلسة الحجز الخاصة</span>
+        <span class="menu-copy__en">Private Reservation Appointment</span>
+      </span>
+    </a></li>
             <li><a href="https://www.facebook.com/EleganzaOfficiall/" target="_blank" rel="noreferrer">Facebook</a></li>
           </ul>
         </div>
@@ -1832,7 +2727,7 @@
   
     </div>
     <script>
-      window.__ELEGANZA_CONFIG__ = {"brandArabic":"إيليجانزا","whatsappNumber":"","catalogPath":"../../../assets/data/catalog.json","siteRoot":"../../../","primaryCTA":"Request Reservation","secondaryCTA":"Book This Piece"};
+      window.__ELEGANZA_CONFIG__ = {"brandArabic":"إيليجانزا","brandName":"ELEGANZA","whatsappNumber":"","catalogPath":"../../../assets/data/catalog.json","siteRoot":"../../../","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"exclusiveLabel":{"ar":"قطعة حصرية","en":"Exclusive piece"},"primaryCTA":{"ar":"اطلبي الحجز","en":"Request Reservation"},"secondaryCTA":{"ar":"احجزي هذه القطعة","en":"Book This Piece"},"viewLabel":{"ar":"استكشفي القطعة","en":"View Piece"},"quickViewLabel":{"ar":"عرض سريع","en":"Quick View"},"submitLabel":{"ar":"إرسال طلب الحجز","en":"Submit Reservation Request"},"reservationHeading":{"ar":"جلسة الحجز الخاصة","en":"Private Reservation Appointment"},"reservationNote":{"ar":"يُرسل طلبك عبر واتساب بصياغة خاصة تتضمن بياناتك والقطعة المختارة لمتابعة أدق مع فريق الدار.","en":"Your request continues through WhatsApp with a private atelier brief tailored to the selected piece."}};
     </script>
     <script src="../../../assets/app.js" defer></script>
   </body>

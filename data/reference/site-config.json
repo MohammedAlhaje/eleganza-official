@@ -1,28 +1,109 @@
 {
   "brandName": "ELEGANZA",
   "brandArabic": "إيليجانزا",
-  "brandTagline": "دار المقتنيات الخاصة وفساتين السهرة الرفيعة",
-  "brandAuthority": "VIP Reservation Atelier",
+  "brandTagline": "دار فساتين السهرة والمقتنيات الخاصة",
+  "brandAuthority": "Private Reservation Atelier",
   "facebookUrl": "https://www.facebook.com/EleganzaOfficiall/",
   "whatsappNumber": "",
   "logoPath": "assets/images/brand-mark-320.png",
   "logoAlt": "شعار إيليجانزا الرسمي",
   "homepageTitle": "Eleganza | صالة الحجز الخاصة لفساتين السهرة",
-  "homepageDescription": "Eleganza تعيد تقديم تجربة صالة الحجز الخاصة لفساتين السهرة والمقتنيات الفاخرة بنموذج VIP reservation فقط.",
+  "homepageDescription": "تجربة هادئة ومترفة لاكتشاف فساتين السهرة الراقية والقطع الخاصة من خلال مسار حجز خاص يليق بالعلامات الرفيعة.",
   "announcementMessages": [
-    "VIP RESERVATION ATELIER | ELEGANZA",
-    "AVAILABLE UPON REQUEST | PRIVATE SHOWROOM",
-    "MADE FOR YOU | BOOK THIS PIECE"
+    {
+      "ar": "مشغل الحجز الخاص",
+      "en": "VIP Reservation Atelier"
+    },
+    {
+      "ar": "متاح عند الطلب",
+      "en": "Available upon request"
+    },
+    {
+      "ar": "صُنع خصيصاً لك",
+      "en": "Made for you"
+    }
   ],
-  "newsletterHeading": "انضمي إلى قائمة Eleganza الخاصة",
-  "newsletterText": "اشتركي لتصلك تحديثات المقتنيات الجديدة، جلسات الحجز الخاصة، والتنبيهات المحدودة قبل الإطلاق العام.",
-  "reservationHeading": "جلسة الحجز الخاصة",
-  "availabilityLabel": "Available upon request",
-  "exclusiveLabel": "Exclusive piece",
-  "primaryCTA": "Request Reservation",
-  "secondaryCTA": "Book This Piece",
-  "submitLabel": "Submit Reservation Request",
-  "reservationNote": "طلب الحجز يتم عبر واتساب بصياغة خاصة تتضمن بياناتك والقطعة المختارة.",
-  "shippingTabHtml": "<h5 style=\"text-align:right;direction:rtl\">وقت التجهيز والشحن</h5><p style=\"text-align:right;direction:rtl\">كل قطعة في Eleganza تُجهّز ضمن مسار حجز خاص. يتم تأكيد مدة التجهيز والشحن أثناء جلسة الحجز بحسب التصميم والمقاس والمدينة.</p><p style=\"text-align:right;direction:rtl\">للطلبات المستعجلة، سيتم توضيح أقرب موعد متاح مباشرة عبر واتساب قبل تثبيت الحجز.</p>",
-  "reservationTabHtml": "<h5 style=\"text-align:right;direction:rtl\">سياسة الحجز</h5><p style=\"text-align:right;direction:rtl\">لا يعتمد هذا الموقع على سلة شراء تقليدية. كل طلب يبدأ عبر نموذج الحجز ثم ينتقل إلى واتساب لتأكيد المقاس والمدينة والتفاصيل الخاصة بالقطعة.</p><p style=\"text-align:right;direction:rtl\">القطع المميزة يمكن وسمها كـ Exclusive piece من خلال ملف overrides دون تغيير بنية الصفحة.</p>"
+  "heroKicker": {
+    "ar": "الدار الخاصة",
+    "en": "Private Showroom"
+  },
+  "heroTitle": {
+    "ar": "فساتين سهرة تُقدَّم بهدوء يليق بالفخامة",
+    "en": "Eveningwear presented with couture restraint"
+  },
+  "heroText": {
+    "ar": "رحلة عرض منسقة لقطع محدودة ومختارة بعناية، تبدأ بالاكتشاف وتنتهي بطلب خاص عبر مشغل إيليجانزا.",
+    "en": "A curated reservation-first experience for limited pieces, atelier-led appointments, and quietly luxurious evening dressing."
+  },
+  "heroPrimaryCTA": {
+    "ar": "اكتشفي القطع المميزة",
+    "en": "Explore Featured Pieces"
+  },
+  "heroSecondaryCTA": {
+    "ar": "احجزي جلسة خاصة",
+    "en": "Book Private Appointment"
+  },
+  "searchPlaceholder": "ابحثي عن القطعة أو السلسلة",
+  "searchLabel": {
+    "ar": "البحث",
+    "en": "Search"
+  },
+  "utilityShowroom": {
+    "ar": "الدار",
+    "en": "Maison"
+  },
+  "utilityReservation": {
+    "ar": "الحجز",
+    "en": "Reservation"
+  },
+  "newsletterHeading": {
+    "ar": "انضمي إلى القائمة الخاصة",
+    "en": "Join the private list"
+  },
+  "newsletterText": {
+    "ar": "استقبلي تحديثات الإطلاقات الجديدة، الدعوات الهادئة، والتنبيهات المحدودة قبل الإتاحة العامة.",
+    "en": "Receive quiet updates on new arrivals, limited releases, and private atelier appointments."
+  },
+  "newsletterButton": {
+    "ar": "انضمي الآن",
+    "en": "Join the List"
+  },
+  "reservationHeading": {
+    "ar": "جلسة الحجز الخاصة",
+    "en": "Private Reservation Appointment"
+  },
+  "availabilityLabel": {
+    "ar": "متاح عند الطلب",
+    "en": "Available upon request"
+  },
+  "exclusiveLabel": {
+    "ar": "قطعة حصرية",
+    "en": "Exclusive piece"
+  },
+  "primaryCTA": {
+    "ar": "اطلبي الحجز",
+    "en": "Request Reservation"
+  },
+  "secondaryCTA": {
+    "ar": "احجزي هذه القطعة",
+    "en": "Book This Piece"
+  },
+  "viewLabel": {
+    "ar": "استكشفي القطعة",
+    "en": "View Piece"
+  },
+  "quickViewLabel": {
+    "ar": "عرض سريع",
+    "en": "Quick View"
+  },
+  "submitLabel": {
+    "ar": "إرسال طلب الحجز",
+    "en": "Submit Reservation Request"
+  },
+  "reservationNote": {
+    "ar": "يُرسل طلبك عبر واتساب بصياغة خاصة تتضمن بياناتك والقطعة المختارة لمتابعة أدق مع فريق الدار.",
+    "en": "Your request continues through WhatsApp with a private atelier brief tailored to the selected piece."
+  },
+  "shippingTabHtml": "<h5 style=\"text-align:right;direction:rtl\">وقت التجهيز والشحن</h5><p style=\"text-align:right;direction:rtl\">كل قطعة في Eleganza تدخل مسار تجهيز خاص حسب التصميم والمقاس والمدينة. يتم تأكيد الجدول النهائي أثناء جلسة الحجز.</p><p style=\"text-align:right;direction:rtl\">بالنسبة للقطع الحصرية أو المصنوعة خصيصاً، يتم توضيح نافذة التنفيذ المتاحة قبل تثبيت الطلب.</p>",
+  "reservationTabHtml": "<h5 style=\"text-align:right;direction:rtl\">سياسة الحجز</h5><p style=\"text-align:right;direction:rtl\">لا يعتمد هذا الموقع على سلة شراء تقليدية. يبدأ كل طلب من نموذج الحجز ثم ينتقل إلى واتساب لتأكيد المقاس والمدينة والتفاصيل الخاصة بالقطعة.</p><p style=\"text-align:right;direction:rtl\">بعض القطع تُعرض كقطع حصرية ويتم التعامل معها ضمن تجربة أهدأ وأكثر خصوصية قبل تثبيت الحجز.</p>"
 }

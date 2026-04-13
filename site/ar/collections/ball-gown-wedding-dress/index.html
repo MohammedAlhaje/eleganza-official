@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Anek+Tamil:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../../assets/styles.css" />
   </head>
   <body class="page-collection" data-page-type="page-collection">
@@ -17,8 +17,28 @@
       
     
     <section class="announcement-bar" aria-label="Brand announcements">
-      <div class="announcement-bar__track">
-        <span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span><span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span><span class="announcement-bar__item">VIP RESERVATION ATELIER | ELEGANZA</span><span class="announcement-bar__item">AVAILABLE UPON REQUEST | PRIVATE SHOWROOM</span><span class="announcement-bar__item">MADE FOR YOU | BOOK THIS PIECE</span>
+      <div class="announcement-bar__viewport">
+        <div class="announcement-bar__track">
+          <span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">مشغل الحجز الخاص</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">VIP Reservation Atelier</span>
+        </span>
+      </span><span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      </span><span class="announcement-bar__item">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">صُنع خصيصاً لك</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Made for you</span>
+        </span>
+      </span>
+        </div>
       </div>
     </section>
   
@@ -31,35 +51,52 @@
                 <svg viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20v2H0zm0 5h20v2H0zm0 5h20v2H0z"/></svg>
               </button>
             </div>
-            <div class="large-search">
-              <form action="../../../ar/collections/all/" method="get" class="header-search-form">
-                <div class="header-search-form__inner">
-                  <label class="visually-hidden" for="header-search">Search</label>
-                  <input class="header-search" id="header-search" type="text" name="q" placeholder="يبحث" />
-                  <button class="icon-button" type="submit" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M14.3 12.6h-.9l-.3-.3a7.2 7.2 0 1 0-.8.8l.3.3v.9l5.7 5.7 1.7-1.7-5.7-5.7Zm-6.9 0a5.1 5.1 0 1 1 0-10.2 5.1 5.1 0 0 1 0 10.2Z"/></svg></button>
-                </div>
-              </form>
+            <div class="header-utility">
+              <ul class="header-actions">
+                <li>
+                  <a href="../../../ar/">
+                    
+      <span class="action-copy action-copy--stacked">
+        <span class="action-copy__ar">الدار</span>
+        <span class="action-copy__en">Maison</span>
+      </span>
+    
+                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 9a3.4 3.4 0 1 0 0-6.8A3.4 3.4 0 0 0 10 9Zm0 2.2c-3.6 0-6.6 2.5-6.6 5.6V20h2.2v-3.2c0-1.2 1.4-3.4 4.4-3.4s4.4 2.2 4.4 3.4V20h2.2v-3.2c0-3.1-3-5.6-6.6-5.6Z"/></svg></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../../../ar/reservation/">
+                    
+      <span class="action-copy action-copy--stacked">
+        <span class="action-copy__ar">الحجز</span>
+        <span class="action-copy__en">Reservation</span>
+      </span>
+    
+                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6V5a5 5 0 1 1 10 0v1h3l-1.2 12H3.2L2 6h3Zm2 0h6V5a3 3 0 1 0-6 0v1Z"/></svg></span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="theme__logo">
               <a href="../../../ar/">
                 <img src="../../../assets/images/brand-mark-320.png" alt="شعار إيليجانزا الرسمي" />
               </a>
             </div>
-            <div class="cart--container">
-              <ul class="header-actions">
-                <li>
-                  <a href="../../../ar/">
-                    <span>دار</span>
-                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 9a3.4 3.4 0 1 0 0-6.8A3.4 3.4 0 0 0 10 9Zm0 2.2c-3.6 0-6.6 2.5-6.6 5.6V20h2.2v-3.2c0-1.2 1.4-3.4 4.4-3.4s4.4 2.2 4.4 3.4V20h2.2v-3.2c0-3.1-3-5.6-6.6-5.6Z"/></svg></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="../../../ar/reservation/">
-                    <span>حجز</span>
-                    <span class="nav-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6V5a5 5 0 1 1 10 0v1h3l-1.2 12H3.2L2 6h3Zm2 0h6V5a3 3 0 1 0-6 0v1Z"/></svg></span>
-                  </a>
-                </li>
-              </ul>
+            <div class="large-search">
+              <form action="../../../ar/collections/all/" method="get" class="header-search-form">
+                <span class="header-search-form__label">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">البحث</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Search</span>
+        </span>
+      </span>
+                <div class="header-search-form__inner">
+                  <label class="visually-hidden" for="header-search">Search</label>
+                  <input class="header-search" id="header-search" type="text" name="q" placeholder="ابحثي عن القطعة أو السلسلة" />
+                  <button class="icon-button" type="submit" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M14.3 12.6h-.9l-.3-.3a7.2 7.2 0 1 0-.8.8l.3.3v.9l5.7 5.7 1.7-1.7-5.7-5.7Zm-6.9 0a5.1 5.1 0 1 1 0-10.2 5.1 5.1 0 0 1 0 10.2Z"/></svg></button>
+                </div>
+              </form>
             </div>
           </div>
         </header>
@@ -69,7 +106,12 @@
               
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/2026-evening-dresses/">
-              NEW IN
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">الجديد</span>
+        <span class="nav-copy__en">New In</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -77,40 +119,81 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/new-arrivals/">CATEGORIES</a>
+                          <a href="../../../ar/collections/new-arrivals/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">الفئات</span>
+        <span class="menu-copy__en">Categories</span>
+      </span>
+    </a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/new-arrivals/">New Arrivals</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">وصل حديثاً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New Arrivals</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/2026-evening-dresses/">2026 Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2026</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2026 Evening Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/2025-new-collection/">2025 Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/2025-new-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2025</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2025 Evening Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/ss-series/">SS Series</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/ss-series/"><span class="menu-copy menu-copy--single">SS Series</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/sf-evening-dress/">SF Series</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/sf-evening-dress/"><span class="menu-copy menu-copy--single">SF Series</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-dress/">Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/plus-size-evening-dresses/">Plus Size</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/plus-size-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المقاسات الممتدة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Plus Size</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                         </ul>
@@ -122,7 +205,7 @@
         
         <li class="navigation__menuitem navigation__menuitem--dropdown">
           <a class="navigation__menulink" href="../../../ar/collections/luxury-evening-dresses/">
-            فساتين السهرة
+            <span class="nav-copy nav-copy--single">فساتين السهرة</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </a>
           <div class="dropdown">
@@ -130,33 +213,63 @@
               
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="../../../ar/collections/hot-selling/">
-                        🔥 FEATURED
+                        <span class="menu-copy menu-copy--single">🔥 FEATURED</span>
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/all/">All Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/all/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جميع الفساتين</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">All Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/hot-selling/">Best Sellers</a>
+                                <a class="dropdown__link" href="../../../ar/collections/hot-selling/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكثر طلباً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Best Sellers</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/new-arrivals/">New In</a>
+                                <a class="dropdown__link" href="../../../ar/collections/new-arrivals/"><span class="menu-copy menu-copy--single">New In</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/ready-to-ship/">Ready To Ship</a>
+                                <a class="dropdown__link" href="../../../ar/collections/ready-to-ship/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جاهز للشحن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Ready To Ship</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/made-to-order/">Made To Order</a>
+                                <a class="dropdown__link" href="../../../ar/collections/made-to-order/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">يصنع عند الطلب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Made To Order</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/trending-now/">Trending Now</a>
+                                <a class="dropdown__link" href="../../../ar/collections/trending-now/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الرائج الآن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Trending Now</span>
+        </span>
+      </a>
                               </li>
                             
                       </ul>
@@ -164,49 +277,85 @@
                   
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="#">
-                        SHOP BY STYLE
+                        
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب الأسلوب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Style</span>
+        </span>
+      
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/arabic-evening-dresses-1/">Arabic Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/arabic-evening-dresses-1/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة العربية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Arabic Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/middle-east-collection/">Middle East Collection</a>
+                                <a class="dropdown__link" href="../../../ar/collections/middle-east-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">تشكيلة الشرق الأوسط</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Middle East Collection</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/turkish-evening-gowns/">Turkish Evening Gowns</a>
+                                <a class="dropdown__link" href="../../../ar/collections/turkish-evening-gowns/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة التركية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Turkish Evening Gowns</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/modest-evening-dresses/">Modest Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/modest-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة المحتشمة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Modest Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/luxury-evening-dresses/">Luxury Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/luxury-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة الفاخرة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Luxury Evening Dresses</span>
+        </span>
+      </a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/mermaid-style/">Mermaid Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/mermaid-style/"><span class="menu-copy menu-copy--single">Mermaid Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/a-line-dresses/">A-Line Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/a-line-dresses/"><span class="menu-copy menu-copy--single">A-Line Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/ball-gown-evening-dress/">Ball Gown Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/ball-gown-evening-dress/"><span class="menu-copy menu-copy--single">Ball Gown Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/sheath-evening-dresses/">Sheath Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/sheath-evening-dresses/"><span class="menu-copy menu-copy--single">Sheath Evening Dresses</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/high-low-evening-dresses/">High Low Evening Dresses</a>
+                                <a class="dropdown__link" href="../../../ar/collections/high-low-evening-dresses/"><span class="menu-copy menu-copy--single">High Low Evening Dresses</span></a>
                               </li>
                             
                       </ul>
@@ -214,37 +363,43 @@
                   
                     <li class="dropdown__item dropdown__item--nested">
                       <a class="dropdown__link" href="#">
-                        SHOP BY COLOR
+                        
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Color</span>
+        </span>
+      
                         <span class="nav-icon"><svg viewBox="0 0 13 20" aria-hidden="true"><path d="M0 2.3 2.5 0 13.3 10 2.5 20 0 17.7 8.3 10Z"/></svg></span>
                       </a>
                       <ul class="dropdown dropdown--nested">
                         
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/black-evening-dresses/">Black</a>
+                                <a class="dropdown__link" href="../../../ar/collections/black-evening-dresses/"><span class="menu-copy menu-copy--single">Black</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/red-evening-dress/">Red</a>
+                                <a class="dropdown__link" href="../../../ar/collections/red-evening-dress/"><span class="menu-copy menu-copy--single">Red</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/sage-green-dress/">Green</a>
+                                <a class="dropdown__link" href="../../../ar/collections/sage-green-dress/"><span class="menu-copy menu-copy--single">Green</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/pink-evening-dresses/">Pink</a>
+                                <a class="dropdown__link" href="../../../ar/collections/pink-evening-dresses/"><span class="menu-copy menu-copy--single">Pink</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/gold-evening-dresses/">Gold</a>
+                                <a class="dropdown__link" href="../../../ar/collections/gold-evening-dresses/"><span class="menu-copy menu-copy--single">Gold</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/blue-evening-dresses/">Blue</a>
+                                <a class="dropdown__link" href="../../../ar/collections/blue-evening-dresses/"><span class="menu-copy menu-copy--single">Blue</span></a>
                               </li>
                             
                               <li class="dropdown__item">
-                                <a class="dropdown__link" href="../../../ar/collections/champagne-dresses/">Champagne</a>
+                                <a class="dropdown__link" href="../../../ar/collections/champagne-dresses/"><span class="menu-copy menu-copy--single">Champagne</span></a>
                               </li>
                             
                       </ul>
@@ -256,7 +411,7 @@
       
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/wedding-dress/">
-              فساتين حفلة موسيقية
+              <span class="nav-copy nav-copy--single">فساتين حفلة موسيقية</span>
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -264,32 +419,37 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/wedding-dress/">WEDDING DRESSES</a>
+                          <a href="../../../ar/collections/wedding-dress/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">فساتين الزفاف</span>
+        <span class="menu-copy__en">Wedding Dresses</span>
+      </span>
+    </a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/ball-gown-wedding-dress/">Ball Gown Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/ball-gown-wedding-dress/"><span class="menu-copy menu-copy--single">Ball Gown Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/mermaid-wedding-dresses/">Mermaid Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/mermaid-wedding-dresses/"><span class="menu-copy menu-copy--single">Mermaid Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/3d-floral-wedding-dresses/">3D Floral Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/3d-floral-wedding-dresses/"><span class="menu-copy menu-copy--single">3D Floral Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/long-sleeve-wedding-dress/">Long Sleeve Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/long-sleeve-wedding-dress/"><span class="menu-copy menu-copy--single">Long Sleeve Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/luxury-beaded-wedding-dresses-1/">Luxury Beaded Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/luxury-beaded-wedding-dresses-1/"><span class="menu-copy menu-copy--single">Luxury Beaded Wedding Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/a-line-wedding-dresses/">A-Line Wedding Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/a-line-wedding-dresses/"><span class="menu-copy menu-copy--single">A-Line Wedding Dresses</span></a>
                                 </li>
                               
                         </ul>
@@ -301,7 +461,12 @@
         
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/short-party-cocktail-dresses/">
-              OCCASION
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">المناسبة</span>
+        <span class="nav-copy__en">Occasion</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -309,28 +474,34 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/formal-party-dresses/">SHOP BY OCCASION</a>
+                          <a href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">SHOP BY OCCASION</span></a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/formal-party-dresses/">Formal Party Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">Formal Party Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-guest-dresses/">Wedding Guest Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/wedding-guest-dresses/"><span class="menu-copy menu-copy--single">Wedding Guest Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/gala-dresses/">Gala Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/gala-dresses/"><span class="menu-copy menu-copy--single">Gala Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/red-carpet-dresses/">Red Carpet Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/red-carpet-dresses/"><span class="menu-copy menu-copy--single">Red Carpet Dresses</span></a>
                                 </li>
                               
                         </ul>
@@ -342,7 +513,12 @@
         
           <li class="navigation__menuitem navigation__menuitem--dropdown">
             <a class="navigation__menulink" href="../../../ar/collections/clearance-promotion/">
-              SALE
+              
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">العروض</span>
+        <span class="nav-copy__en">Sale</span>
+      </span>
+    
               <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
             </a>
             <div class="megamenu">
@@ -350,20 +526,20 @@
                 
                       <div class="megamenu__column">
                         <h4 class="megamenu__header">
-                          <a href="../../../ar/collections/clearance-promotion/">EXCLUSIVE SALE PICKS</a>
+                          <a href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">EXCLUSIVE SALE PICKS</span></a>
                         </h4>
                         <ul class="megamenu__list">
                           
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/clearance-promotion/">Final Sale Evening Dresses</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">Final Sale Evening Dresses</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/under-199/">Under $199</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/under-199/"><span class="menu-copy menu-copy--single">Under $199</span></a>
                                 </li>
                               
                                 <li class="megamenu__listitem">
-                                  <a class="megamenu__listlink" href="../../../ar/collections/last-chance-sizes/">Last Chance Sizes</a>
+                                  <a class="megamenu__listlink" href="../../../ar/collections/last-chance-sizes/"><span class="menu-copy menu-copy--single">Last Chance Sizes</span></a>
                                 </li>
                               
                         </ul>
@@ -381,53 +557,110 @@
         <div class="mobile-drawer__overlay js-mobile-menu-close"></div>
         <aside class="mobile-drawer__panel" aria-label="Mobile navigation">
           <div class="mobile-drawer__header">
-            <strong>ELEGANZA</strong>
+            <strong>
+      <span class="brand-copy brand-copy--stacked">
+        <span class="brand-copy__ar">إيليجانزا</span>
+        <span class="brand-copy__en">ELEGANZA</span>
+      </span>
+    </strong>
             <button class="icon-button js-mobile-menu-close" type="button" aria-label="Close navigation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 4.4 1.4-1.4L10 8.6 15.6 3 17 4.4 11.4 10 17 15.6 15.6 17 10 11.4 4.4 17 3 15.6 8.6 10Z"/></svg></button>
           </div>
           <div class="mobile-nav">
             
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>NEW IN</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">الجديد</span>
+        <span class="nav-copy__en">New In</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/2026-evening-dresses/">عرض NEW IN</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/2026-evening-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض الجديد</span>
+        <span class="menu-copy__en">View New In</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/new-arrivals/">CATEGORIES</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الفئات</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Categories</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/new-arrivals/">New Arrivals</a>
+                              <a href="../../../ar/collections/new-arrivals/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">وصل حديثاً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New Arrivals</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/2026-evening-dresses/">2026 Evening Dresses</a>
+                              <a href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2026</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2026 Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/2025-new-collection/">2025 Evening Dresses</a>
+                              <a href="../../../ar/collections/2025-new-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">مجموعة 2025</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">2025 Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ss-series/">SS Series</a>
+                              <a href="../../../ar/collections/ss-series/"><span class="menu-copy menu-copy--single">SS Series</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sf-evening-dress/">SF Series</a>
+                              <a href="../../../ar/collections/sf-evening-dress/"><span class="menu-copy menu-copy--single">SF Series</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/wedding-dress/">Wedding Dresses</a>
+                              <a href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/plus-size-evening-dresses/">Plus Size</a>
+                              <a href="../../../ar/collections/plus-size-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المقاسات الممتدة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Plus Size</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                              <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                     </ul>
@@ -438,120 +671,197 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>فساتين السهرة</span>
+            <span class="nav-copy nav-copy--single">فساتين السهرة</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/luxury-evening-dresses/">عرض فساتين السهرة</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/luxury-evening-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض فساتين السهرة</span>
+        <span class="menu-copy__en">View فساتين السهرة</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/hot-selling/">🔥 FEATURED</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/hot-selling/"><span class="menu-copy menu-copy--single">🔥 FEATURED</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/all/">All Dresses</a>
+                              <a href="../../../ar/collections/all/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جميع الفساتين</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">All Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/hot-selling/">Best Sellers</a>
+                              <a href="../../../ar/collections/hot-selling/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكثر طلباً</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Best Sellers</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/new-arrivals/">New In</a>
+                              <a href="../../../ar/collections/new-arrivals/"><span class="menu-copy menu-copy--single">New In</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ready-to-ship/">Ready To Ship</a>
+                              <a href="../../../ar/collections/ready-to-ship/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">جاهز للشحن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Ready To Ship</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/made-to-order/">Made To Order</a>
+                              <a href="../../../ar/collections/made-to-order/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">يصنع عند الطلب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Made To Order</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/trending-now/">Trending Now</a>
+                              <a href="../../../ar/collections/trending-now/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الرائج الآن</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Trending Now</span>
+        </span>
+      </a>
                             </li>
                           
                     </ul>
                   </div>
                 
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="#">SHOP BY STYLE</a>
+                    <a class="mobile-nav__heading" href="#">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب الأسلوب</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Style</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/arabic-evening-dresses-1/">Arabic Evening Dresses</a>
+                              <a href="../../../ar/collections/arabic-evening-dresses-1/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة العربية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Arabic Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/middle-east-collection/">Middle East Collection</a>
+                              <a href="../../../ar/collections/middle-east-collection/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">تشكيلة الشرق الأوسط</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Middle East Collection</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/turkish-evening-gowns/">Turkish Evening Gowns</a>
+                              <a href="../../../ar/collections/turkish-evening-gowns/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة التركية</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Turkish Evening Gowns</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/modest-evening-dresses/">Modest Evening Dresses</a>
+                              <a href="../../../ar/collections/modest-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة المحتشمة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Modest Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/luxury-evening-dresses/">Luxury Evening Dresses</a>
+                              <a href="../../../ar/collections/luxury-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين السهرة الفاخرة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Luxury Evening Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/mermaid-style/">Mermaid Evening Dresses</a>
+                              <a href="../../../ar/collections/mermaid-style/"><span class="menu-copy menu-copy--single">Mermaid Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/a-line-dresses/">A-Line Evening Dresses</a>
+                              <a href="../../../ar/collections/a-line-dresses/"><span class="menu-copy menu-copy--single">A-Line Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/ball-gown-evening-dress/">Ball Gown Evening Dresses</a>
+                              <a href="../../../ar/collections/ball-gown-evening-dress/"><span class="menu-copy menu-copy--single">Ball Gown Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sheath-evening-dresses/">Sheath Evening Dresses</a>
+                              <a href="../../../ar/collections/sheath-evening-dresses/"><span class="menu-copy menu-copy--single">Sheath Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/high-low-evening-dresses/">High Low Evening Dresses</a>
+                              <a href="../../../ar/collections/high-low-evening-dresses/"><span class="menu-copy menu-copy--single">High Low Evening Dresses</span></a>
                             </li>
                           
                     </ul>
                   </div>
                 
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="#">SHOP BY COLOR</a>
+                    <a class="mobile-nav__heading" href="#">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التسوق حسب اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Shop by Color</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/black-evening-dresses/">Black</a>
+                              <a href="../../../ar/collections/black-evening-dresses/"><span class="menu-copy menu-copy--single">Black</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/red-evening-dress/">Red</a>
+                              <a href="../../../ar/collections/red-evening-dress/"><span class="menu-copy menu-copy--single">Red</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/sage-green-dress/">Green</a>
+                              <a href="../../../ar/collections/sage-green-dress/"><span class="menu-copy menu-copy--single">Green</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/pink-evening-dresses/">Pink</a>
+                              <a href="../../../ar/collections/pink-evening-dresses/"><span class="menu-copy menu-copy--single">Pink</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/gold-evening-dresses/">Gold</a>
+                              <a href="../../../ar/collections/gold-evening-dresses/"><span class="menu-copy menu-copy--single">Gold</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/blue-evening-dresses/">Blue</a>
+                              <a href="../../../ar/collections/blue-evening-dresses/"><span class="menu-copy menu-copy--single">Blue</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/champagne-dresses/">Champagne</a>
+                              <a href="../../../ar/collections/champagne-dresses/"><span class="menu-copy menu-copy--single">Champagne</span></a>
                             </li>
                           
                     </ul>
@@ -562,38 +872,49 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>فساتين حفلة موسيقية</span>
+            <span class="nav-copy nav-copy--single">فساتين حفلة موسيقية</span>
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/wedding-dress/">عرض فساتين حفلة موسيقية</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/wedding-dress/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض فساتين حفلة موسيقية</span>
+        <span class="menu-copy__en">View فساتين حفلة موسيقية</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/wedding-dress/">WEDDING DRESSES</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/wedding-dress/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الزفاف</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Wedding Dresses</span>
+        </span>
+      </a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/ball-gown-wedding-dress/">Ball Gown Wedding Dresses</a>
+                              <a href="../../../ar/collections/ball-gown-wedding-dress/"><span class="menu-copy menu-copy--single">Ball Gown Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/mermaid-wedding-dresses/">Mermaid Wedding Dresses</a>
+                              <a href="../../../ar/collections/mermaid-wedding-dresses/"><span class="menu-copy menu-copy--single">Mermaid Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/3d-floral-wedding-dresses/">3D Floral Wedding Dresses</a>
+                              <a href="../../../ar/collections/3d-floral-wedding-dresses/"><span class="menu-copy menu-copy--single">3D Floral Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/long-sleeve-wedding-dress/">Long Sleeve Wedding Dresses</a>
+                              <a href="../../../ar/collections/long-sleeve-wedding-dress/"><span class="menu-copy menu-copy--single">Long Sleeve Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/luxury-beaded-wedding-dresses-1/">Luxury Beaded Wedding Dresses</a>
+                              <a href="../../../ar/collections/luxury-beaded-wedding-dresses-1/"><span class="menu-copy menu-copy--single">Luxury Beaded Wedding Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/a-line-wedding-dresses/">A-Line Wedding Dresses</a>
+                              <a href="../../../ar/collections/a-line-wedding-dresses/"><span class="menu-copy menu-copy--single">A-Line Wedding Dresses</span></a>
                             </li>
                           
                     </ul>
@@ -604,34 +925,50 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>OCCASION</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">المناسبة</span>
+        <span class="nav-copy__en">Occasion</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/short-party-cocktail-dresses/">عرض OCCASION</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/short-party-cocktail-dresses/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض المناسبة</span>
+        <span class="menu-copy__en">View Occasion</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/formal-party-dresses/">SHOP BY OCCASION</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">SHOP BY OCCASION</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/formal-party-dresses/">Formal Party Dresses</a>
+                              <a href="../../../ar/collections/formal-party-dresses/"><span class="menu-copy menu-copy--single">Formal Party Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/wedding-guest-dresses/">Wedding Guest Dresses</a>
+                              <a href="../../../ar/collections/wedding-guest-dresses/"><span class="menu-copy menu-copy--single">Wedding Guest Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/short-party-cocktail-dresses/">Cocktail Dresses</a>
+                              <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">فساتين الكوكتيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Cocktail Dresses</span>
+        </span>
+      </a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/gala-dresses/">Gala Dresses</a>
+                              <a href="../../../ar/collections/gala-dresses/"><span class="menu-copy menu-copy--single">Gala Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/red-carpet-dresses/">Red Carpet Dresses</a>
+                              <a href="../../../ar/collections/red-carpet-dresses/"><span class="menu-copy menu-copy--single">Red Carpet Dresses</span></a>
                             </li>
                           
                     </ul>
@@ -642,26 +979,36 @@
       
         <div class="mobile-nav__group" data-mobile-group>
           <button class="mobile-nav__toggle" type="button" aria-expanded="false">
-            <span>SALE</span>
+            
+      <span class="nav-copy nav-copy--stacked">
+        <span class="nav-copy__ar">العروض</span>
+        <span class="nav-copy__en">Sale</span>
+      </span>
+    
             <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
           </button>
           <div class="mobile-nav__panel">
-            <a class="mobile-nav__root-link" href="../../../ar/collections/clearance-promotion/">عرض SALE</a>
+            <a class="mobile-nav__root-link" href="../../../ar/collections/clearance-promotion/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">عرض العروض</span>
+        <span class="menu-copy__en">View Sale</span>
+      </span>
+    </a>
             
                   <div class="mobile-nav__subgroup">
-                    <a class="mobile-nav__heading" href="../../../ar/collections/clearance-promotion/">EXCLUSIVE SALE PICKS</a>
+                    <a class="mobile-nav__heading" href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">EXCLUSIVE SALE PICKS</span></a>
                     <ul class="mobile-nav__items">
                       
                             <li>
-                              <a href="../../../ar/collections/clearance-promotion/">Final Sale Evening Dresses</a>
+                              <a href="../../../ar/collections/clearance-promotion/"><span class="menu-copy menu-copy--single">Final Sale Evening Dresses</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/under-199/">Under $199</a>
+                              <a href="../../../ar/collections/under-199/"><span class="menu-copy menu-copy--single">Under $199</span></a>
                             </li>
                           
                             <li>
-                              <a href="../../../ar/collections/last-chance-sizes/">Last Chance Sizes</a>
+                              <a href="../../../ar/collections/last-chance-sizes/"><span class="menu-copy menu-copy--single">Last Chance Sizes</span></a>
                             </li>
                           
                     </ul>
@@ -687,20 +1034,37 @@
     
     <section class="breadcrumb">
       <div class="breadcrumb__inner">
-        <a href="../../../ar/">الرئيسية</a><span class="separator"> / </span><span>Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns</span>
+        <a href="../../../ar/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">الرئيسية</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Home</span>
+        </span>
+      </a><span class="separator"> / </span><span><span class="micro-copy micro-copy--single">Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns</span></span>
       </div>
     </section>
   
     <section class="collection__page">
       <div class="collection__mobile-toolbar">
-        <button class="button button--ghost js-filter-open" type="button">منقي</button>
+        <button class="button button--ghost js-filter-open" type="button">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">الفلاتر</span>
+        <span class="button-copy__en">Filters</span>
+      </span>
+    </button>
         <span class="collection__results-count">22 قطعة</span>
       </div>
       <div class="collection-layout">
         
     <form class="collection-sidebar" data-collection-sidebar>
       <div class="collection__page-sort">
-        <label class="collection-sort__label" for="collection-sort">ترتيب حسب</label>
+        <label class="collection-sort__label" for="collection-sort">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">ترتيب العرض</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Sort By</span>
+        </span>
+      </label>
         <select id="collection-sort" class="collection-sort__select" data-collection-sort>
           <option value="featured">متميز</option><option value="title-ascending">أبجديا، من الألف إلى الياء</option><option value="title-descending">أبجديا، ZA</option><option value="created-descending">التاريخ، الجديد إلى القديم</option><option value="created-ascending">التاريخ، القديم إلى الجديد</option>
         </select>
@@ -708,7 +1072,13 @@
       
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>التوفر</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">التوفر</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Availability</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -724,7 +1094,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Silhouette</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">القصّة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Silhouette</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -746,7 +1122,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Neckline</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الياقة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Neckline</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -798,7 +1180,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Hemline/Train</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الطول والذيل</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Hemline / Train</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -814,7 +1202,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Sleeves</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الأكمام</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Sleeves</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -842,7 +1236,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Fabric</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">القماش</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Fabric</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -876,7 +1276,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Hot Features</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">السمات البارزة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Key Features</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -976,7 +1382,13 @@
           
             <section class="filter-group">
               <button class="filter-group__toggle" type="button" data-filter-toggle>
-                <span>Color</span>
+                
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">اللون</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Color</span>
+        </span>
+      
                 <span class="nav-icon"><svg viewBox="0 0 20 13" aria-hidden="true"><path d="m2.3 0 7.7 8.3L17.7 0 20 2.5 10 13.3 0 2.5Z"/></svg></span>
               </button>
               <div class="filter-group__panel">
@@ -1006,7 +1418,14 @@
   
         <div class="collection__page--productContent">
           <header class="collection-header">
-            <h1>Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns</h1>
+            <span class="section-heading__eyebrow">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">مجموعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Collection</span>
+        </span>
+      </span>
+            <h1><span class="display-copy display-copy--single">Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns</span></h1>
             <p>Discover stunning ball gown wedding dresses with elegant designs and full skirts. Perfect for brides seeking a fairytale look on their special day.</p>
           </header>
           <div class="product-loop collection__page-products" data-collection-grid>
@@ -1024,13 +1443,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-long-sleeve-lace-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-long-sleeve-lace-ball-gown-wedding-dress/"><h2>Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1048,8 +1486,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-long-sleeve-lace-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-long-sleeve-lace-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-long-sleeve-lace-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-long-sleeve-lace-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1067,13 +1516,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress/"><h2>Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1091,8 +1559,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1110,13 +1589,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt/"><h2>Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1134,8 +1632,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1153,13 +1662,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt/"><h2>Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1177,8 +1705,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1196,13 +1735,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-modern-draped-high-slit-bridal-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-modern-draped-high-slit-bridal-wedding-dress/"><h2>Luxury Modern Draped High-Slit Bridal Wedding Dress SW578</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1220,8 +1778,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-modern-draped-high-slit-bridal-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-modern-draped-high-slit-bridal-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-modern-draped-high-slit-bridal-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-modern-draped-high-slit-bridal-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1239,13 +1808,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-minimalist-elegant-bridal-wedding-dress-with-veil">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-minimalist-elegant-bridal-wedding-dress-with-veil/"><h2>Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1263,8 +1851,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-minimalist-elegant-bridal-wedding-dress-with-veil/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-minimalist-elegant-bridal-wedding-dress-with-veil">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-minimalist-elegant-bridal-wedding-dress-with-veil">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-minimalist-elegant-bridal-wedding-dress-with-veil/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1282,13 +1881,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-sparkling-pearl-lace-princess-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-sparkling-pearl-lace-princess-wedding-dress/"><h2>Luxury Sparkling Pearl Lace Princess Wedding Dress SW576</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1306,8 +1924,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-sparkling-pearl-lace-princess-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-sparkling-pearl-lace-princess-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-sparkling-pearl-lace-princess-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-sparkling-pearl-lace-princess-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1325,13 +1954,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-elegant-royal-ball-gown-wedding-dress-with-bows">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-elegant-royal-ball-gown-wedding-dress-with-bows/"><h2>Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1349,8 +1997,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-elegant-royal-ball-gown-wedding-dress-with-bows/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-elegant-royal-ball-gown-wedding-dress-with-bows">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-elegant-royal-ball-gown-wedding-dress-with-bows">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-elegant-royal-ball-gown-wedding-dress-with-bows/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1368,13 +2027,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil/"><h2>Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1392,8 +2070,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1411,13 +2100,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress/"><h2>Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1435,8 +2143,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1454,13 +2173,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-pearl-deep-v-lace-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-pearl-deep-v-lace-ball-gown-wedding-dress/"><h2>Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1478,8 +2216,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-pearl-deep-v-lace-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-pearl-deep-v-lace-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-pearl-deep-v-lace-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-pearl-deep-v-lace-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1497,13 +2246,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-white-off-shoulder-lace-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-white-off-shoulder-lace-ball-gown-wedding-dress/"><h2>Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1521,8 +2289,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-white-off-shoulder-lace-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-white-off-shoulder-lace-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-white-off-shoulder-lace-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-white-off-shoulder-lace-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1540,13 +2319,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress/"><h2>Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1564,8 +2362,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1583,13 +2392,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-off-white-lace-embroidery-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-off-white-lace-embroidery-ball-gown-wedding-dress/"><h2>Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1607,8 +2435,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-off-white-lace-embroidery-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-off-white-lace-embroidery-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-off-white-lace-embroidery-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-off-white-lace-embroidery-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1626,13 +2465,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress/"><h2>Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1650,8 +2508,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1669,13 +2538,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress/"><h2>Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1693,8 +2581,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1712,13 +2611,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress/"><h2>Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1736,8 +2654,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1755,13 +2684,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="glamorous-white-diamond-embroidery-long-sleeve-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/glamorous-white-diamond-embroidery-long-sleeve-wedding-dress/"><h2>Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1779,8 +2727,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/glamorous-white-diamond-embroidery-long-sleeve-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-white-diamond-embroidery-long-sleeve-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=glamorous-white-diamond-embroidery-long-sleeve-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/glamorous-white-diamond-embroidery-long-sleeve-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1798,13 +2757,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress/"><h2>Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1822,8 +2800,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1841,13 +2830,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress/"><h2>Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1865,8 +2873,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1884,13 +2903,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="luxury-white-draped-long-sleeve-ball-gown-evening-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/luxury-white-draped-long-sleeve-ball-gown-evening-dress/"><h2>Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1908,8 +2946,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/luxury-white-draped-long-sleeve-ball-gown-evening-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-white-draped-long-sleeve-ball-gown-evening-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=luxury-white-draped-long-sleeve-ball-gown-evening-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/luxury-white-draped-long-sleeve-ball-gown-evening-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1927,13 +2976,32 @@
           </a>
         </div>
         <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="elegant-lace-printed-buttons-ball-gown-wedding-dress">
-          عرض سريع
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">عرض سريع</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Quick View</span>
+        </span>
+      
         </button>
       </div>
       <div class="product-info">
+        <div class="product-info__meta">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قطعة منسقة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Curated Piece</span>
+        </span>
+      </div>
         <a href="../../../ar/products/elegant-lace-printed-buttons-ball-gown-wedding-dress/"><h2>Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533</h2></a>
         <div class="availability-copy ">
-          Available upon request
+          
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">متاح عند الطلب</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Available upon request</span>
+        </span>
+      
         </div>
         
     <div class="product--grid__swatches">
@@ -1951,8 +3019,19 @@
     </div>
   
         <div class="product-card__actions">
-          <a class="button button--ghost" href="../../../ar/products/elegant-lace-printed-buttons-ball-gown-wedding-dress/">Request Reservation</a>
-          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-lace-printed-buttons-ball-gown-wedding-dress">Request Reservation</a>
+          <a class="button button--dark" href="../../../ar/reservation/?product=elegant-lace-printed-buttons-ball-gown-wedding-dress">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">اطلبي الحجز</span>
+        <span class="button-copy__en">Request Reservation</span>
+      </span>
+    </a>
+          <a class="button button--text" href="../../../ar/products/elegant-lace-printed-buttons-ball-gown-wedding-dress/">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">استكشفي القطعة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">View Piece</span>
+        </span>
+      </a>
         </div>
       </div>
     </article>
@@ -1962,56 +3041,112 @@
         </div>
       </div>
     </section>
-    <script id="page-data" type="application/json">{"type":"collection","collection":{"slug":"ball-gown-wedding-dress","title":"Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns","pageSize":22},"products":[{"handle":"elegant-long-sleeve-lace-ball-gown-wedding-dress","title":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47568564715777,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_30b87bc7-356f-42d7-a007-93b3eecd194d.jpg?v=1770083129","alt":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47568564748545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A4176.jpg?v=1770083129","alt":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Lace"],"colors":["White"]}},{"handle":"vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress","title":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47258398130433,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW631_1.jpg?v=1766133167","alt":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258398163201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW631_2.jpg?v=1766133167","alt":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Sequin"],"colors":["Off White"]}},{"handle":"stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt","title":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47258260963585,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW637_1.jpg?v=1766132018","alt":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258261029121,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW637_2.jpg?v=1766132018","alt":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Belt"],"colors":["Off White"]}},{"handle":"luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt","title":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47258227900673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW633.jpg?v=1766131026","alt":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258227736833,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW633_1.jpg?v=1766131026","alt":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Off Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Overskirt"],"colors":["Ivory"]}},{"handle":"luxury-modern-draped-high-slit-bridal-wedding-dress","title":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213823459585,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_d49164a3-2696-4684-94ff-91aff894239f.jpg?v=1765596516","alt":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","width":1350,"height":1350,"position":1},"hoverMedia":{"id":47213823492353,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251106043034_1.jpg?v=1765596516","alt":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","width":1080,"height":1350,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Draping"],"colors":["Ivory"]}},{"handle":"luxury-minimalist-elegant-bridal-wedding-dress-with-veil","title":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213719814401,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_67fb78fa-0c98-4105-951f-20af51f3105f.jpg?v=1765596097","alt":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","width":1350,"height":1350,"position":1},"hoverMedia":{"id":47213719847169,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251030043022_1.jpg?v=1765596097","alt":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","width":1080,"height":1350,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Veil"],"colors":["Ivory"]}},{"handle":"luxury-sparkling-pearl-lace-princess-wedding-dress","title":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213605388545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_75f8b093-099e-420f-9d4b-f33f69f32fbf.jpg?v=1765595646","alt":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","width":1764,"height":1764,"position":1},"hoverMedia":{"id":47213605421313,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251019043105_1.jpg?v=1765595646","alt":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","width":1440,"height":1800,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lace"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-elegant-royal-ball-gown-wedding-dress-with-bows","title":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213489488129,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_11a07478-00e4-4d2a-bcd4-5651fef36af9.jpg?v=1765595150","alt":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","width":1259,"height":1259,"position":1},"hoverMedia":{"id":47213489520897,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251027043024_1.jpg?v=1765595150","alt":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","width":1080,"height":1350,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Bows"],"colors":["Off White"]}},{"handle":"luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil","title":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213354352897,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_2b2c802a-8e38-4773-a815-b742b3f70366.jpg?v=1765594580","alt":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","width":1604,"height":1605,"position":1},"hoverMedia":{"id":47213354385665,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_2180728601_ELIE_SAAB_Bridal_20250919220020_1.jpg?v=1765594580","alt":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","width":1440,"height":1920,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lace"],"hotFeatures":["Veil"],"colors":["White"]}},{"handle":"luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress","title":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47213243891969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_4d852dcd-f5b6-4646-891e-f8a4c9d76ddc.jpg?v=1765594086","alt":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","width":1680,"height":1680,"position":1},"hoverMedia":{"id":47213243924737,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_4076240401_GEORGINA_MARIE_20250626184428_1.jpg?v=1765594086","alt":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","width":1440,"height":1920,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-pearl-deep-v-lace-ball-gown-wedding-dress","title":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47212542984449,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/111_2986238a-af62-4e68-ac5d-995b396b678e.jpg?v=1765592231","alt":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","width":1878,"height":1878,"position":1},"hoverMedia":{"id":47212543017217,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251109210312_1.jpg?v=1765592231","alt":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","width":1440,"height":1920,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Ivory"]}},{"handle":"luxury-white-off-shoulder-lace-ball-gown-wedding-dress","title":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47199326306561,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/111.jpg?v=1765445563","alt":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","width":1863,"height":1863,"position":1},"hoverMedia":{"id":47199326372097,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251106034557_6.jpg?v=1765445563","alt":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","width":1440,"height":1920,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Strapless"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lycra"],"hotFeatures":["Printing"],"colors":["White"]}},{"handle":"luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress","title":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47199309070593,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1111.jpg?v=1765445144","alt":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","width":1890,"height":1890,"position":1},"hoverMedia":{"id":47199309136129,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251103023927_8.jpg?v=1765445143","alt":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","width":1440,"height":1920,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"elegant-off-white-lace-embroidery-ball-gown-wedding-dress","title":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47080092893441,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW652_1.jpg?v=1764224995","alt":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080092926209,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW652_2.jpg?v=1764224995","alt":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress","title":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47080078803201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW606_1.jpg?v=1764224173","alt":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080078835969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW606_2.jpg?v=1764224173","alt":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Embroidery"],"colors":["Ivory"]}},{"handle":"luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress","title":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47080072511745,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW605_1.jpg?v=1764223706","alt":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080072544513,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW605_2.jpg?v=1764223706","alt":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Satin"],"hotFeatures":["Embroidery"],"colors":["Ivory"]}},{"handle":"sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress","title":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47080062779649,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW604_1.jpg?v=1764222856","alt":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080065073409,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW604_1_f05b0289-8734-4b69-bf2a-f53781f965f9.jpg?v=1764223284","alt":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Full-Sequin"],"colors":["White"]}},{"handle":"glamorous-white-diamond-embroidery-long-sleeve-wedding-dress","title":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47080042987777,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW603_1.jpg?v=1764221893","alt":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080043020545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW603_2.jpg?v=1764221893","alt":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza"],"hotFeatures":["Diamond"],"colors":["White"]}},{"handle":"luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress","title":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47079914963201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW602_1.jpg?v=1764215842","alt":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47079914995969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW602_2.jpg?v=1764215842","alt":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Crystal","Embroidery"],"colors":["Ivory"]}},{"handle":"luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress","title":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47079864697089,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A8625_199c94f8-5f1a-49e1-a297-3a4a2a75a0ef.jpg?v=1764214669","alt":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47079864729857,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A8628_d1168e0e-e9ab-49c6-aac3-df1b5b3d11f1.jpg?v=1764214669","alt":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["3D Flower"],"colors":["Ivory"]}},{"handle":"luxury-white-draped-long-sleeve-ball-gown-evening-dress","title":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":47033668665601,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_bfcdb228-0c5c-4a87-a7bf-4a464b1db7f6.jpg?v=1763629884","alt":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","width":1194,"height":1193,"position":1},"hoverMedia":{"id":47033668698369,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/HS207511.jpg?v=1763629883","alt":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","width":960,"height":1440,"position":2},"colors":["White"],"sizes":["US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza"],"hotFeatures":["Draping"],"colors":["White"]}},{"handle":"elegant-lace-printed-buttons-ball-gown-wedding-dress","title":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","availabilityLabel":"Available upon request","reservationLabel":"Request Reservation","isExclusive":false,"primaryMedia":{"id":46961652891905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_1cfd0670-9e84-449c-b9d3-8a95ae4f1633.jpg?v=1762848985","alt":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","width":1528,"height":1528,"position":1},"hoverMedia":{"id":46961652924673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_65562203769_Bridal_boutique_Wedding_dress_Dubai_20250317003000_1.jpg?v=1762848985","alt":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","width":1440,"height":1665,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":[],"neckline":["Sqaure"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza","Lycra"],"hotFeatures":["Printing","Buttons"],"colors":["White"]}}]}</script>
+    <script id="page-data" type="application/json">{"type":"collection","collection":{"slug":"ball-gown-wedding-dress","title":"Elegant Ball Gown Wedding Dresses | Royal Bridal Gowns","pageSize":22},"products":[{"handle":"elegant-long-sleeve-lace-ball-gown-wedding-dress","title":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47568564715777,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_30b87bc7-356f-42d7-a007-93b3eecd194d.jpg?v=1770083129","alt":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47568564748545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A4176.jpg?v=1770083129","alt":"Elegant Long Sleeve Lace Ball Gown Wedding Dress SW075","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Lace"],"colors":["White"]}},{"handle":"vibrant-strapless-sequins-3d-floral-ball-gown-wedding-dress","title":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47258398130433,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW631_1.jpg?v=1766133167","alt":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258398163201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW631_2.jpg?v=1766133167","alt":"Vibrant Strapless Sequins 3D Floral Ball Gown Wedding Dress SW631","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Sequin"],"colors":["Off White"]}},{"handle":"stunning-spaghetti-strap-lace-ball-gown-wedding-dress-with-belt","title":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47258260963585,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW637_1.jpg?v=1766132018","alt":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258261029121,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW637_2.jpg?v=1766132018","alt":"Stunning Spaghetti-Strap Lace Ball Gown Wedding Dress with Belt SW637","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Belt"],"colors":["Off White"]}},{"handle":"luxury-off-shoulder-bows-ball-gown-wedding-dress-with-overskirt","title":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47258227900673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW633.jpg?v=1766131026","alt":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47258227736833,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW633_1.jpg?v=1766131026","alt":"Luxury Off-Shoulder Bows Ball Gown Wedding Dress with Overskirt SW633","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Off Shoulder"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Overskirt"],"colors":["Ivory"]}},{"handle":"luxury-modern-draped-high-slit-bridal-wedding-dress","title":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213823459585,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_d49164a3-2696-4684-94ff-91aff894239f.jpg?v=1765596516","alt":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","width":1350,"height":1350,"position":1},"hoverMedia":{"id":47213823492353,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251106043034_1.jpg?v=1765596516","alt":"Luxury Modern Draped High-Slit Bridal Wedding Dress SW578","width":1080,"height":1350,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Draping"],"colors":["Ivory"]}},{"handle":"luxury-minimalist-elegant-bridal-wedding-dress-with-veil","title":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213719814401,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_67fb78fa-0c98-4105-951f-20af51f3105f.jpg?v=1765596097","alt":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","width":1350,"height":1350,"position":1},"hoverMedia":{"id":47213719847169,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251030043022_1.jpg?v=1765596097","alt":"Luxury Minimalist Elegant Bridal Wedding Dress with Veil SW577","width":1080,"height":1350,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Satin"],"hotFeatures":["Veil"],"colors":["Ivory"]}},{"handle":"luxury-sparkling-pearl-lace-princess-wedding-dress","title":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213605388545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_75f8b093-099e-420f-9d4b-f33f69f32fbf.jpg?v=1765595646","alt":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","width":1764,"height":1764,"position":1},"hoverMedia":{"id":47213605421313,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251019043105_1.jpg?v=1765595646","alt":"Luxury Sparkling Pearl Lace Princess Wedding Dress SW576","width":1440,"height":1800,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lace"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-elegant-royal-ball-gown-wedding-dress-with-bows","title":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213489488129,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_11a07478-00e4-4d2a-bcd4-5651fef36af9.jpg?v=1765595150","alt":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","width":1259,"height":1259,"position":1},"hoverMedia":{"id":47213489520897,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_27304666_STEVEN_KHALIL_20251027043024_1.jpg?v=1765595150","alt":"Luxury Elegant Royal Ball Gown Wedding Dress With Bows SW575","width":1080,"height":1350,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Bows"],"colors":["Off White"]}},{"handle":"luxury-romantic-lace-long-train-bridal-wedding-dress-with-veil","title":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213354352897,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/2_2b2c802a-8e38-4773-a815-b742b3f70366.jpg?v=1765594580","alt":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","width":1604,"height":1605,"position":1},"hoverMedia":{"id":47213354385665,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_2180728601_ELIE_SAAB_Bridal_20250919220020_1.jpg?v=1765594580","alt":"Luxury Romantic Lace Long Train Bridal Wedding Dress with Veil SW572","width":1440,"height":1920,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["A-line"],"neckline":["Wrap"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lace"],"hotFeatures":["Veil"],"colors":["White"]}},{"handle":"luxury-classic-ball-gown-pearl-lace-bridal-wedding-dress","title":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47213243891969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_4d852dcd-f5b6-4646-891e-f8a4c9d76ddc.jpg?v=1765594086","alt":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","width":1680,"height":1680,"position":1},"hoverMedia":{"id":47213243924737,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_4076240401_GEORGINA_MARIE_20250626184428_1.jpg?v=1765594086","alt":"Luxury Classic Ball Gown Pearl Lace Bridal Wedding Dress SW571","width":1440,"height":1920,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-pearl-deep-v-lace-ball-gown-wedding-dress","title":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47212542984449,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/111_2986238a-af62-4e68-ac5d-995b396b678e.jpg?v=1765592231","alt":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","width":1878,"height":1878,"position":1},"hoverMedia":{"id":47212543017217,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251109210312_1.jpg?v=1765592231","alt":"Luxury Pearl Deep V-Lace Ball Gown Wedding Dress SW547","width":1440,"height":1920,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Ivory"]}},{"handle":"luxury-white-off-shoulder-lace-ball-gown-wedding-dress","title":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47199326306561,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/111.jpg?v=1765445563","alt":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","width":1863,"height":1863,"position":1},"hoverMedia":{"id":47199326372097,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251106034557_6.jpg?v=1765445563","alt":"Luxury White Off-Shoulder Lace Ball Gown Wedding Dress SW548","width":1440,"height":1920,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Strapless"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Lycra"],"hotFeatures":["Printing"],"colors":["White"]}},{"handle":"luxury-off-white-high-neck-pearl-lace-ball-gown-wedding-dress","title":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47199309070593,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1111.jpg?v=1765445144","alt":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","width":1890,"height":1890,"position":1},"hoverMedia":{"id":47199309136129,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_77393139898_Corte_Couture_Bridal_20251103023927_8.jpg?v=1765445143","alt":"Luxury Off White High-Neck Pearl Lace Ball Gown Wedding Dress SW546","width":1440,"height":1920,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"elegant-off-white-lace-embroidery-ball-gown-wedding-dress","title":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47080092893441,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW652_1.jpg?v=1764224995","alt":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080092926209,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW652_2.jpg?v=1764224995","alt":"Elegant Off White Lace Pearl Embroidery Ball Gown Wedding Dress SW652","width":1440,"height":1440,"position":2},"colors":["Off White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Pearl"],"colors":["Off White"]}},{"handle":"luxury-ivory-satin-silver-embroidery-ball-gown-wedding-dress","title":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47080078803201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW606_1.jpg?v=1764224173","alt":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080078835969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW606_2.jpg?v=1764224173","alt":"Luxury Ivory Satin Silver Embroidery Ball Gown Wedding Dress SW606","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Embroidery"],"colors":["Ivory"]}},{"handle":"luxury-ivory-satin-silver-floral-embroidery-ball-gown-wedding-dress","title":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47080072511745,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW605_1.jpg?v=1764223706","alt":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080072544513,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW605_2.jpg?v=1764223706","alt":"Luxury Ivory Satin Silver Floral Embroidery Ball Gown Wedding Dress SW605","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Short Sleeve"],"fabric":["Satin"],"hotFeatures":["Embroidery"],"colors":["Ivory"]}},{"handle":"sparkly-white-full-sequin-embroidery-ball-gown-wedding-dress","title":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47080062779649,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW604_1.jpg?v=1764222856","alt":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080065073409,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW604_1_f05b0289-8734-4b69-bf2a-f53781f965f9.jpg?v=1764223284","alt":"Sparkly White Full-Sequin Embroidery Ball Gown Wedding Dress SW604","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Sleeveless"],"fabric":["Organza"],"hotFeatures":["Full-Sequin"],"colors":["White"]}},{"handle":"glamorous-white-diamond-embroidery-long-sleeve-wedding-dress","title":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47080042987777,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW603_1.jpg?v=1764221893","alt":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47080043020545,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW603_2.jpg?v=1764221893","alt":"Glamorous White Diamond Embroidery Long Sleeve Wedding Dress SW603","width":1440,"height":1440,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza"],"hotFeatures":["Diamond"],"colors":["White"]}},{"handle":"luxury-ivory-crystal-embroidery-long-sleeve-wedding-dress","title":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47079914963201,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW602_1.jpg?v=1764215842","alt":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47079914995969,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/SW602_2.jpg?v=1764215842","alt":"Luxury Ivory Crystal Embroidery Long Sleeve Wedding Dress SW602","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Round"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["Crystal","Embroidery"],"colors":["Ivory"]}},{"handle":"luxury-satin-3d-floral-embroidery-long-sleeve-wedding-dress","title":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47079864697089,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A8625_199c94f8-5f1a-49e1-a297-3a4a2a75a0ef.jpg?v=1764214669","alt":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","width":1440,"height":1440,"position":1},"hoverMedia":{"id":47079864729857,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/5B9A8628_d1168e0e-e9ab-49c6-aac3-df1b5b3d11f1.jpg?v=1764214669","alt":"Luxury Satin 3D Floral Embroidery Long Sleeve Wedding Dress SW601","width":1440,"height":1440,"position":2},"colors":["Ivory"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["V-Neck"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Satin"],"hotFeatures":["3D Flower"],"colors":["Ivory"]}},{"handle":"luxury-white-draped-long-sleeve-ball-gown-evening-dress","title":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":47033668665601,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_bfcdb228-0c5c-4a87-a7bf-4a464b1db7f6.jpg?v=1763629884","alt":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","width":1194,"height":1193,"position":1},"hoverMedia":{"id":47033668698369,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/HS207511.jpg?v=1763629883","alt":"Luxury White Draped Long-Sleeve Ball Gown Wedding Dress SF603","width":960,"height":1440,"position":2},"colors":["White"],"sizes":["US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":["Ball Gown"],"neckline":["Sweetheart"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza"],"hotFeatures":["Draping"],"colors":["White"]}},{"handle":"elegant-lace-printed-buttons-ball-gown-wedding-dress","title":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"reservationLabel":{"ar":"اطلبي الحجز","en":"Request Reservation"},"isExclusive":false,"primaryMedia":{"id":46961652891905,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/1_1cfd0670-9e84-449c-b9d3-8a95ae4f1633.jpg?v=1762848985","alt":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","width":1528,"height":1528,"position":1},"hoverMedia":{"id":46961652924673,"type":"image","src":"https://cdn.shopify.com/s/files/1/0699/3772/5697/files/Instagram_65562203769_Bridal_boutique_Wedding_dress_Dubai_20250317003000_1.jpg?v=1762848985","alt":"Elegant Lace Printed Buttons Ball Gown Wedding Dress SW533","width":1440,"height":1665,"position":2},"colors":["White"],"sizes":["US 2","US 4","US 6","US 8","US 10","US 12","US 14","US 16","US 18","US 20","Custom Size"],"filters":{"availability":["available"],"silhouette":[],"neckline":["Sqaure"],"hemlineTrain":["Sweep Train"],"sleeves":["Long Sleeve"],"fabric":["Organza","Lycra"],"hotFeatures":["Printing","Buttons"],"colors":["White"]}}]}</script>
   
       </main>
       
     <section class="newsletter__section">
       <div class="newsletter__section-container">
         <div class="newsletter__section-content">
-          <h2>انضمي إلى قائمة Eleganza الخاصة</h2>
-          <p>اشتركي لتصلك تحديثات المقتنيات الجديدة، جلسات الحجز الخاصة، والتنبيهات المحدودة قبل الإطلاق العام.</p>
+          <span class="newsletter__eyebrow">
+        <span class="micro-copy micro-copy--inline">
+          <span class="micro-copy__ar">قائمة خاصة</span>
+          <span class="micro-copy__divider" aria-hidden="true">/</span>
+          <span class="micro-copy__en">Private List</span>
+        </span>
+      </span>
+          <h2>
+      <span class="display-copy display-copy--stacked">
+        <span class="display-copy__ar">انضمي إلى القائمة الخاصة</span>
+        <span class="display-copy__en">Join the private list</span>
+      </span>
+    </h2>
+          <p>
+      <span class="ui-copy ui-copy--stacked">
+        <span class="ui-copy__ar">استقبلي تحديثات الإطلاقات الجديدة، الدعوات الهادئة، والتنبيهات المحدودة قبل الإتاحة العامة.</span>
+        <span class="ui-copy__en">Receive quiet updates on new arrivals, limited releases, and private atelier appointments.</span>
+      </span>
+    </p>
         </div>
         <form class="newsletter__form" action="#" method="post" data-newsletter-form>
           <label class="visually-hidden" for="newsletter-email">Email</label>
           <input id="newsletter-email" class="newsletter__input" type="email" placeholder="أدخل عنوان بريدك الإلكتروني" />
-          <button class="newsletter__submit" type="submit">ينضم</button>
+          <button class="newsletter__submit" type="submit">
+      <span class="button-copy button-copy--stacked">
+        <span class="button-copy__ar">انضمي الآن</span>
+        <span class="button-copy__en">Join the List</span>
+      </span>
+    </button>
         </form>
       </div>
     </section>
     <footer class="footer-section">
       <div class="footer-grid">
         <div>
-          <h3>ELEGANZA</h3>
-          <p>دار المقتنيات الخاصة وفساتين السهرة الرفيعة</p>
-          <p>VIP Reservation Atelier</p>
+          <h3>
+      <span class="display-copy display-copy--stacked">
+        <span class="display-copy__ar">إيليجانزا</span>
+        <span class="display-copy__en">ELEGANZA</span>
+      </span>
+    </h3>
+          <p>دار فساتين السهرة والمقتنيات الخاصة</p>
+          <p>Private Reservation Atelier</p>
         </div>
         <div>
-          <h4>المجموعات</h4>
+          <h4>
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المجموعات</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Collections</span>
+        </span>
+      </h4>
           <ul class="footer-links">
             
                   <li>
-                    <a href="../../../ar/collections/2026-evening-dresses/">NEW IN</a>
+                    <a href="../../../ar/collections/2026-evening-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الجديد</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">New In</span>
+        </span>
+      </a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/luxury-evening-dresses/">فساتين السهرة</a>
+                    <a href="../../../ar/collections/luxury-evening-dresses/"><span class="menu-copy menu-copy--single">فساتين السهرة</span></a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/wedding-dress/">فساتين حفلة موسيقية</a>
+                    <a href="../../../ar/collections/wedding-dress/"><span class="menu-copy menu-copy--single">فساتين حفلة موسيقية</span></a>
                   </li>
                 
                   <li>
-                    <a href="../../../ar/collections/short-party-cocktail-dresses/">OCCASION</a>
+                    <a href="../../../ar/collections/short-party-cocktail-dresses/">
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">المناسبة</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Occasion</span>
+        </span>
+      </a>
                   </li>
                 
           </ul>
         </div>
         <div>
-          <h4>الحجز</h4>
+          <h4>
+        <span class="menu-copy menu-copy--inline">
+          <span class="menu-copy__ar">الحجز</span>
+          <span class="menu-copy__divider" aria-hidden="true">/</span>
+          <span class="menu-copy__en">Reservation</span>
+        </span>
+      </h4>
           <ul class="footer-links">
-            <li><a href="../../../ar/reservation/">جلسة الحجز الخاصة</a></li>
+            <li><a href="../../../ar/reservation/">
+      <span class="menu-copy menu-copy--stacked">
+        <span class="menu-copy__ar">جلسة الحجز الخاصة</span>
+        <span class="menu-copy__en">Private Reservation Appointment</span>
+      </span>
+    </a></li>
             <li><a href="https://www.facebook.com/EleganzaOfficiall/" target="_blank" rel="noreferrer">Facebook</a></li>
           </ul>
         </div>
@@ -2020,7 +3155,7 @@
   
     </div>
     <script>
-      window.__ELEGANZA_CONFIG__ = {"brandArabic":"إيليجانزا","whatsappNumber":"","catalogPath":"../../../assets/data/catalog.json","siteRoot":"../../../","primaryCTA":"Request Reservation","secondaryCTA":"Book This Piece"};
+      window.__ELEGANZA_CONFIG__ = {"brandArabic":"إيليجانزا","brandName":"ELEGANZA","whatsappNumber":"","catalogPath":"../../../assets/data/catalog.json","siteRoot":"../../../","availabilityLabel":{"ar":"متاح عند الطلب","en":"Available upon request"},"exclusiveLabel":{"ar":"قطعة حصرية","en":"Exclusive piece"},"primaryCTA":{"ar":"اطلبي الحجز","en":"Request Reservation"},"secondaryCTA":{"ar":"احجزي هذه القطعة","en":"Book This Piece"},"viewLabel":{"ar":"استكشفي القطعة","en":"View Piece"},"quickViewLabel":{"ar":"عرض سريع","en":"Quick View"},"submitLabel":{"ar":"إرسال طلب الحجز","en":"Submit Reservation Request"},"reservationHeading":{"ar":"جلسة الحجز الخاصة","en":"Private Reservation Appointment"},"reservationNote":{"ar":"يُرسل طلبك عبر واتساب بصياغة خاصة تتضمن بياناتك والقطعة المختارة لمتابعة أدق مع فريق الدار.","en":"Your request continues through WhatsApp with a private atelier brief tailored to the selected piece."}};
     </script>
     <script src="../../../assets/app.js" defer></script>
   </body>

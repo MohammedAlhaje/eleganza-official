@@ -13,6 +13,44 @@
       .replaceAll("'", "&#39;");
   }
 
+  function isLabelObject(value) {
+    return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+  }
+
+  function labelText(value, locale = "ar") {
+    if (!isLabelObject(value)) {
+      return String(value || "");
+    }
+
+    return value[locale] || value.ar || value.en || "";
+  }
+
+  function renderLabel(value, className = "ui-copy", variant = "stacked") {
+    const ar = labelText(value, "ar");
+    const en = labelText(value, "en");
+
+    if (ar && en && ar !== en) {
+      if (variant === "inline") {
+        return `
+          <span class="${className} ${className}--inline">
+            <span class="${className}__ar">${escapeHtml(ar)}</span>
+            <span class="${className}__divider" aria-hidden="true">/</span>
+            <span class="${className}__en">${escapeHtml(en)}</span>
+          </span>
+        `;
+      }
+
+      return `
+        <span class="${className} ${className}--stacked">
+          <span class="${className}__ar">${escapeHtml(ar)}</span>
+          <span class="${className}__en">${escapeHtml(en)}</span>
+        </span>
+      `;
+    }
+
+    return `<span class="${className} ${className}--single">${escapeHtml(ar || en)}</span>`;
+  }
+
   function colorToCss(name) {
     const value = String(name || "").trim().toLowerCase();
     const map = {
@@ -46,7 +84,7 @@
     const number = (config.whatsappNumber || "").replace(/\D/g, "");
     const lines = [
       `مرحباً فريق ${config.brandArabic || "إيليجانزا"}`,
-      extras.intent || (product.isExclusive ? config.secondaryCTA : config.primaryCTA),
+      labelText(extras.intent || (product.isExclusive ? config.secondaryCTA : config.primaryCTA), "ar"),
       `القطعة: ${product.title}`,
       `Handle: ${product.handle}`
     ];
@@ -121,12 +159,21 @@
           </a>
           </div>
           <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="${escapeHtml(product.handle)}">
-            عرض سريع
+            ${renderLabel(config.quickViewLabel || { ar: "عرض سريع", en: "Quick View" }, "micro-copy", "inline")}
           </button>
         </div>
         <div class="product-info">
+          <div class="product-info__meta">${renderLabel(
+            product.isExclusive ? product.availabilityLabel : { ar: "قطعة منسقة", en: "Curated Piece" },
+            "micro-copy",
+            "inline"
+          )}</div>
           <a href="${escapeHtml(productHref)}"><h2>${escapeHtml(product.title)}</h2></a>
-          <div class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</div>
+          <div class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${renderLabel(
+            product.availabilityLabel,
+            "micro-copy",
+            "inline"
+          )}</div>
           ${
             product.colors?.length
               ? `
@@ -151,9 +198,14 @@
               : ""
           }
           <div class="product-card__actions">
-            <a class="button button--ghost" href="${escapeHtml(productHref)}">${escapeHtml(product.reservationLabel || config.primaryCTA)}</a>
-            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${escapeHtml(
-              product.isExclusive ? "Book This Piece" : "Request Reservation"
+            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${renderLabel(
+              product.reservationLabel || config.primaryCTA,
+              "button-copy"
+            )}</a>
+            <a class="button button--text" href="${escapeHtml(productHref)}">${renderLabel(
+              config.viewLabel || { ar: "استكشفي القطعة", en: "View Piece" },
+              "micro-copy",
+              "inline"
             )}</a>
           </div>
         </div>
@@ -171,9 +223,13 @@
           <img src="${escapeHtml(product.primaryMedia?.src || "")}" alt="${escapeHtml(product.title)}" loading="lazy" />
         </div>
         <div class="quickview-card__body">
-          <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</span>
+          <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${renderLabel(
+            product.availabilityLabel,
+            "micro-copy",
+            "inline"
+          )}</span>
           <h2>${escapeHtml(product.title)}</h2>
-          <p>${escapeHtml(product.bodyText || "VIP reservation only")}</p>
+          <p>${escapeHtml(product.bodyText || "Private reservation only.")}</p>
           ${
             product.colors?.length
               ? `<div class="quickview-card__swatches">${product.colors
@@ -185,9 +241,14 @@
               : ""
           }
           <div class="quickview-card__actions">
-            <a class="button button--ghost" href="${escapeHtml(productHref)}">View Piece</a>
-            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${escapeHtml(
-              product.isExclusive ? "Book This Piece" : "Request Reservation"
+            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${renderLabel(
+              product.reservationLabel || config.primaryCTA,
+              "button-copy"
+            )}</a>
+            <a class="button button--text" href="${escapeHtml(productHref)}">${renderLabel(
+              config.viewLabel || { ar: "استكشفي القطعة", en: "View Piece" },
+              "micro-copy",
+              "inline"
             )}</a>
           </div>
         </div>
@@ -517,10 +578,7 @@
         }
 
         if (pageData?.type === "product") {
-          product = {
-            ...pageData.product,
-            availabilityLabel: pageData.product.isExclusive ? "Exclusive piece" : "Available upon request"
-          };
+          product = { ...pageData.product };
         }
 
         if (!product) {
@@ -582,7 +640,11 @@
         <div class="reservation-selected">
           <img src="${escapeHtml(product.primaryMedia?.src || "")}" alt="${escapeHtml(product.title)}" />
           <div>
-            <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</span>
+            <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${renderLabel(
+              product.availabilityLabel || (product.isExclusive ? config.exclusiveLabel : config.availabilityLabel),
+              "micro-copy",
+              "inline"
+            )}</span>
             <h3>${escapeHtml(product.title)}</h3>
             <p>${escapeHtml(product.bodyText || "")}</p>
           </div>

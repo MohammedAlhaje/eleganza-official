@@ -1,36 +1,36 @@
 :root {
-  --main-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
-  --heading-family: "Cormorant Garamond", "IBM Plex Sans Arabic", serif;
+  --main-family: "Inter", "IBM Plex Sans Arabic", sans-serif;
+  --heading-family: "Inter", "IBM Plex Sans Arabic", sans-serif;
   --font-size: 16px;
-  --text-color: #171512;
-  --heading-color: #111111;
-  --muted-color: #6b665f;
-  --background: #faf7f2;
-  --surface: #fffdfa;
-  --surface-alt: #f5efe5;
-  --surface-soft: #efe7db;
-  --line-color: #ded4c6;
-  --line-strong: #bcae9b;
-  --button-color: #121212;
+  --text-color: #000000;
+  --heading-color: #000000;
+  --muted-color: #666666;
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #fafafa;
+  --surface-soft: #f7f7f7;
+  --line-color: #eaeaea;
+  --line-strong: #d9d9d9;
+  --button-color: #000000;
   --button-text: #ffffff;
-  --button-ghost: #fdfaf5;
-  --button-ghost-text: #171512;
-  --top-bar-background: #111111;
-  --top-bar-color: #f7f2ea;
-  --newsletter-background: #111111;
-  --newsletter-color: #f6efe4;
-  --footer-background: #f8f2e9;
-  --footer-color: #171512;
-  --accent: #c6b196;
-  --accent-strong: #9b8263;
-  --success-dark: #1f1c17;
-  --max-width: 1400px;
+  --button-ghost: #ffffff;
+  --button-ghost-text: #000000;
+  --top-bar-background: #ffffff;
+  --top-bar-color: #666666;
+  --newsletter-background: #ffffff;
+  --newsletter-color: #000000;
+  --footer-background: #ffffff;
+  --footer-color: #000000;
+  --accent: #f3f3f3;
+  --accent-strong: #000000;
+  --success-dark: #000000;
+  --max-width: 1280px;
   --radius-xs: 8px;
-  --radius-sm: 14px;
-  --radius-md: 22px;
-  --radius-lg: 32px;
-  --shadow-soft: 0 24px 70px rgba(17, 17, 17, 0.08);
-  --shadow-card: 0 16px 34px rgba(17, 17, 17, 0.05);
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: none;
+  --shadow-card: none;
 }
 
 *,
@@ -54,9 +54,7 @@ body {
   width: 100%;
   max-width: 100vw;
   overflow-x: clip;
-  background:
-    radial-gradient(circle at top right, rgba(222, 212, 198, 0.3), transparent 32%),
-    linear-gradient(180deg, #fcf9f4 0%, #faf7f2 42%, #f8f3eb 100%);
+  background: #ffffff;
   color: var(--text-color);
   font: 400 var(--font-size) / 1.8 var(--main-family);
   text-rendering: optimizeLegibility;
@@ -2021,5 +2019,1151 @@ svg {
 
   .reservation-selected {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Minimal monochrome refresh */
+
+body.theme-minimal,
+.theme-minimal .page-wrap {
+  background: #ffffff;
+  color: #000000;
+}
+
+.theme-minimal .content-wrapper {
+  width: min(calc(100% - 64px), 1240px);
+  padding-bottom: 120px;
+}
+
+.theme-minimal .ui-copy,
+.theme-minimal .micro-copy,
+.theme-minimal .display-copy,
+.theme-minimal .nav-copy,
+.theme-minimal .menu-copy,
+.theme-minimal .action-copy,
+.theme-minimal .button-copy,
+.theme-minimal .brand-copy {
+  gap: 4px;
+  line-height: 1.3;
+}
+
+.theme-minimal .ui-copy__ar,
+.theme-minimal .ui-copy__single,
+.theme-minimal .nav-copy__ar,
+.theme-minimal .nav-copy__single,
+.theme-minimal .menu-copy__ar,
+.theme-minimal .menu-copy__single,
+.theme-minimal .action-copy__ar,
+.theme-minimal .action-copy__single,
+.theme-minimal .button-copy__ar,
+.theme-minimal .button-copy__single,
+.theme-minimal .brand-copy__ar,
+.theme-minimal .brand-copy__single {
+  font-family: var(--main-family);
+  color: #000000;
+}
+
+.theme-minimal .ui-copy__en,
+.theme-minimal .micro-copy__en,
+.theme-minimal .display-copy__en,
+.theme-minimal .nav-copy__en,
+.theme-minimal .menu-copy__en,
+.theme-minimal .action-copy__en,
+.theme-minimal .button-copy__en,
+.theme-minimal .brand-copy__en {
+  color: #666666;
+  font-size: 0.78em;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 1;
+}
+
+.theme-minimal .display-copy__ar,
+.theme-minimal .display-copy__single {
+  font-family: var(--heading-family);
+  font-weight: 700;
+  line-height: 1.08;
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  letter-spacing: -0.03em;
+}
+
+.theme-minimal .display-copy__en {
+  font-size: 0.9rem;
+}
+
+.theme-minimal .micro-copy__ar,
+.theme-minimal .micro-copy__single {
+  color: #666666;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.theme-minimal .button-copy__ar,
+.theme-minimal .button-copy__single {
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.theme-minimal .nav-copy,
+.theme-minimal .action-copy,
+.theme-minimal .button-copy {
+  text-align: start;
+  justify-items: start;
+}
+
+.theme-minimal .navigation__menulink .nav-copy {
+  text-align: center;
+  justify-items: center;
+}
+
+.theme-minimal .announcement-bar {
+  background: #ffffff;
+  color: #666666;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.theme-minimal .announcement-bar__track {
+  justify-content: center;
+  gap: 24px;
+  padding: 10px 24px;
+}
+
+.theme-minimal .announcement-bar__item {
+  opacity: 1;
+}
+
+.theme-minimal .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eaeaea;
+}
+
+.theme-minimal .theme-header {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.theme-minimal .header--container,
+.theme-minimal .navigation__maincontainer,
+.theme-minimal .newsletter__section-container,
+.theme-minimal .footer-grid,
+.theme-minimal .breadcrumb__inner,
+.theme-minimal .collection-layout,
+.theme-minimal .product__section,
+.theme-minimal .section-heading-row,
+.theme-minimal .video__section,
+.theme-minimal .reviews-carousel,
+.theme-minimal .reservation-page {
+  width: min(calc(100% - 48px), 1240px);
+}
+
+.theme-minimal .header--container {
+  grid-template-columns: minmax(0, 1fr) auto minmax(260px, 320px);
+  min-height: 88px;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.theme-minimal .header-actions {
+  gap: 16px;
+}
+
+.theme-minimal .header-actions a {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #666666;
+}
+
+.theme-minimal .header-actions a:hover,
+.theme-minimal .header-actions a:focus-visible {
+  color: #000000;
+  background: transparent;
+  transform: none;
+}
+
+.theme-minimal .header-actions .nav-icon {
+  display: inline-flex;
+  color: #666666;
+}
+
+.theme-minimal .theme__logo img {
+  width: 136px;
+}
+
+.theme-minimal .large-search {
+  width: min(100%, 320px);
+}
+
+.theme-minimal .header-search-form {
+  gap: 8px;
+}
+
+.theme-minimal .header-search-form__label {
+  color: #666666;
+}
+
+.theme-minimal .header-search {
+  min-height: 48px;
+  padding: 0 16px 0 44px;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.theme-minimal .header-search-form .icon-button {
+  left: 4px;
+}
+
+.theme-minimal .icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #666666;
+}
+
+.theme-minimal .icon-button:hover,
+.theme-minimal .icon-button:focus-visible {
+  background: #f5f5f5;
+  color: #000000;
+}
+
+.theme-minimal .navigation__maincontainer {
+  padding: 0 0 8px;
+}
+
+.theme-minimal .navigation__list {
+  justify-content: center;
+  gap: 28px;
+}
+
+.theme-minimal .navigation__menulink {
+  min-height: 52px;
+  color: #000000;
+}
+
+.theme-minimal .navigation__menuitem:hover .navigation__menulink,
+.theme-minimal .navigation__menuitem:focus-within .navigation__menulink {
+  color: #666666;
+}
+
+.theme-minimal .megamenu,
+.theme-minimal .dropdown,
+.theme-minimal .dropdown--nested {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.theme-minimal .megamenu {
+  min-width: min(760px, calc(100vw - 40px));
+  padding: 24px;
+}
+
+.theme-minimal .megamenu__container {
+  gap: 24px;
+}
+
+.theme-minimal .megamenu__listlink,
+.theme-minimal .dropdown__link,
+.theme-minimal .mobile-nav__items a,
+.theme-minimal .mobile-nav__root-link,
+.theme-minimal .mobile-nav__heading {
+  color: #666666;
+}
+
+.theme-minimal .megamenu__listlink:hover,
+.theme-minimal .dropdown__link:hover,
+.theme-minimal .mobile-nav__items a:hover,
+.theme-minimal .mobile-nav__root-link:hover,
+.theme-minimal .mobile-nav__heading:hover {
+  color: #000000;
+}
+
+.theme-minimal .dropdown {
+  padding: 8px;
+}
+
+.theme-minimal .dropdown__link {
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.theme-minimal .dropdown__item:hover > .dropdown__link {
+  background: #f7f7f7;
+}
+
+.theme-minimal .mobile-drawer__panel,
+.theme-minimal .quickview-modal__panel,
+.theme-minimal .size-guide__panel {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: none;
+}
+
+.theme-minimal .mobile-drawer__panel {
+  border-inline-start: 1px solid #eaeaea;
+}
+
+.theme-minimal .mobile-drawer__header {
+  margin-bottom: 24px;
+}
+
+.theme-minimal .mobile-nav__group {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.theme-minimal .mobile-nav__toggle {
+  padding: 16px 0;
+}
+
+.theme-minimal .mobile-nav__panel {
+  padding: 0 0 16px;
+}
+
+.theme-minimal .mobile-nav__subgroup {
+  gap: 12px;
+}
+
+.theme-minimal .mobile-nav__items {
+  gap: 10px;
+  padding-right: 0;
+}
+
+.theme-minimal .slideshow-section,
+.theme-minimal .global__section,
+.theme-minimal .video__section,
+.theme-minimal .reviews-carousel,
+.theme-minimal .newsletter__section,
+.theme-minimal .footer-section,
+.theme-minimal .collection__page,
+.theme-minimal .reservation-page,
+.theme-minimal .related-products {
+  margin-top: 96px;
+}
+
+.theme-minimal .page-home .slideshow-section:first-child {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 56px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.theme-minimal .slideshow {
+  min-height: auto;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.theme-minimal .slideshow__slide-image {
+  border-radius: inherit;
+}
+
+.theme-minimal .slideshow__editorial {
+  position: static;
+  inset: auto;
+  padding: 0;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.theme-minimal .hero-panel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.theme-minimal .hero-panel p,
+.theme-minimal .section-heading__summary,
+.theme-minimal .collection-header p,
+.theme-minimal .product__lede,
+.theme-minimal .reviews-carousel__header p,
+.theme-minimal .newsletter__section-content p,
+.theme-minimal .reservation-page__intro p,
+.theme-minimal .reservation-summary__content p,
+.theme-minimal .quickview-card__body p,
+.theme-minimal .tabbed__product-content,
+.theme-minimal .footer-grid p,
+.theme-minimal .footer-links {
+  color: #666666;
+}
+
+.theme-minimal .hero-panel p {
+  margin-top: 20px;
+  max-width: 36ch;
+}
+
+.theme-minimal .hero-panel__actions {
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.theme-minimal .slideshow__dots {
+  position: static;
+  left: auto;
+  bottom: auto;
+  grid-column: 1;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.theme-minimal .slideshow__dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #d9d9d9;
+  background: transparent;
+}
+
+.theme-minimal .slideshow__dot.is-active {
+  background: #000000;
+  border-color: #000000;
+}
+
+.theme-minimal .secondary-banner__copy {
+  position: static;
+  max-width: 640px;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.theme-minimal .section-heading-row {
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.theme-minimal .section-heading .display-copy__ar,
+.theme-minimal .section-heading .display-copy__single,
+.theme-minimal .collection-header .display-copy__ar,
+.theme-minimal .collection-header .display-copy__single,
+.theme-minimal .reservation-page__intro .display-copy__ar,
+.theme-minimal .reservation-page__intro .display-copy__single {
+  font-size: clamp(1.75rem, 2.6vw, 3rem);
+}
+
+.theme-minimal .featured__collection {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+
+.theme-minimal .featured__collection-carousel,
+.theme-minimal .reviews-carousel__track {
+  gap: 24px;
+  padding-bottom: 4px;
+}
+
+.theme-minimal .featured__collection-carousel {
+  grid-auto-columns: minmax(280px, 30%);
+}
+
+.theme-minimal .product-index {
+  display: grid;
+  gap: 16px;
+}
+
+.theme-minimal .prod-image {
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.theme-minimal .primary-image,
+.theme-minimal .secondary-image {
+  transition: opacity 220ms ease;
+}
+
+.theme-minimal .product-listing__quickview-trigger {
+  right: 12px;
+  left: 12px;
+  bottom: 12px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.theme-minimal .product-info {
+  gap: 12px;
+  text-align: start;
+  padding-top: 0;
+}
+
+.theme-minimal .product-info h2 {
+  min-height: auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.theme-minimal .product-info__meta {
+  color: #666666;
+}
+
+.theme-minimal .availability-copy {
+  justify-self: start;
+  padding: 6px 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #666666;
+}
+
+.theme-minimal .availability-copy--exclusive {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.theme-minimal .product-card__actions,
+.theme-minimal .quickview-card__actions {
+  justify-content: flex-start;
+}
+
+.theme-minimal .button,
+.theme-minimal .newsletter__submit,
+.theme-minimal .pagination__button {
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+  box-shadow: none;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.theme-minimal .button:hover,
+.theme-minimal .newsletter__submit:hover,
+.theme-minimal .pagination__button:hover {
+  transform: none;
+}
+
+.theme-minimal .button--dark,
+.theme-minimal .newsletter__submit,
+.theme-minimal .pagination__button.is-active {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.theme-minimal .button--dark:hover,
+.theme-minimal .newsletter__submit:hover {
+  background: #111111;
+  border-color: #111111;
+}
+
+.theme-minimal .button--ghost,
+.theme-minimal .pagination__button {
+  background: #ffffff;
+  color: #000000;
+  border-color: #eaeaea;
+}
+
+.theme-minimal .button--ghost:hover,
+.theme-minimal .pagination__button:hover {
+  background: #f7f7f7;
+}
+
+.theme-minimal .button--text {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  color: #666666;
+}
+
+.theme-minimal .button--text:hover {
+  color: #000000;
+}
+
+.theme-minimal .color.options,
+.theme-minimal .quickview-card__swatches,
+.theme-minimal .swatches__row {
+  justify-content: flex-start;
+}
+
+.theme-minimal .swatch-circle {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d9d9d9;
+}
+
+.theme-minimal .video__section,
+.theme-minimal .reviews-carousel,
+.theme-minimal .related-products {
+  padding: 0;
+}
+
+.theme-minimal .videoWrapper,
+.theme-minimal .review-card {
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+.theme-minimal .review-card {
+  padding: 24px;
+}
+
+.theme-minimal .review-card h3 {
+  font-family: var(--heading-family);
+  font-size: 1.2rem;
+}
+
+.theme-minimal .review-card__meta {
+  color: #666666;
+}
+
+.theme-minimal .newsletter__section {
+  padding: 40px;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.theme-minimal .newsletter__section-container {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 32px;
+}
+
+.theme-minimal .newsletter__form {
+  gap: 12px;
+}
+
+.theme-minimal .newsletter__input {
+  min-height: 48px;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.theme-minimal .footer-section {
+  background: #ffffff;
+  color: #000000;
+  padding: 48px 0 64px;
+  border-top: 1px solid #eaeaea;
+}
+
+.theme-minimal .footer-grid {
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.8fr));
+  gap: 32px;
+}
+
+.theme-minimal .footer-grid h3,
+.theme-minimal .footer-grid h4 {
+  margin-bottom: 12px;
+}
+
+.theme-minimal .footer-links {
+  gap: 8px;
+}
+
+.theme-minimal .breadcrumb {
+  padding-top: 24px;
+}
+
+.theme-minimal .breadcrumb__inner {
+  width: min(calc(100% - 48px), 1240px);
+  padding: 0;
+  color: #666666;
+}
+
+.theme-minimal .collection-layout {
+  grid-template-columns: minmax(250px, 280px) minmax(0, 1fr);
+  gap: 48px;
+  padding: 0;
+}
+
+.theme-minimal .collection-sidebar {
+  top: 120px;
+  gap: 12px;
+}
+
+.theme-minimal .collection__page-sort,
+.theme-minimal .filter-group,
+.theme-minimal .product__tabs-container,
+.theme-minimal .reservation-page__card,
+.theme-minimal .quickview-card,
+.theme-minimal .size-guide__panel,
+.theme-minimal .reservation-form {
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.theme-minimal .collection__page-sort,
+.theme-minimal .filter-group {
+  padding: 0;
+}
+
+.theme-minimal .collection-sort__label,
+.theme-minimal .swatches__option-name,
+.theme-minimal .filter-option,
+.theme-minimal .filter-count {
+  color: #666666;
+}
+
+.theme-minimal .collection-sort__select,
+.theme-minimal .reservation-form input,
+.theme-minimal .reservation-form select,
+.theme-minimal .reservation-form textarea {
+  min-height: 48px;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.theme-minimal .filter-group__toggle {
+  padding: 14px 16px;
+}
+
+.theme-minimal .filter-group__panel {
+  padding: 0 16px 16px;
+}
+
+.theme-minimal .collection-header {
+  margin-bottom: 32px;
+  max-width: 760px;
+}
+
+.theme-minimal .collection__page-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+
+.theme-minimal .pagination {
+  margin-top: 40px;
+}
+
+.theme-minimal .product__section {
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 420px);
+  gap: 64px;
+  padding: 16px 0 0;
+}
+
+.theme-minimal .product__gallery--container {
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.theme-minimal .product-single__thumbnail,
+.theme-minimal .product__main-media {
+  border: 1px solid #eaeaea;
+  background: #ffffff;
+}
+
+.theme-minimal .product-single__thumbnail {
+  border-radius: 14px;
+}
+
+.theme-minimal .product__main-media {
+  border-radius: 20px;
+}
+
+.theme-minimal .product__section-information {
+  position: sticky;
+  top: 120px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-minimal .product__section-information h1 {
+  font-size: clamp(1.9rem, 3.2vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.theme-minimal .product__section--custom_liquid {
+  margin-top: 32px;
+}
+
+.theme-minimal .custom-productiontime {
+  gap: 12px;
+}
+
+.theme-minimal .time-desc {
+  padding: 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  background: #fafafa;
+  text-align: start;
+}
+
+.theme-minimal .time-desc hr {
+  border-top: 1px solid #eaeaea;
+}
+
+.theme-minimal .time-desc .top-desc,
+.theme-minimal .time-desc .bot-desc {
+  color: #000000;
+}
+
+.theme-minimal .swatches__container {
+  margin-top: 24px;
+}
+
+.theme-minimal .swatches__swatch--color span,
+.theme-minimal .swatches__swatch--regular span {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #eaeaea;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.theme-minimal .swatches__swatch--color span {
+  width: 34px;
+  min-height: 34px;
+}
+
+.theme-minimal .swatches__swatch--color input:checked + span,
+.theme-minimal .swatches__swatch--regular input:checked + span {
+  border-color: #000000;
+  box-shadow: none;
+}
+
+.theme-minimal .button-as-link {
+  color: #666666;
+}
+
+.theme-minimal .button-as-link:hover {
+  color: #000000;
+}
+
+.theme-minimal .product-cta-row {
+  justify-content: flex-start;
+  margin-top: 32px;
+}
+
+.theme-minimal .reservation-form {
+  margin-top: 32px;
+  padding: 24px;
+}
+
+.theme-minimal .reservation-form__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.theme-minimal .reservation-form textarea {
+  min-height: 120px;
+}
+
+.theme-minimal .reservation-form__actions {
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 24px;
+}
+
+.theme-minimal .reservation-form__actions p {
+  max-width: 36ch;
+}
+
+.theme-minimal .product__tabs-container {
+  margin-top: 32px;
+}
+
+.theme-minimal .product__tabs {
+  gap: 12px;
+  padding: 16px 16px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.theme-minimal .product__tab-trigger button {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #666666;
+}
+
+.theme-minimal .product__tab-trigger.is-active button {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.theme-minimal .tabbed__product-content {
+  padding: 20px 16px 24px;
+}
+
+.theme-minimal .share-icons {
+  gap: 16px;
+  margin-top: 24px;
+  color: #666666;
+}
+
+.theme-minimal .quickview-modal__panel,
+.theme-minimal .size-guide__panel {
+  width: min(92vw, 880px);
+  margin: 4vh auto;
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.theme-minimal .quickview-card {
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: 24px;
+  padding: 0;
+  border: 0;
+}
+
+.theme-minimal .quickview-card__media img {
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+}
+
+.theme-minimal .quickview-card__body {
+  gap: 16px;
+}
+
+.theme-minimal .quickview-card__body h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.theme-minimal .size-guide th,
+.theme-minimal .size-guide td {
+  border: 1px solid #eaeaea;
+}
+
+.theme-minimal .reservation-page {
+  padding: 16px 0 0;
+}
+
+.theme-minimal .reservation-page__intro {
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+.theme-minimal .reservation-page__card {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.theme-minimal .reservation-selected {
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.theme-minimal .reservation-selected img {
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+}
+
+.theme-minimal .page-home .featured__collection .product-index,
+.theme-minimal .page-home .featured__collection-carousel .product-index,
+.theme-minimal .page-collection .product-index,
+.theme-minimal .related-products .product-index {
+  align-content: start;
+}
+
+@media (max-width: 1180px) {
+  .theme-minimal .page-home .slideshow-section:first-child {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .theme-minimal .featured__collection,
+  .theme-minimal .collection__page-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .theme-minimal .product__section {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 980px) {
+  .theme-minimal .content-wrapper,
+  .theme-minimal .header--container,
+  .theme-minimal .navigation__maincontainer,
+  .theme-minimal .newsletter__section-container,
+  .theme-minimal .footer-grid,
+  .theme-minimal .breadcrumb__inner,
+  .theme-minimal .collection-layout,
+  .theme-minimal .product__section,
+  .theme-minimal .section-heading-row,
+  .theme-minimal .video__section,
+  .theme-minimal .reviews-carousel,
+  .theme-minimal .reservation-page {
+    width: min(calc(100% - 32px), 1240px);
+  }
+
+  .theme-minimal .header--container {
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    min-height: 72px;
+    padding: 12px 0;
+  }
+
+  .theme-minimal .header-actions {
+    gap: 8px;
+  }
+
+  .theme-minimal .header-actions a {
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-minimal .header-actions .action-copy {
+    display: none;
+  }
+
+  .theme-minimal .theme__logo img {
+    width: 116px;
+  }
+
+  .theme-minimal .slideshow-section,
+  .theme-minimal .global__section,
+  .theme-minimal .video__section,
+  .theme-minimal .reviews-carousel,
+  .theme-minimal .newsletter__section,
+  .theme-minimal .footer-section,
+  .theme-minimal .collection__page,
+  .theme-minimal .reservation-page,
+  .theme-minimal .related-products {
+    margin-top: 72px;
+  }
+
+  .theme-minimal .featured__collection,
+  .theme-minimal .collection__page-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theme-minimal .newsletter__section-container,
+  .theme-minimal .footer-grid,
+  .theme-minimal .collection-layout,
+  .theme-minimal .product__section,
+  .theme-minimal .quickview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-minimal .collection-sidebar {
+    top: auto;
+  }
+
+  .theme-minimal .product__section-information {
+    position: static;
+  }
+
+  .theme-minimal .product__gallery--container {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-minimal .thumb-slider {
+    order: 2;
+    grid-auto-flow: column;
+    grid-auto-columns: 72px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .theme-minimal .content-wrapper {
+    width: min(calc(100% - 24px), 1240px);
+    padding-bottom: 96px;
+  }
+
+  .theme-minimal .announcement-bar__track {
+    gap: 12px;
+    padding: 8px 12px;
+  }
+
+  .theme-minimal .featured__collection,
+  .theme-minimal .collection__page-products {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-minimal .featured__collection-carousel,
+  .theme-minimal .reviews-carousel__track {
+    grid-auto-columns: minmax(240px, 88%);
+  }
+
+  .theme-minimal .hero-panel__actions,
+  .theme-minimal .product-cta-row,
+  .theme-minimal .product-card__actions,
+  .theme-minimal .quickview-card__actions,
+  .theme-minimal .reservation-form__actions,
+  .theme-minimal .newsletter__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .theme-minimal .newsletter__form {
+    display: grid;
+  }
+
+  .theme-minimal .button,
+  .theme-minimal .newsletter__submit,
+  .theme-minimal .newsletter__input {
+    width: 100%;
+  }
+
+  .theme-minimal .button--text {
+    width: auto;
+  }
+
+  .theme-minimal .section-heading-row {
+    margin-bottom: 24px;
+  }
+
+  .theme-minimal .product-listing__quickview-trigger {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .theme-minimal .custom-productiontime,
+  .theme-minimal .reservation-form__grid,
+  .theme-minimal .reservation-selected {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-minimal .newsletter__section,
+  .theme-minimal .reservation-form,
+  .theme-minimal .reservation-page__card,
+  .theme-minimal .quickview-modal__panel,
+  .theme-minimal .size-guide__panel {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .theme-minimal .quickview-modal__panel,
+  .theme-minimal .size-guide__panel {
+    width: min(96vw, 720px);
+  }
+
+  .theme-minimal .display-copy__ar,
+  .theme-minimal .display-copy__single {
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
   }
 }

@@ -229,7 +229,7 @@
             "inline"
           )}</span>
           <h2>${escapeHtml(product.title)}</h2>
-          <p>${escapeHtml(product.bodyText || "Private reservation only.")}</p>
+          <p>${escapeHtml(product.bodyText || "تجربة حجز خاصة داخل الدار.")}</p>
           ${
             product.colors?.length
               ? `<div class="quickview-card__swatches">${product.colors
@@ -324,7 +324,7 @@
     if (slides.length > 1) {
       window.setInterval(() => {
         activate((activeIndex + 1) % slides.length);
-      }, 5000);
+      }, 7000);
     }
   }
 

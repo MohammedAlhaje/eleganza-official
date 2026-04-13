@@ -476,12 +476,7 @@ function renderMobileNavigation(prefix, navigation) {
           <div class="mobile-nav__panel">
             <a class="mobile-nav__root-link" href="${escapeHtml(
               item.slug ? toInternalHref(prefix, routeForCollection(item.slug)) : "#"
-            )}">${renderLabel(
-              labelText(item.label, "en")
-                ? { ar: `عرض ${labelText(item.label, "ar") || labelText(item.label, "en")}`, en: `View ${labelText(item.label, "en")}` }
-                : { ar: `عرض ${labelText(item.label, "ar") || labelText(item.label, "en")}` },
-              "menu-copy"
-            )}</a>
+            )}">${renderLabel({ ar: "استكشفي القسم", en: "Explore Section" }, "menu-copy")}</a>
             ${item.groups
               .map(
                 (group) => `
@@ -1295,10 +1290,10 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="${escapeHtml(`${prefix}assets/styles.css`)}" />
   </head>
-  <body class="${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
+  <body class="theme-minimal ${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
     <div class="page-wrap">
       ${renderHeader(prefix, config, navigation)}
       <main id="MainContent" class="content-wrapper">
@@ -1447,7 +1442,7 @@ function main() {
       ...section,
       kicker:
         index === 0
-          ? { ar: "Exclusive Pieces 2026", en: "Exclusive Pieces 2026" }
+          ? { ar: "قطع خاصة 2026", en: "Exclusive Pieces 2026" }
           : { ar: "اختيار هادئ للسهرة", en: "Evening Edit" },
       summary: collection?.description || "",
       products: (collection?.products || []).slice(0, index === 0 ? 4 : 6)

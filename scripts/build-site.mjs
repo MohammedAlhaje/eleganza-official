@@ -9,15 +9,19 @@ const referenceDir = path.join(projectRoot, "data", "reference");
 const overridesPath = path.join(projectRoot, "data", "overrides.json");
 const siteDir = path.join(projectRoot, "site");
 const assetVersion = (() => {
+  const buildStamp = new Date().toISOString().replaceAll(/[-:TZ.]/g, "").slice(0, 14);
+
   try {
-    return execSync("git rev-parse --short HEAD", {
+    const head = execSync("git rev-parse --short HEAD", {
       cwd: projectRoot,
       stdio: ["ignore", "pipe", "ignore"]
     })
       .toString()
       .trim();
+
+    return `${head}-${buildStamp}`;
   } catch {
-    return String(Date.now());
+    return buildStamp;
   }
 })();
 
@@ -142,7 +146,6 @@ function renderLabel(value, className = "ui-copy", variant = "stacked") {
       return `
         <span class="${className} ${className}--inline">
           <span class="${className}__ar">${escapeHtml(ar)}</span>
-          <span class="${className}__divider" aria-hidden="true">/</span>
           <span class="${className}__en">${escapeHtml(en)}</span>
         </span>
       `;
@@ -369,16 +372,7 @@ function buildFilterGroups(products) {
 }
 
 function renderAnnouncement(config) {
-  const items = config.announcementMessages;
-  return `
-    <section class="announcement-bar" aria-label="Brand announcements">
-      <div class="announcement-bar__viewport">
-        <div class="announcement-bar__track">
-          ${items.map((item) => `<span class="announcement-bar__item">${renderLabel(item, "micro-copy", "inline")}</span>`).join("")}
-        </div>
-      </div>
-    </section>
-  `;
+  return "";
 }
 
 function renderDesktopNavigation(prefix, navigation) {
@@ -528,48 +522,51 @@ function renderMobileNavigation(prefix, navigation) {
 function renderHeader(prefix, config, navigation) {
   const allHref = toInternalHref(prefix, routeForCollection("all"));
   const reservationHref = toInternalHref(prefix, routeForReservation());
-  const aboutHref = toInternalHref(prefix, "ar/");
+  const homeHref = toInternalHref(prefix, "ar/");
   return `
     ${renderAnnouncement(config)}
     <theme-header class="site-header">
       <div class="header-section">
         <header class="theme-header">
           <div class="header--container">
-            <div class="mobile-menu__trigger">
-              <button class="icon-button js-mobile-menu-open" type="button" aria-label="Open navigation">
-                ${icon("menu")}
-              </button>
-            </div>
             <div class="header-utility">
               <ul class="header-actions">
                 <li>
-                  <a href="${escapeHtml(aboutHref)}">
+                  <a href="${escapeHtml(allHref)}">
                     ${renderLabel(config.utilityShowroom, "action-copy")}
-                    <span class="nav-icon">${icon("user")}</span>
                   </a>
                 </li>
                 <li>
                   <a href="${escapeHtml(reservationHref)}">
                     ${renderLabel(config.utilityReservation, "action-copy")}
-                    <span class="nav-icon">${icon("bag")}</span>
                   </a>
                 </li>
               </ul>
             </div>
             <div class="theme__logo">
-              <a href="${escapeHtml(toInternalHref(prefix, "ar/"))}">
-                <img src="${escapeHtml(`${prefix}${config.logoPath}`)}" alt="${escapeHtml(config.logoAlt)}" />
+              <a href="${escapeHtml(homeHref)}">
+                <span class="theme__logo-mark">
+                  <img src="${escapeHtml(`${prefix}${config.logoPath}`)}" alt="${escapeHtml(config.logoAlt)}" />
+                </span>
+                <span class="theme__wordmark">
+                  <strong class="theme__wordmark-main">${escapeHtml(config.brandName)}</strong>
+                  <span class="theme__wordmark-sub">${renderLabel(config.brandAuthority, "micro-copy", "inline")}</span>
+                </span>
               </a>
             </div>
-            <div class="large-search">
+            <div class="header-tools">
               <form action="${escapeHtml(allHref)}" method="get" class="header-search-form">
-                <span class="header-search-form__label">${renderLabel(config.searchLabel, "micro-copy", "inline")}</span>
                 <div class="header-search-form__inner">
                   <label class="visually-hidden" for="header-search">Search</label>
                   <input class="header-search" id="header-search" type="text" name="q" placeholder="${escapeHtml(config.searchPlaceholder)}" />
                   <button class="icon-button" type="submit" aria-label="Search">${icon("search")}</button>
                 </div>
               </form>
+              <div class="mobile-menu__trigger">
+                <button class="icon-button js-mobile-menu-open" type="button" aria-label="Open navigation">
+                  ${icon("menu")}
+                </button>
+              </div>
             </div>
           </div>
         </header>
@@ -625,7 +622,7 @@ function renderFooter(prefix, config, navigation) {
         <div>
           <h3>${renderLabel({ ar: config.brandArabic, en: config.brandName }, "display-copy")}</h3>
           <p>${escapeHtml(config.brandTagline)}</p>
-          <p>${escapeHtml(config.brandAuthority)}</p>
+          <p>${renderLabel(config.brandAuthority, "ui-copy", "inline")}</p>
         </div>
         <div>
           <h4>${renderLabel({ ar: "المجموعات", en: "Collections" }, "menu-copy", "inline")}</h4>
@@ -728,6 +725,27 @@ function renderHero(homepage, prefix, config) {
   const reservationHref = toInternalHref(prefix, routeForReservation());
   return `
     <section class="slideshow-section" data-slideshow>
+      <div class="hero-intro">
+        <span class="hero-panel__eyebrow">${renderLabel(config.heroKicker, "micro-copy", "inline")}</span>
+        <h1>${renderLabel(config.heroTitle, "display-copy")}</h1>
+        <p>${renderLabel(config.heroText, "ui-copy")}</p>
+        <div class="hero-panel__actions">
+          <a class="button button--dark" href="${escapeHtml(featuredTarget)}">${renderLabel(config.heroPrimaryCTA, "button-copy")}</a>
+          <a class="button button--ghost" href="${escapeHtml(reservationHref)}">${renderLabel(config.heroSecondaryCTA, "button-copy")}</a>
+        </div>
+        <div class="hero-notes">
+          ${config.announcementMessages
+            .slice(0, 3)
+            .map(
+              (item) => `
+                <div class="hero-note">
+                  <span>${renderLabel(item, "micro-copy", "inline")}</span>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
       <div class="slideshow" data-slides>
         ${homepage.heroSlides
           .map(
@@ -750,17 +768,6 @@ function renderHero(homepage, prefix, config) {
           )
           .join("")}
       </div>
-      <div class="slideshow__editorial">
-        <div class="hero-panel">
-          <span class="hero-panel__eyebrow">${renderLabel(config.heroKicker, "micro-copy", "inline")}</span>
-          <h1>${renderLabel(config.heroTitle, "display-copy")}</h1>
-          <p>${renderLabel(config.heroText, "ui-copy")}</p>
-          <div class="hero-panel__actions">
-            <a class="button button--dark" href="${escapeHtml(featuredTarget)}">${renderLabel(config.heroPrimaryCTA, "button-copy")}</a>
-            <a class="button button--ghost" href="${escapeHtml(reservationHref)}">${renderLabel(config.heroSecondaryCTA, "button-copy")}</a>
-          </div>
-        </div>
-      </div>
       <div class="slideshow__dots">
         ${homepage.heroSlides
           .map(
@@ -775,6 +782,7 @@ function renderHero(homepage, prefix, config) {
 }
 
 function renderFeaturedSection(section, prefix) {
+  const sectionHref = toInternalHref(prefix, routeForCollection(section.slug));
   const content =
     section.kind === "carousel"
       ? `<div class="featured__collection-carousel" data-carousel>${section.products
@@ -785,13 +793,16 @@ function renderFeaturedSection(section, prefix) {
   return `
     <section class="global__section">
       <div class="section-heading-row">
-        <div>
+        <div class="section-heading">
           <span class="section-heading__eyebrow">${renderLabel(section.kicker || { ar: "اختيار منسق", en: "Curated Selection" }, "micro-copy", "inline")}</span>
-          <h2 class="section-heading"><a href="${escapeHtml(
-            toInternalHref(prefix, routeForCollection(section.slug))
-          )}">${renderLabel(section.heading, "display-copy")}</a></h2>
+          <h2><a href="${escapeHtml(sectionHref)}">${renderLabel(section.heading, "display-copy")}</a></h2>
           ${section.summary ? `<p class="section-heading__summary">${escapeHtml(section.summary)}</p>` : ""}
         </div>
+        <a class="button button--text section-heading__link" href="${escapeHtml(sectionHref)}">${renderLabel(
+          { ar: "استعرضي المجموعة", en: "View collection" },
+          "micro-copy",
+          "inline"
+        )}</a>
       </div>
       ${content}
     </section>
@@ -1310,7 +1321,7 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="${escapeHtml(`${prefix}${versionedAsset("assets/styles.css")}`)}" />
   </head>
-  <body class="theme-minimal ${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
+  <body class="theme-minimal theme-openai ${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
     <div class="page-wrap">
       ${renderHeader(prefix, config, navigation)}
       <main id="MainContent" class="content-wrapper">

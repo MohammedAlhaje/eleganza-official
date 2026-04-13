@@ -1,18 +1,21 @@
 {
   "brandName": "ELEGANZA",
   "brandArabic": "إيليجانزا",
-  "brandTagline": "دار فساتين السهرة والمقتنيات الخاصة",
-  "brandAuthority": "Private Reservation Atelier",
+  "brandTagline": "فساتين سهرة خاصة وتجربة حجز هادئة",
+  "brandAuthority": {
+    "ar": "دار الحجز الخاصة",
+    "en": "Private Reservation House"
+  },
   "facebookUrl": "https://www.facebook.com/EleganzaOfficiall/",
   "whatsappNumber": "",
   "logoPath": "assets/images/brand-mark-320.png",
   "logoAlt": "شعار إيليجانزا الرسمي",
-  "homepageTitle": "Eleganza | صالة الحجز الخاصة لفساتين السهرة",
-  "homepageDescription": "تجربة هادئة ومترفة لاكتشاف فساتين السهرة الراقية والقطع الخاصة من خلال مسار حجز خاص يليق بالعلامات الرفيعة.",
+  "homepageTitle": "Eleganza | واجهة خاصة لفساتين السهرة",
+  "homepageDescription": "واجهة أكثر هدوءاً وصفاءً لاكتشاف فساتين السهرة والقطع الخاصة من خلال مسار حجز خاص ومنسق.",
   "announcementMessages": [
     {
-      "ar": "مشغل الحجز الخاص",
-      "en": "VIP Reservation Atelier"
+      "ar": "دار الحجز الخاصة",
+      "en": "Private Reservation House"
     },
     {
       "ar": "متاح عند الطلب",
@@ -24,45 +27,45 @@
     }
   ],
   "heroKicker": {
-    "ar": "الدار الخاصة",
-    "en": "Private Showroom"
+    "ar": "لغة العرض",
+    "en": "Brand Language"
   },
   "heroTitle": {
-    "ar": "فساتين سهرة تُقدَّم بهدوء يليق بالفخامة",
-    "en": "Eveningwear presented with couture restraint"
+    "ar": "واجهة هادئة لفساتين السهرة الخاصة",
+    "en": "A quieter interface for private eveningwear"
   },
   "heroText": {
-    "ar": "رحلة عرض منسقة لقطع محدودة ومختارة بعناية، تبدأ بالاكتشاف وتنتهي بطلب خاص عبر مشغل إيليجانزا.",
-    "en": "A curated reservation-first experience for limited pieces, atelier-led appointments, and quietly luxurious evening dressing."
+    "ar": "تجربة بصرية نقية ومنظمة لعرض القطع المحدودة، مع مسار حجز واضح وخالٍ من الضوضاء.",
+    "en": "A cleaner, more deliberate reservation-first experience for limited evening pieces and private requests."
   },
   "heroPrimaryCTA": {
-    "ar": "اكتشفي القطع المميزة",
-    "en": "Explore Featured Pieces"
+    "ar": "استعرضي المجموعة",
+    "en": "Browse Collection"
   },
   "heroSecondaryCTA": {
-    "ar": "احجزي جلسة خاصة",
-    "en": "Book Private Appointment"
+    "ar": "ابدئي الحجز",
+    "en": "Start Reservation"
   },
-  "searchPlaceholder": "ابحثي عن القطعة أو السلسلة",
+  "searchPlaceholder": "ابحثي عن القطعة",
   "searchLabel": {
     "ar": "البحث",
     "en": "Search"
   },
   "utilityShowroom": {
-    "ar": "الدار",
-    "en": "Maison"
+      "ar": "المجموعة",
+      "en": "Collection"
   },
   "utilityReservation": {
-    "ar": "الحجز",
-    "en": "Reservation"
+      "ar": "الحجز",
+      "en": "Reservation"
   },
   "newsletterHeading": {
-    "ar": "انضمي إلى القائمة الخاصة",
-    "en": "Join the private list"
+    "ar": "انضمي إلى القائمة",
+    "en": "Join the list"
   },
   "newsletterText": {
-    "ar": "استقبلي تحديثات الإطلاقات الجديدة، الدعوات الهادئة، والتنبيهات المحدودة قبل الإتاحة العامة.",
-    "en": "Receive quiet updates on new arrivals, limited releases, and private atelier appointments."
+    "ar": "استقبلي تحديثات القطع الجديدة والإطلاقات المحدودة والدعوات الخاصة قبل الإتاحة الأوسع.",
+    "en": "Receive updates on new pieces, limited releases, and private invitations before wider availability."
   },
   "newsletterButton": {
     "ar": "انضمي الآن",

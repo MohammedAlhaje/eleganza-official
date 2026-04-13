@@ -34,7 +34,6 @@
         return `
           <span class="${className} ${className}--inline">
             <span class="${className}__ar">${escapeHtml(ar)}</span>
-            <span class="${className}__divider" aria-hidden="true">/</span>
             <span class="${className}__en">${escapeHtml(en)}</span>
           </span>
         `;

@@ -586,6 +586,13 @@ function renderHeader(prefix, config, navigation) {
             <strong>${renderLabel({ ar: config.brandArabic, en: config.brandName }, "brand-copy")}</strong>
             <button class="icon-button js-mobile-menu-close" type="button" aria-label="Close navigation">${icon("close")}</button>
           </div>
+          <form action="${escapeHtml(allHref)}" method="get" class="mobile-drawer__search">
+            <div class="header-search-form__inner">
+              <label class="visually-hidden" for="mobile-search">Search</label>
+              <input class="header-search" id="mobile-search" type="text" name="q" placeholder="${escapeHtml(config.searchPlaceholder)}" />
+              <button class="icon-button" type="submit" aria-label="Search">${icon("search")}</button>
+            </div>
+          </form>
           <div class="mobile-nav">
             ${renderMobileNavigation(prefix, navigation)}
           </div>

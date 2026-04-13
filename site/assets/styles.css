@@ -3710,6 +3710,15 @@ body.theme-openai,
   box-shadow: none;
 }
 
+.theme-openai .mobile-drawer__search {
+  margin-bottom: 16px;
+}
+
+.theme-openai .mobile-drawer__search .header-search-form__inner {
+  min-width: 0;
+  width: 100%;
+}
+
 .theme-openai .slideshow-section,
 .theme-openai .global__section,
 .theme-openai .video__section,
@@ -4262,8 +4271,22 @@ body.theme-openai,
     justify-self: start;
   }
 
+  .theme-openai .theme__logo a {
+    gap: 10px;
+  }
+
+  .theme-openai .theme__logo-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-openai .theme__wordmark-sub {
+    display: none;
+  }
+
   .theme-openai .header-tools {
     grid-area: tools;
+    gap: 10px;
   }
 
   .theme-openai .header-utility {
@@ -4271,8 +4294,31 @@ body.theme-openai,
   }
 
   .theme-openai .header-actions {
-    gap: 14px;
+    gap: 10px;
     overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .theme-openai .header-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .theme-openai .header-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid #eaeaea;
+    border-radius: 999px;
+    white-space: nowrap;
+    background: #ffffff;
+  }
+
+  .theme-openai .header-actions .action-copy__ar,
+  .theme-openai .header-actions .action-copy__single {
+    font-size: 0.84rem;
   }
 
   .theme-openai .navigation.full-nav {
@@ -4285,6 +4331,14 @@ body.theme-openai,
 
   .theme-openai .mobile-menu__trigger {
     display: block;
+  }
+
+  .theme-openai .mobile-menu__trigger .icon-button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #eaeaea;
+    border-radius: 999px;
+    background: #ffffff;
   }
 
   .theme-openai .slideshow-section,
@@ -4326,6 +4380,83 @@ body.theme-openai,
   .theme-openai .reservation-selected {
     grid-template-columns: 1fr;
   }
+
+  .theme-openai .collection__page-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+
+  .theme-openai .product-info h2 {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .theme-openai .mobile-drawer__panel {
+    width: min(100vw, 420px);
+    padding: 18px 16px 28px;
+    border-radius: 0;
+    border-inline-start: 0;
+  }
+
+  .theme-openai .mobile-drawer__header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f1f1;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .theme-openai .mobile-nav {
+    gap: 10px;
+  }
+
+  .theme-openai .mobile-nav__group {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .theme-openai .mobile-nav__toggle {
+    min-height: 54px;
+    padding: 0 2px;
+  }
+
+  .theme-openai .mobile-nav__panel {
+    gap: 12px;
+  }
+
+  .theme-openai .mobile-nav__root-link,
+  .theme-openai .mobile-nav__subgroup {
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    background: #fafafa;
+  }
+
+  .theme-openai .mobile-nav__root-link {
+    display: block;
+    padding: 14px 16px;
+  }
+
+  .theme-openai .mobile-nav__subgroup {
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  .theme-openai .mobile-nav__items {
+    gap: 6px;
+    padding-right: 0;
+  }
+
+  .theme-openai .mobile-nav__items a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .theme-openai .quickview-modal__panel {
+    width: min(100vw - 20px, 720px);
+    padding: 18px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -4348,6 +4479,47 @@ body.theme-openai,
   .theme-openai .display-copy__ar,
   .theme-openai .display-copy__single {
     font-size: clamp(2.1rem, 9vw, 3.4rem);
+  }
+
+  .theme-openai .theme__wordmark-main {
+    font-size: 1rem;
+  }
+
+  .theme-openai .header--container {
+    gap: 10px 12px;
+    padding: 14px 0;
+  }
+
+  .theme-openai .header-actions {
+    gap: 8px;
+  }
+
+  .theme-openai .header-actions a {
+    min-height: 34px;
+    padding: 0 12px;
+  }
+
+  .theme-openai .hero-intro {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .theme-openai .hero-notes {
+    gap: 12px;
+    margin-top: 2px;
+  }
+
+  .theme-openai .slideshow-section,
+  .theme-openai .global__section,
+  .theme-openai .video__section,
+  .theme-openai .reviews-carousel,
+  .theme-openai .newsletter__section,
+  .theme-openai .footer-section,
+  .theme-openai .collection__page,
+  .theme-openai .reservation-page,
+  .theme-openai .related-products {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .theme-openai .slideshow,
@@ -4373,6 +4545,141 @@ body.theme-openai,
   .theme-openai .newsletter__submit,
   .theme-openai .newsletter__input {
     width: 100%;
+  }
+
+  .theme-openai .featured__collection,
+  .theme-openai .collection__page-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+
+  .theme-openai .featured__collection-carousel,
+  .theme-openai .reviews-carousel__track {
+    grid-auto-columns: minmax(236px, 86%);
+  }
+
+  .theme-openai .prod-image,
+  .theme-openai .product-single__thumbnail,
+  .theme-openai .product__main-media {
+    border-radius: 16px;
+  }
+
+  .theme-openai .product-listing__quickview-trigger {
+    margin-top: 10px;
+    font-size: 0.82rem;
+  }
+
+  .theme-openai .product-info {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .theme-openai .product-info h2 {
+    font-size: 0.96rem;
+    line-height: 1.4;
+  }
+
+  .theme-openai .collection__mobile-toolbar {
+    position: sticky;
+    top: 74px;
+    z-index: 5;
+    padding: 10px 12px;
+    border: 1px solid #ededed;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .theme-openai .collection__mobile-toolbar .button {
+    width: auto;
+    min-height: 40px;
+    padding-inline: 16px;
+  }
+
+  .theme-openai .product__section {
+    gap: 28px;
+  }
+
+  .theme-openai .thumb-slider {
+    grid-auto-columns: 72px;
+    gap: 10px;
+  }
+
+  .theme-openai .product__section-information {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .theme-openai .product__section-information h1 {
+    font-size: clamp(1.6rem, 7.5vw, 2.2rem);
+    line-height: 1.16;
+  }
+
+  .theme-openai .product__lede {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .theme-openai .custom-productiontime {
+    gap: 10px;
+  }
+
+  .theme-openai .time-desc {
+    padding-top: 12px;
+  }
+
+  .theme-openai .swatches__container {
+    padding-top: 12px;
+  }
+
+  .theme-openai .swatches__row {
+    gap: 8px;
+  }
+
+  .theme-openai .swatches__row--sizes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theme-openai .swatches__swatch--regular span {
+    justify-content: center;
+  }
+
+  .theme-openai .product-cta-row {
+    gap: 10px;
+  }
+
+  .theme-openai .reservation-page {
+    gap: 20px;
+  }
+
+  .theme-openai .reservation-page__card,
+  .theme-openai .reservation-form,
+  .theme-openai .quickview-modal__panel {
+    padding: 18px;
+  }
+
+  .theme-openai .reservation-page__intro h1 {
+    line-height: 1.18;
+  }
+
+  .theme-openai .reservation-form__grid {
+    gap: 14px;
+  }
+
+  .theme-openai .reservation-form__actions {
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .theme-openai .reservation-form__actions p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .theme-openai .newsletter__section-container {
+    gap: 18px;
   }
 
   .theme-openai .footer-grid {

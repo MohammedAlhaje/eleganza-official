@@ -392,12 +392,12 @@ function renderDesktopNavigation(prefix, navigation) {
 
       if (isMega) {
         return `
-          <li class="navigation__menuitem navigation__menuitem--dropdown">
-            <a class="navigation__menulink" href="${escapeHtml(itemHref)}">
+          <li class="navigation__menuitem navigation__menuitem--dropdown" data-desktop-nav-item>
+            <a class="navigation__menulink" href="${escapeHtml(itemHref)}" data-desktop-nav-trigger aria-expanded="false">
               ${renderLabel(item.label, "nav-copy")}
               <span class="nav-icon">${icon("chevronDown")}</span>
             </a>
-            <div class="megamenu">
+            <div class="megamenu" data-desktop-nav-panel>
               <div class="megamenu__container">
                 ${item.groups
                   .map(
@@ -433,12 +433,12 @@ function renderDesktopNavigation(prefix, navigation) {
       }
 
       return `
-        <li class="navigation__menuitem navigation__menuitem--dropdown">
-          <a class="navigation__menulink" href="${escapeHtml(itemHref)}">
+        <li class="navigation__menuitem navigation__menuitem--dropdown" data-desktop-nav-item>
+          <a class="navigation__menulink" href="${escapeHtml(itemHref)}" data-desktop-nav-trigger aria-expanded="false">
             ${renderLabel(item.label, "nav-copy")}
             <span class="nav-icon">${icon("chevronDown")}</span>
           </a>
-          <div class="dropdown">
+          <div class="dropdown" data-desktop-nav-panel>
             <ul class="dropdown__list">
               ${item.groups
                 .map(
@@ -577,6 +577,7 @@ function renderHeader(prefix, config, navigation) {
             </ul>
           </div>
         </nav>
+        <button class="navigation-scrim js-desktop-nav-close" type="button" data-nav-scrim hidden aria-label="Close navigation"></button>
       </div>
       <div class="mobile-drawer" id="mobile-drawer" hidden>
         <div class="mobile-drawer__overlay js-mobile-menu-close"></div>

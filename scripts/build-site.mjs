@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -7,6 +8,18 @@ const projectRoot = path.resolve(__dirname, "..");
 const referenceDir = path.join(projectRoot, "data", "reference");
 const overridesPath = path.join(projectRoot, "data", "overrides.json");
 const siteDir = path.join(projectRoot, "site");
+const assetVersion = (() => {
+  try {
+    return execSync("git rev-parse --short HEAD", {
+      cwd: projectRoot,
+      stdio: ["ignore", "pipe", "ignore"]
+    })
+      .toString()
+      .trim();
+  } catch {
+    return String(Date.now());
+  }
+})();
 
 const FILTER_GROUPS = [
   { key: "availability", label: { ar: "التوفر", en: "Availability" } },
@@ -158,6 +171,10 @@ function editorialHeading(primary, secondary = "") {
 
 function serializeJson(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
+}
+
+function versionedAsset(relativePath) {
+  return `${relativePath}?v=${assetVersion}`;
 }
 
 function stripHtml(value = "") {
@@ -1271,7 +1288,7 @@ function renderReservationPage(prefix, config) {
     </section>
     <script id="page-data" type="application/json">${serializeJson({
       type: "reservation",
-      catalogPath: `${prefix}assets/data/catalog.json`
+      catalogPath: `${prefix}${versionedAsset("assets/data/catalog.json")}`
     })}</script>
   `;
 }
@@ -1286,12 +1303,12 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
-    <link rel="icon" href="${escapeHtml(`${prefix}assets/favicon.svg`)}" type="image/svg+xml" />
+    <link rel="icon" href="${escapeHtml(`${prefix}${versionedAsset("assets/favicon.svg")}`)}" type="image/svg+xml" />
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="${escapeHtml(`${prefix}assets/styles.css`)}" />
+    <link rel="stylesheet" href="${escapeHtml(`${prefix}${versionedAsset("assets/styles.css")}`)}" />
   </head>
   <body class="theme-minimal ${escapeHtml(mainClass)}" data-page-type="${escapeHtml(mainClass)}">
     <div class="page-wrap">
@@ -1306,7 +1323,7 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
         brandArabic: config.brandArabic,
         brandName: config.brandName,
         whatsappNumber: config.whatsappNumber,
-        catalogPath: `${prefix}assets/data/catalog.json`,
+        catalogPath: `${prefix}${versionedAsset("assets/data/catalog.json")}`,
         siteRoot: prefix,
         availabilityLabel: config.availabilityLabel,
         exclusiveLabel: config.exclusiveLabel,
@@ -1319,7 +1336,7 @@ function renderDocument({ relativePath, title, description, mainClass = "", cont
         reservationNote: config.reservationNote
       })};
     </script>
-    <script src="${escapeHtml(`${prefix}assets/app.js`)}" defer></script>
+    <script src="${escapeHtml(`${prefix}${versionedAsset("assets/app.js")}`)}" defer></script>
   </body>
 </html>
 `;

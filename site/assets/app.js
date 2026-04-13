@@ -348,7 +348,7 @@
 
     function scheduleClose() {
       cancelClose();
-      closeTimer = window.setTimeout(closeMenus, 140);
+      closeTimer = window.setTimeout(closeMenus, 220);
     }
 
     function openMenu(item) {

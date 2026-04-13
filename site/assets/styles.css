@@ -41,6 +41,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html.has-drawer,
@@ -50,6 +51,8 @@ html.has-modal {
 
 body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--text-color);
   font: 400 var(--font-size) / 1.7 var(--main-family);
@@ -115,10 +118,11 @@ svg {
 
 .page-wrap {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .content-wrapper {
-  width: min(100% - 40px, var(--max-width));
+  width: min(calc(100% - 40px), var(--max-width));
   margin: 0 auto;
   padding-bottom: 96px;
 }
@@ -128,14 +132,17 @@ svg {
   background: var(--top-bar-background);
   color: var(--top-bar-color);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  isolation: isolate;
 }
 
 .announcement-bar__track {
   display: flex;
   gap: 48px;
   width: max-content;
+  max-width: none;
   padding: 10px 0;
   animation: marquee 50s linear infinite;
+  will-change: transform;
 }
 
 .announcement-bar__item {
@@ -1501,7 +1508,7 @@ svg {
   }
 
   .content-wrapper {
-    width: min(100% - 20px, var(--max-width));
+    width: min(calc(100% - 20px), var(--max-width));
   }
 
   .header--container,

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eleganza | المتجر</title>
-  <meta name="description" content="تصفحي فساتين Eleganza مع فلتر واضح بين المنتجات المنتظمة وقطع Exclusive 2026." />
-  <meta property="og:title" content="Eleganza Shop" />
-  <meta property="og:description" content="منتجات منتظمة وقطع Exclusive 2026 داخل متجر فاخر واضح البنية." />
+  <title>Eleganza | المقتنيات</title>
+  <meta name="description" content="مقتنيات إيليجانزا بصياغة تحريرية راقية، مع فصل واضح بين القطع الحصرية والمقتنيات المتاحة للطلب الخاص." />
+  <meta property="og:title" content="إيليجانزا | المقتنيات" />
+  <meta property="og:description" content="صفحة مجموعة أقرب إلى مجلة أزياء راقية من متجر تقليدي." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/brand-mark.png" />
   <link rel="icon" href="assets/images/brand-mark.png" type="image/png" />
@@ -18,14 +18,14 @@
   <div data-site-header></div>
 
   <main class="page-products">
-    <section class="page-hero">
+    <section class="page-hero" data-reveal>
       <div class="shell">
         <div class="page-hero__panel">
-          <span class="eyebrow">Shop</span>
-          <h1>متجر مصمم للوضوح<br />وليس للازدحام</h1>
+          <span class="eyebrow">المقتنيات</span>
+          <h1>مجموعة تُقرأ<br />مثل افتتاحية أزياء</h1>
           <p>
-            الفرق بين القطع المنتظمة والقطع الحصرية ظاهر بصرياً من أول بطاقة. اختاري نوع
-            التجربة التي تناسبك ثم تابعي إلى التفاصيل أو افتحي WhatsApp مباشرة.
+            تم تقليل الضوضاء البصرية إلى الحد الأدنى، بحيث تظهر كل قطعة كاختيار مستقل يحمل
+            قصته ومكانته، لا كبطاقة داخل متجر مزدحم.
           </p>
         </div>
       </div>
@@ -33,13 +33,15 @@
 
     <section class="section section--light">
       <div class="shell">
-        <div class="filter-row" data-shop-filters>
-          <button class="filter-button is-selected" type="button" data-filter="all">الكل</button>
-          <button class="filter-button" type="button" data-filter="exclusive">Exclusive 2026</button>
-          <button class="filter-button" type="button" data-filter="regular">Regular</button>
+        <div class="filter-row" data-shop-filters data-reveal>
+          <button class="filter-button is-selected" type="button" data-filter="all">كل المقتنيات</button>
+          <button class="filter-button" type="button" data-filter="exclusive">الحصرية 2026</button>
+          <button class="filter-button" type="button" data-filter="regular">الطلب الخاص</button>
         </div>
 
-        <div class="products-grid" data-shop-grid></div>
+        <p class="collection-count" data-shop-count></p>
+        <div data-collection-spotlight></div>
+        <div class="curation-grid" data-shop-grid></div>
       </div>
     </section>
   </main>

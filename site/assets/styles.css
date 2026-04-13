@@ -3302,6 +3302,25 @@ body.theme-openai,
   flex-wrap: wrap;
 }
 
+.theme-openai .button .button-copy,
+.theme-openai .newsletter__submit .button-copy,
+.theme-openai .pagination__button .button-copy {
+  justify-items: center;
+  text-align: center;
+}
+
+.theme-openai .button .button-copy__ar,
+.theme-openai .button .button-copy__single,
+.theme-openai .button .button-copy__en,
+.theme-openai .newsletter__submit .button-copy__ar,
+.theme-openai .newsletter__submit .button-copy__single,
+.theme-openai .newsletter__submit .button-copy__en,
+.theme-openai .pagination__button .button-copy__ar,
+.theme-openai .pagination__button .button-copy__single,
+.theme-openai .pagination__button .button-copy__en {
+  color: inherit;
+}
+
 .theme-openai .header-actions .action-copy__en,
 .theme-openai .navigation .nav-copy__en,
 .theme-openai .megamenu .menu-copy__en,

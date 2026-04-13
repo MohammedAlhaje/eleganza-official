@@ -1,8 +1,8 @@
 (function () {
-  const config = window.ELEGANZA_CONFIG || {};
-  const products = window.ELEGANZA_PRODUCTS || [];
-  const productMap = new Map(products.map((product) => [product.slug, product]));
-  let revealObserver;
+  const config = window.__ELEGANZA_CONFIG__ || {};
+  const pageDataNode = document.querySelector("#page-data");
+  const pageData = pageDataNode ? JSON.parse(pageDataNode.textContent) : null;
+  let catalogPromise;
 
   function escapeHtml(value) {
     return String(value)
@@ -13,72 +13,50 @@
       .replaceAll("'", "&#39;");
   }
 
-  function getParam(name) {
-    return new URLSearchParams(window.location.search).get(name);
+  function colorToCss(name) {
+    const value = String(name || "").trim().toLowerCase();
+    const map = {
+      black: "#111111",
+      white: "#f8f8f3",
+      ivory: "#f2efe4",
+      red: "#9e2231",
+      burgundy: "#5f1024",
+      pink: "#d69aac",
+      "light pink": "#edc8d3",
+      blue: "#4a678f",
+      green: "#5f7758",
+      sage: "#93a18f",
+      gold: "#b79858",
+      champagne: "#cfb08a",
+      silver: "#aeb3bb",
+      purple: "#6f5a8c",
+      lavender: "#afa3c5",
+      brown: "#815f43",
+      caramel: "#a66f46",
+      bronze: "#946a3c",
+      yellow: "#d4ae4f",
+      orange: "#d7794b",
+      grey: "#8e8e91"
+    };
+
+    return map[value] || "#d7d3cd";
   }
 
-  function buildWhatsAppUrl(message) {
+  function buildWhatsAppUrl(product, extras = {}) {
     const number = (config.whatsappNumber || "").replace(/\D/g, "");
-    const encoded = encodeURIComponent(message);
-    return number
-      ? `https://wa.me/${number}?text=${encoded}`
-      : `https://wa.me/?text=${encoded}`;
-  }
-
-  function getModeLabel(mode) {
-    return mode === "exclusive" ? "حصرية 2026" : "طلب خاص";
-  }
-
-  function getModeExperience(mode) {
-    return mode === "exclusive" ? "جلسة حجز خاصة" : "طلب خاص مباشر";
-  }
-
-  function getModeTone(mode) {
-    return mode === "exclusive" ? "chip chip--exclusive" : "chip chip--regular";
-  }
-
-  function getLeadTimeLabel(product) {
-    return product.mode === "exclusive"
-      ? `صنع خصيصاً لك خلال ${product.deliveryWindow}`
-      : product.deliveryWindow;
-  }
-
-  function getPaymentLabel(product) {
-    return product.fullPaymentRequired
-      ? "اعتماد القطعة بعد سداد كامل القيمة"
-      : "تأكيد الطلب أثناء المحادثة الخاصة";
-  }
-
-  function getPrimaryActionLabel(product) {
-    return product.mode === "exclusive" ? "ابدئي طلب الحجز الخاص" : "ابدئي الطلب الخاص";
-  }
-
-  function getCheckoutLabel(product) {
-    return product.mode === "exclusive" ? "جلسة الطلب الخاصة" : "إتمام الطلب الخاص";
-  }
-
-  function getAvailabilityCopy(product) {
-    return product.mode === "exclusive"
-      ? product.regionNote
-      : "التوفر يُعتمد بحسب المقاس، لأن العرض هنا curated لا يعتمد على كثافة المخزون.";
-  }
-
-  function createMessage(product, extras = {}) {
     const lines = [
-      `مرحباً فريق ${config.brandArabic || config.brandName || "Eleganza"}`,
-      extras.intent || product.whatsAppMessage || config.whatsappDefaultNote,
-      `المنتج: ${product.name}`,
-      `الكود: ${product.sku}`,
-      `فئة القطعة: ${getModeLabel(product.mode)}`,
-      `نوع الخدمة: ${getModeExperience(product.mode)}`
+      `مرحباً فريق ${config.brandArabic || "إيليجانزا"}`,
+      extras.intent || (product.isExclusive ? config.secondaryCTA : config.primaryCTA),
+      `القطعة: ${product.title}`,
+      `Handle: ${product.handle}`
     ];
+
+    if (extras.color) {
+      lines.push(`اللون: ${extras.color}`);
+    }
 
     if (extras.size) {
       lines.push(`المقاس: ${extras.size}`);
-    }
-
-    if (extras.city) {
-      lines.push(`المدينة: ${extras.city}`);
     }
 
     if (extras.name) {
@@ -86,817 +64,547 @@
     }
 
     if (extras.phone) {
-      lines.push(`رقم التواصل: ${extras.phone}`);
+      lines.push(`الهاتف: ${extras.phone}`);
     }
 
-    if (extras.eventDate) {
-      lines.push(`تاريخ المناسبة: ${extras.eventDate}`);
+    if (extras.city) {
+      lines.push(`المدينة: ${extras.city}`);
     }
 
     if (extras.notes) {
-      lines.push(`ملاحظات إضافية: ${extras.notes}`);
+      lines.push(`ملاحظات: ${extras.notes}`);
     }
 
-    return lines.join("\n");
+    const encoded = encodeURIComponent(lines.join("\n"));
+    return number ? `https://wa.me/${number}?text=${encoded}` : `https://wa.me/?text=${encoded}`;
   }
 
-  function navLink(pageId, href, label) {
-    const active = document.body.dataset.page === pageId ? "is-active" : "";
-    return `<a class="site-nav__link ${active}" href="${href}">${label}</a>`;
+  function qs(selector, scope = document) {
+    return scope.querySelector(selector);
   }
 
-  function initReveal() {
-    const nodes = document.querySelectorAll("[data-reveal]");
+  function qsa(selector, scope = document) {
+    return Array.from(scope.querySelectorAll(selector));
+  }
 
-    if (!("IntersectionObserver" in window)) {
-      nodes.forEach((node) => node.classList.add("is-visible"));
+  function getCatalog() {
+    if (!catalogPromise) {
+      catalogPromise = fetch(config.catalogPath)
+        .then((response) => response.json())
+        .catch(() => []);
+    }
+
+    return catalogPromise;
+  }
+
+  function resolveRoute(route) {
+    return `${config.siteRoot || ""}${route}`;
+  }
+
+  function cardTemplate(product) {
+    const productHref = resolveRoute(`ar/products/${encodeURIComponent(product.handle)}/`);
+    const reservationHref = resolveRoute(`ar/reservation/?product=${encodeURIComponent(product.handle)}`);
+    const primaryImage = product.primaryMedia?.src || "";
+    const hoverImage = product.hoverMedia?.src || primaryImage;
+
+    return `
+      <article class="product-index" data-product-card data-product-handle="${escapeHtml(product.handle)}">
+        <div class="prod-container">
+          <div class="prod-image image_portrait">
+            <a href="${escapeHtml(productHref)}" title="${escapeHtml(product.title)}">
+              <div class="reveal reveal--image">
+                <div class="box-ratio box-ratio--square">
+                  <img class="primary-image" src="${escapeHtml(primaryImage)}" alt="${escapeHtml(product.title)}" loading="lazy" />
+                  <img class="secondary-image" src="${escapeHtml(hoverImage)}" alt="" loading="lazy" />
+                </div>
+              </div>
+          </a>
+          </div>
+          <button class="product-listing__quickview-trigger js-quickview-open" type="button" data-product-handle="${escapeHtml(product.handle)}">
+            عرض سريع
+          </button>
+        </div>
+        <div class="product-info">
+          <a href="${escapeHtml(productHref)}"><h2>${escapeHtml(product.title)}</h2></a>
+          <div class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</div>
+          ${
+            product.colors?.length
+              ? `
+                <div class="product--grid__swatches">
+                  <div class="prod-colors">
+                    <div class="color-swatch">
+                      <ul class="color options">
+                        ${product.colors
+                          .map(
+                            (color) => `
+                              <li data-option-title="${escapeHtml(color)}">
+                                <span class="swatch-circle" style="background-color:${escapeHtml(colorToCss(color))};" title="${escapeHtml(color)}"></span>
+                              </li>
+                            `
+                          )
+                          .join("")}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              `
+              : ""
+          }
+          <div class="product-card__actions">
+            <a class="button button--ghost" href="${escapeHtml(productHref)}">${escapeHtml(product.reservationLabel || config.primaryCTA)}</a>
+            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${escapeHtml(
+              product.isExclusive ? "Book This Piece" : "Request Reservation"
+            )}</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function quickViewTemplate(product) {
+    const productHref = resolveRoute(`ar/products/${encodeURIComponent(product.handle)}/`);
+    const reservationHref = resolveRoute(`ar/reservation/?product=${encodeURIComponent(product.handle)}`);
+
+    return `
+      <article class="quickview-card">
+        <div class="quickview-card__media">
+          <img src="${escapeHtml(product.primaryMedia?.src || "")}" alt="${escapeHtml(product.title)}" loading="lazy" />
+        </div>
+        <div class="quickview-card__body">
+          <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</span>
+          <h2>${escapeHtml(product.title)}</h2>
+          <p>${escapeHtml(product.bodyText || "VIP reservation only")}</p>
+          ${
+            product.colors?.length
+              ? `<div class="quickview-card__swatches">${product.colors
+                  .map(
+                    (color) =>
+                      `<span class="swatch-circle" style="background-color:${escapeHtml(colorToCss(color))};" title="${escapeHtml(color)}"></span>`
+                  )
+                  .join("")}</div>`
+              : ""
+          }
+          <div class="quickview-card__actions">
+            <a class="button button--ghost" href="${escapeHtml(productHref)}">View Piece</a>
+            <a class="button button--dark" href="${escapeHtml(reservationHref)}">${escapeHtml(
+              product.isExclusive ? "Book This Piece" : "Request Reservation"
+            )}</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function initMobileMenu() {
+    const drawer = qs("#mobile-drawer");
+
+    if (!drawer) {
       return;
     }
 
-    if (!revealObserver) {
-      revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.18 }
-      );
+    function openDrawer() {
+      drawer.hidden = false;
+      document.documentElement.classList.add("has-drawer");
     }
 
-    nodes.forEach((node) => {
-      node.classList.add("reveal");
-      if (!node.classList.contains("is-visible")) {
-        revealObserver.observe(node);
+    function closeDrawer() {
+      drawer.hidden = true;
+      document.documentElement.classList.remove("has-drawer");
+    }
+
+    qsa(".js-mobile-menu-open").forEach((button) => button.addEventListener("click", openDrawer));
+    qsa(".js-mobile-menu-close").forEach((button) => button.addEventListener("click", closeDrawer));
+
+    qsa("[data-mobile-group]").forEach((group) => {
+      const toggle = qs(".mobile-nav__toggle", group);
+      if (!toggle) {
+        return;
+      }
+
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        group.classList.toggle("is-open", !expanded);
+      });
+    });
+  }
+
+  function initNewsletterForm() {
+    qsa("[data-newsletter-form]").forEach((form) =>
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      })
+    );
+  }
+
+  function initHeroSlideshow() {
+    const slideshow = qs("[data-slides]");
+    if (!slideshow) {
+      return;
+    }
+
+    const slides = qsa("[data-slide]", slideshow);
+    const dots = qsa("[data-slide-dot]");
+    let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+    if (activeIndex < 0) {
+      activeIndex = 0;
+    }
+
+    function activate(index) {
+      slides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === index));
+      dots.forEach((dot, dotIndex) => dot.classList.toggle("is-active", dotIndex === index));
+      activeIndex = index;
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => activate(index));
+    });
+
+    if (slides.length > 1) {
+      window.setInterval(() => {
+        activate((activeIndex + 1) % slides.length);
+      }, 5000);
+    }
+  }
+
+  function initQuickView() {
+    const modal = qs("#quickview-modal");
+    const content = qs("[data-quickview-content]");
+
+    if (!modal || !content) {
+      return;
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      content.innerHTML = "";
+      document.documentElement.classList.remove("has-modal");
+    }
+
+    async function openQuickView(handle) {
+      let product = null;
+
+      if (pageData?.type === "collection") {
+        product = pageData.products.find((entry) => entry.handle === handle) || null;
+      }
+
+      if (!product) {
+        const catalog = await getCatalog();
+        product = catalog.find((entry) => entry.handle === handle) || null;
+      }
+
+      if (!product) {
+        return;
+      }
+
+      content.innerHTML = quickViewTemplate(product);
+      modal.hidden = false;
+      document.documentElement.classList.add("has-modal");
+    }
+
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest(".js-quickview-open");
+      if (trigger) {
+        openQuickView(trigger.dataset.productHandle);
+      }
+
+      if (event.target.closest(".js-quickview-close")) {
+        closeModal();
       }
     });
   }
 
-  function renderHeader() {
-    const target = document.querySelector("[data-site-header]");
-
-    if (!target) {
+  function initCollectionPage() {
+    if (pageData?.type !== "collection") {
       return;
     }
 
-    const defaultCheckout = products[0] ? `checkout.html?slug=${encodeURIComponent(products[0].slug)}` : "checkout.html";
-
-    target.innerHTML = `
-      <div class="topbar">
-        <div class="shell topbar__inner">
-          <a class="brand" href="index.html" aria-label="العودة إلى الرئيسية">
-            <span class="brand__mark">
-              <img src="${escapeHtml(config.logoSrc || "assets/images/brand-mark-320.png")}" alt="${escapeHtml(config.logoAlt || "شعار إيليجانزا")}" />
-            </span>
-            <span class="brand__copy">
-              <span class="brand__latin">${escapeHtml(config.brandName || "ELEGANZA")}</span>
-              <span class="brand__arabic">${escapeHtml(config.brandArabic || "إيليجانزا")}</span>
-              <span class="brand__tagline">${escapeHtml(config.brandTagline || "دار فساتين سهرة فاخرة")}</span>
-            </span>
-          </a>
-          <nav class="site-nav" aria-label="التنقل الرئيسي">
-            ${navLink("home", "index.html", "الرئيسية")}
-            ${navLink("shop", "shop.html", "المقتنيات")}
-            ${navLink("exclusive", "exclusive-2026.html", "الحصرية 2026")}
-            ${navLink("about", "about.html", "عن الدار")}
-            ${navLink("booking", "booking.html", "الحجز المسبق")}
-            ${navLink("contact", "contact.html", "التواصل")}
-          </nav>
-          <div class="topbar__actions">
-            <a class="button button--ghost" href="${escapeHtml(config.facebookUrl)}" target="_blank" rel="noreferrer">الصفحة الرسمية</a>
-            <a class="button button--dark" href="${escapeHtml(defaultCheckout)}">جلسة الطلب</a>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderFooter() {
-    const target = document.querySelector("[data-site-footer]");
-
-    if (!target) {
-      return;
-    }
-
-    const defaultCheckout = products[0] ? `checkout.html?slug=${encodeURIComponent(products[0].slug)}` : "checkout.html";
-
-    target.innerHTML = `
-      <footer class="site-footer">
-        <div class="shell site-footer__grid">
-          <div class="site-footer__brand">
-            <span class="site-footer__mark">
-              <img src="${escapeHtml(config.logoSrc || "assets/images/brand-mark-320.png")}" alt="${escapeHtml(config.logoAlt || "شعار إيليجانزا")}" />
-            </span>
-            <div>
-              <span class="eyebrow">صالة عرض رقمية خاصة</span>
-              <h2 class="site-footer__title">${escapeHtml(config.brandName || "ELEGANZA")}</h2>
-              <p class="site-footer__text">
-                ${escapeHtml(config.brandTagline || "دار فساتين سهرة فاخرة")} بتجربة هادئة، محسوبة، ومبنية على الندرة
-                والاختيار المدروس لا على كثافة العرض.
-              </p>
-              <p class="site-footer__text">
-                ${escapeHtml(config.brandAuthority || "موزع معتمد في ليبيا")}، مع مسار حجز خاص للقطع الحصرية
-                وطلب مباشر راقٍ للمقتنيات المنتظمة.
-              </p>
-            </div>
-          </div>
-          <div>
-            <strong class="site-footer__heading">المسارات</strong>
-            <div class="site-footer__links">
-              <a href="shop.html">المقتنيات</a>
-              <a href="exclusive-2026.html">القطع الحصرية 2026</a>
-              <a href="booking.html">الحجز المسبق</a>
-              <a href="${escapeHtml(defaultCheckout)}">جلسة الطلب الخاصة</a>
-            </div>
-          </div>
-          <div>
-            <strong class="site-footer__heading">التواصل</strong>
-            <div class="site-footer__links">
-              <a href="${buildWhatsAppUrl(config.whatsappDefaultNote || "")}" target="_blank" rel="noreferrer">واتساب</a>
-              <a href="${escapeHtml(config.facebookUrl)}" target="_blank" rel="noreferrer">فيسبوك</a>
-              <a href="contact.html">قنوات التواصل</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    `;
-  }
-
-  function productCard(product) {
-    const message = createMessage(product);
-
-    return `
-      <article class="product-card" data-reveal>
-        <a class="product-card__media" href="product.html?slug=${encodeURIComponent(product.slug)}">
-          <img src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" loading="lazy" />
-        </a>
-        <div class="product-card__body">
-          <div class="chip-row">
-            <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-            <span class="chip chip--line">${escapeHtml(product.sku)}</span>
-          </div>
-          <h3 class="product-card__title">${escapeHtml(product.name)}</h3>
-          <p class="product-card__text">${escapeHtml(product.shortDescription)}</p>
-          <p class="product-card__micro">${escapeHtml(getAvailabilityCopy(product))}</p>
-          <div class="product-card__meta">
-            <div>
-              <strong class="product-card__price">${escapeHtml(product.priceLabel)}</strong>
-              <span class="product-card__hint">${escapeHtml(getLeadTimeLabel(product))}</span>
-            </div>
-            <div class="product-card__actions">
-              <a class="button button--ghost" href="product.html?slug=${encodeURIComponent(product.slug)}">تفاصيل القطعة</a>
-              <a class="button ${product.mode === "exclusive" ? "button--dark" : "button--sand"}" href="${buildWhatsAppUrl(message)}" target="_blank" rel="noreferrer">
-                ${getPrimaryActionLabel(product)}
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
-  function editorialCard(product, featured = false) {
-    const message = createMessage(product);
-    const highlights = (product.highlights || [])
-      .slice(0, 3)
-      .map((item) => `<span class="chip chip--ghost">${escapeHtml(item)}</span>`)
-      .join("");
-
-    return `
-      <article class="editorial-card ${featured ? "editorial-card--featured" : ""}" data-reveal>
-        <a class="editorial-card__media" href="product.html?slug=${encodeURIComponent(product.slug)}">
-          <img src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" loading="lazy" />
-        </a>
-        <div class="editorial-card__content">
-          <div class="chip-row">
-            <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-            <span class="chip chip--line">${escapeHtml(product.sku)}</span>
-          </div>
-          <h3>${escapeHtml(product.name)}</h3>
-          <p>${escapeHtml(product.description)}</p>
-          <div class="chip-row">${highlights}</div>
-          <div class="editorial-card__footer">
-            <div>
-              <strong>${escapeHtml(product.priceLabel)}</strong>
-              <span>${escapeHtml(getLeadTimeLabel(product))}</span>
-            </div>
-            <div class="button-row">
-              <a class="button button--ghost" href="product.html?slug=${encodeURIComponent(product.slug)}">القصة كاملة</a>
-              <a class="button button--sand" href="${buildWhatsAppUrl(message)}" target="_blank" rel="noreferrer">تواصلي الآن</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
-  function collectionSpotlight(productsList) {
-    if (!productsList.length) {
-      return `<div class="empty-state" data-reveal><h2>لا توجد قطع حالياً</h2><p>يمكنك العودة لاحقاً أو التواصل مباشرة لطلب التحديثات الخاصة بالمجموعة.</p></div>`;
-    }
-
-    const primary = productsList[0];
-    const side = productsList.slice(1, 3);
-
-    return `
-      <div class="collection-spotlight" data-reveal>
-        <article class="spotlight-main">
-          <a class="spotlight-main__media" href="product.html?slug=${encodeURIComponent(primary.slug)}">
-            <img src="${escapeHtml(primary.images[0].src)}" alt="${escapeHtml(primary.images[0].alt)}" loading="lazy" />
-          </a>
-          <div class="spotlight-main__copy">
-            <span class="eyebrow">اختيار التحرير الأول</span>
-            <div class="chip-row">
-              <span class="${getModeTone(primary.mode)}">${getModeLabel(primary.mode)}</span>
-              <span class="chip chip--line">${escapeHtml(primary.sku)}</span>
-            </div>
-            <h2>${escapeHtml(primary.name)}</h2>
-            <p>${escapeHtml(primary.description)}</p>
-            <ul class="bullet-list">
-              <li>${escapeHtml(getLeadTimeLabel(primary))}</li>
-              <li>${escapeHtml(getPaymentLabel(primary))}</li>
-              <li>${escapeHtml(primary.regionNote)}</li>
-            </ul>
-            <div class="button-row">
-              <a class="button button--dark" href="product.html?slug=${encodeURIComponent(primary.slug)}">استكشفي القطعة</a>
-              <a class="button button--ghost" href="checkout.html?slug=${encodeURIComponent(primary.slug)}">${getCheckoutLabel(primary)}</a>
-            </div>
-          </div>
-        </article>
-        <div class="spotlight-stack">
-          ${side
-            .map(
-              (product) => `
-                <article class="spotlight-card">
-                  <a class="spotlight-card__media" href="product.html?slug=${encodeURIComponent(product.slug)}">
-                    <img src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" loading="lazy" />
-                  </a>
-                  <div class="spotlight-card__copy">
-                    <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-                    <h3>${escapeHtml(product.name)}</h3>
-                    <p>${escapeHtml(product.shortDescription)}</p>
-                    <a class="text-link" href="product.html?slug=${encodeURIComponent(product.slug)}">اقرئي القصة</a>
-                  </div>
-                </article>
-              `
-            )
-            .join("")}
-        </div>
-      </div>
-    `;
-  }
-
-  function renderCards(targetSelector, list, builder) {
-    const target = document.querySelector(targetSelector);
-
-    if (!target) {
-      return;
-    }
-
-    target.innerHTML = list.map((item, index) => builder(item, index === 0)).join("");
-  }
-
-  function renderGrid(targetSelector, list) {
-    const target = document.querySelector(targetSelector);
-
-    if (!target) {
-      return;
-    }
-
-    target.innerHTML = list.map(productCard).join("");
-  }
-
-  function renderHomePage() {
-    const exclusive = products.filter((item) => item.mode === "exclusive").slice(0, 3);
-    renderCards("[data-featured-exclusive]", exclusive, editorialCard);
-    renderGrid("[data-home-preview]", products.slice(0, 4));
-    initReveal();
-  }
-
-  function renderShopPage() {
-    const filters = document.querySelector("[data-shop-filters]");
-    const spotlight = document.querySelector("[data-collection-spotlight]");
-    const grid = document.querySelector("[data-shop-grid]");
-    const count = document.querySelector("[data-shop-count]");
-
-    if (!filters || !spotlight || !grid) {
-      return;
-    }
-
-    const render = (mode) => {
-      const filtered = mode === "all" ? products : products.filter((item) => item.mode === mode);
-      spotlight.innerHTML = collectionSpotlight(filtered.slice(0, 3));
-      grid.innerHTML = filtered.slice(3).map(productCard).join("");
-
-      if (!filtered.slice(3).length && filtered.length <= 3) {
-        grid.innerHTML = "";
-      }
-
-      if (count) {
-        count.textContent =
-          mode === "all"
-            ? `تم اختيار ${filtered.length} قطعة داخل الصالة الرقمية الحالية.`
-            : `يعرض هذا المسار ${filtered.length} ${mode === "exclusive" ? "قطعة حصرية" : "قطعة للطلب الخاص"}.`;
-      }
-
-      initReveal();
+    const grid = qs("[data-collection-grid]");
+    const pagination = qs("[data-collection-pagination]");
+    const sidebar = qs("[data-collection-sidebar]");
+    const sortSelect = qs("[data-collection-sort]");
+    const filterOpen = qs(".js-filter-open");
+    const query = new URLSearchParams(window.location.search).get("q")?.toLowerCase() || "";
+    const state = {
+      page: 1,
+      pageSize: pageData.collection.pageSize || 24,
+      sort: "featured"
     };
 
-    filters.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-filter]");
+    pageData.products.forEach((product, index) => {
+      product.__index = index;
+    });
 
+    function getActiveFilters() {
+      const filters = {};
+      qsa("[data-filter-input]:checked").forEach((input) => {
+        const group = input.dataset.filterGroup;
+        if (!filters[group]) {
+          filters[group] = [];
+        }
+
+        filters[group].push(input.value);
+      });
+      return filters;
+    }
+
+    function matchesFilters(product, filters) {
+      if (query && !product.title.toLowerCase().includes(query)) {
+        return false;
+      }
+
+      return Object.entries(filters).every(([group, values]) => {
+        const haystack = product.filters[group] || [];
+        return values.some((value) => haystack.includes(value));
+      });
+    }
+
+    function sortProducts(items) {
+      const sorted = [...items];
+      switch (state.sort) {
+        case "title-ascending":
+          sorted.sort((left, right) => left.title.localeCompare(right.title));
+          break;
+        case "title-descending":
+          sorted.sort((left, right) => right.title.localeCompare(left.title));
+          break;
+        case "created-descending":
+          sorted.sort((left, right) => right.__index - left.__index);
+          break;
+        case "created-ascending":
+          sorted.sort((left, right) => left.__index - right.__index);
+          break;
+        default:
+          sorted.sort((left, right) => left.__index - right.__index);
+          break;
+      }
+      return sorted;
+    }
+
+    function renderPagination(totalPages) {
+      if (!pagination) {
+        return;
+      }
+
+      if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+      }
+
+      pagination.innerHTML = Array.from({ length: totalPages }, (_, index) => index + 1)
+        .map(
+          (page) => `
+            <button class="pagination__button ${page === state.page ? "is-active" : ""}" type="button" data-page-button="${page}">
+              ${page}
+            </button>
+          `
+        )
+        .join("");
+    }
+
+    function renderGrid() {
+      const filters = getActiveFilters();
+      const filtered = sortProducts(pageData.products.filter((product) => matchesFilters(product, filters)));
+      const totalPages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
+      if (state.page > totalPages) {
+        state.page = 1;
+      }
+
+      const start = (state.page - 1) * state.pageSize;
+      const items = filtered.slice(start, start + state.pageSize);
+
+      grid.innerHTML = items.map(cardTemplate).join("");
+      renderPagination(totalPages);
+    }
+
+    sortSelect?.addEventListener("change", () => {
+      state.sort = sortSelect.value;
+      state.page = 1;
+      renderGrid();
+    });
+
+    qsa("[data-filter-input]").forEach((input) =>
+      input.addEventListener("change", () => {
+        state.page = 1;
+        renderGrid();
+      })
+    );
+
+    pagination?.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-page-button]");
       if (!button) {
         return;
       }
 
-      filters.querySelectorAll("[data-filter]").forEach((node) => node.classList.remove("is-selected"));
-      button.classList.add("is-selected");
-      render(button.dataset.filter);
+      state.page = Number(button.dataset.pageButton);
+      renderGrid();
     });
 
-    render("all");
-  }
+    filterOpen?.addEventListener("click", () => {
+      sidebar?.classList.toggle("is-open");
+    });
 
-  function productStoryMarkup(product) {
-    const detailItems = (product.details || [])
-      .map((detail) => `<li>${escapeHtml(detail)}</li>`)
-      .join("");
-    const highlights = (product.highlights || [])
-      .map((item) => `<span class="chip chip--ghost">${escapeHtml(item)}</span>`)
-      .join("");
-
-    return `
-      <div class="story-grid-two">
-        <article class="story-block" data-reveal>
-          <span class="eyebrow">قصة التصميم</span>
-          <h2>تفاصيل تُقرأ قبل أن تُرتدى</h2>
-          <p>
-            ${escapeHtml(product.description)}
-          </p>
-          <ul class="bullet-list">${detailItems}</ul>
-        </article>
-        <article class="story-block story-block--dark" data-reveal>
-          <span class="eyebrow">منطق الاختيار</span>
-          <h2>${product.mode === "exclusive" ? "ندرة محسوبة لا عرضاً سريعاً" : "شراء خاص بإيقاع هادئ"}</h2>
-          <p>
-            ${escapeHtml(
-              product.mode === "exclusive"
-                ? "هذه القطعة لا تُعرض بصيغة شراء سريع. يتم اعتمادها لعدد محدود لكل منطقة مع تجربة تنسيق شخصية من البداية حتى الاعتماد النهائي."
-                : "القطعة المنتظمة هنا لا تُقدم كمنتج مزدحم في واجهة بيع تقليدية، بل كخيار منتقى بطلب خاص واضح ومباشر."
-            )}
-          </p>
-          <div class="chip-row">${highlights}</div>
-        </article>
-      </div>
-    `;
-  }
-
-  function productExperienceMarkup(product) {
-    const thumbs = product.images
-      .map(
-        (image, index) => `
-          <button class="thumb ${index === 0 ? "is-active" : ""}" type="button" data-gallery-thumb data-src="${escapeHtml(image.src)}" data-alt="${escapeHtml(image.alt)}">
-            <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
-          </button>
-        `
-      )
-      .join("");
-
-    return `
-      <div class="product-experience" data-reveal>
-        <div class="product-gallery">
-          <div class="product-gallery__stage">
-            <img class="product-gallery__main" data-gallery-main src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" />
-          </div>
-          <div class="product-gallery__thumbs">${thumbs}</div>
-        </div>
-        <aside class="product-summary">
-          <div class="chip-row">
-            <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-            <span class="chip chip--line">${escapeHtml(product.sku)}</span>
-          </div>
-          <h1 class="product-summary__title">${escapeHtml(product.name)}</h1>
-          <p class="product-summary__lead">${escapeHtml(product.shortDescription)}</p>
-          <p class="product-summary__text">${escapeHtml(product.description)}</p>
-
-          <div class="concierge-box">
-            <strong>${product.mode === "exclusive" ? "صنع خصيصاً لك" : "طلب خاص بإيقاع راقٍ"}</strong>
-            <span>${escapeHtml(
-              product.mode === "exclusive"
-                ? `بدلاً من لغة التأخير، نقدّم هذه القطعة كتنفيذ خاص يبدأ بعد اعتماد الحجز، خلال ${product.deliveryWindow}.`
-                : "يتم تأكيد التوفر والمقاس عبر المحادثة الخاصة لتبقى التجربة هادئة وواضحة."
-            )}</span>
-          </div>
-
-          <div class="fact-grid">
-            <div class="fact-card">
-              <span>المدة</span>
-              <strong>${escapeHtml(getLeadTimeLabel(product))}</strong>
-            </div>
-            <div class="fact-card">
-              <span>الندرة</span>
-              <strong>${escapeHtml(getAvailabilityCopy(product))}</strong>
-            </div>
-            <div class="fact-card">
-              <span>الدفع</span>
-              <strong>${escapeHtml(getPaymentLabel(product))}</strong>
-            </div>
-          </div>
-
-          <div class="product-summary__price">${escapeHtml(product.priceLabel)}</div>
-          <div class="product-summary__note">${escapeHtml(
-            product.mode === "exclusive"
-              ? "يتم اعتماد القطعة حسب المدينة ثم تبدأ مرحلة التنفيذ الخاصة."
-              : "تجربة الطلب المباشر هنا مصممة لتكون شخصية وبسيطة دون ازدحام خيارات."
-          )}</div>
-
-          <div class="selection-grid">
-            <label class="field">
-              <span>المقاس</span>
-              <select data-product-size>
-                ${product.sizes.map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join("")}
-              </select>
-            </label>
-            <label class="field">
-              <span>المدينة</span>
-              <input type="text" data-product-city placeholder="مثال: طرابلس" />
-            </label>
-          </div>
-
-          <div class="button-row">
-            <a class="button button--dark" href="${buildWhatsAppUrl(createMessage(product))}" data-product-whatsapp target="_blank" rel="noreferrer">${getPrimaryActionLabel(product)}</a>
-            <a class="button button--ghost" href="checkout.html?slug=${encodeURIComponent(product.slug)}" data-product-checkout>${getCheckoutLabel(product)}</a>
-            <a class="button button--sand" href="booking.html?product=${encodeURIComponent(product.slug)}">حجز مسبق</a>
-          </div>
-
-          <p class="availability-note">${escapeHtml(
-            product.mode === "exclusive"
-              ? "عدد محدود من القطع يُعتمد لكل منطقة، لذلك يتم تثبيت الحجز بترتيب هادئ وواضح."
-              : "المحادثة الخاصة تحل محل سلة الشراء التقليدية لتبقى التجربة أكثر أناقة وأقل ازدحاماً."
-          )}</p>
-        </aside>
-      </div>
-      ${productStoryMarkup(product)}
-    `;
-  }
-
-  function bindProductInteractions(product) {
-    const thumbs = document.querySelectorAll("[data-gallery-thumb]");
-    const main = document.querySelector("[data-gallery-main]");
-    const sizeInput = document.querySelector("[data-product-size]");
-    const cityInput = document.querySelector("[data-product-city]");
-    const button = document.querySelector("[data-product-whatsapp]");
-    const checkoutLink = document.querySelector("[data-product-checkout]");
-
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        thumbs.forEach((item) => item.classList.remove("is-active"));
-        thumb.classList.add("is-active");
-        main.src = thumb.dataset.src;
-        main.alt = thumb.dataset.alt;
+    qsa("[data-filter-toggle]").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        toggle.parentElement?.classList.toggle("is-open");
       });
     });
 
-    const syncLinks = () => {
-      const message = createMessage(product, {
-        size: sizeInput ? sizeInput.value : "",
-        city: cityInput ? cityInput.value.trim() : ""
-      });
-
-      if (button) {
-        button.href = buildWhatsAppUrl(message);
-      }
-
-      if (checkoutLink) {
-        const params = new URLSearchParams({ slug: product.slug });
-        if (sizeInput && sizeInput.value) {
-          params.set("size", sizeInput.value);
-        }
-        if (cityInput && cityInput.value.trim()) {
-          params.set("city", cityInput.value.trim());
-        }
-        checkoutLink.href = `checkout.html?${params.toString()}`;
-      }
-    };
-
-    if (sizeInput) {
-      sizeInput.addEventListener("change", syncLinks);
-    }
-
-    if (cityInput) {
-      cityInput.addEventListener("input", syncLinks);
-    }
-
-    syncLinks();
+    renderGrid();
   }
 
-  function renderProductPage() {
-    const target = document.querySelector("[data-product-root]");
-
-    if (!target) {
+  function initProductPage() {
+    if (pageData?.type !== "product") {
       return;
     }
 
-    const slug = getParam("slug") || "ss257-champagne";
-    const product = productMap.get(slug);
+    qsa("[data-product-thumb]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = button.dataset.productThumb;
+        qsa("[data-product-thumb]").forEach((thumb) => thumb.classList.toggle("is-active", thumb === button));
+        qsa("[data-product-media]").forEach((frame) => frame.classList.toggle("is-active", frame.dataset.productMedia === index));
+      });
+    });
 
-    if (!product) {
-      target.innerHTML = `
-        <div class="empty-state" data-reveal>
-          <h1>القطعة غير متاحة</h1>
-          <p>تعذّر العثور على هذه القطعة. يمكنك العودة إلى المقتنيات الحالية أو بدء جلسة طلب خاصة من جديد.</p>
-          <a class="button button--dark" href="shop.html">العودة إلى المقتنيات</a>
+    qsa("[data-tab-trigger]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const target = trigger.dataset.tabTrigger;
+        qsa(".product__tab-trigger").forEach((item) => item.classList.toggle("is-active", item.contains(trigger)));
+        qsa("[data-tab-panel]").forEach((panel) => panel.classList.toggle("is-active", panel.dataset.tabPanel === target));
+      });
+    });
+
+    const sizeGuide = qs("[data-size-guide]");
+    qsa(".js-size-chart-open").forEach((button) =>
+      button.addEventListener("click", () => {
+        if (sizeGuide) {
+          sizeGuide.hidden = false;
+          document.documentElement.classList.add("has-modal");
+        }
+      })
+    );
+
+    qsa(".js-size-chart-close").forEach((button) =>
+      button.addEventListener("click", () => {
+        if (sizeGuide) {
+          sizeGuide.hidden = true;
+          document.documentElement.classList.remove("has-modal");
+        }
+      })
+    );
+  }
+
+  function initReservationForms() {
+    qsa("[data-reservation-form]").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const handle =
+          form.dataset.productHandle ||
+          pageData?.product?.handle ||
+          new URLSearchParams(window.location.search).get("product") ||
+          "";
+
+        if (!handle) {
+          return;
+        }
+
+        let product = null;
+
+        if (pageData?.type === "collection") {
+          product = pageData.products.find((entry) => entry.handle === handle) || null;
+        }
+
+        if (pageData?.type === "product") {
+          product = {
+            ...pageData.product,
+            availabilityLabel: pageData.product.isExclusive ? "Exclusive piece" : "Available upon request"
+          };
+        }
+
+        if (!product) {
+          const catalog = await getCatalog();
+          product = catalog.find((entry) => entry.handle === handle) || null;
+        }
+
+        if (!product) {
+          return;
+        }
+
+        const selectedColor =
+          formData.get("color") ||
+          qs("[data-reservation-color]:checked")?.value ||
+          pageData?.product?.colors?.[0] ||
+          "";
+        const selectedSize =
+          formData.get("size") ||
+          qs("[data-reservation-size]:checked")?.value ||
+          qs("[data-reservation-size-select]")?.value ||
+          "";
+
+        const whatsappUrl = buildWhatsAppUrl(product, {
+          color: selectedColor,
+          size: selectedSize || "Made to measure",
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          city: formData.get("city"),
+          notes: formData.get("notes")
+        });
+
+        window.open(whatsappUrl, "_blank", "noopener");
+      });
+    });
+  }
+
+  function initReservationPage() {
+    if (pageData?.type !== "reservation") {
+      return;
+    }
+
+    const handle = new URLSearchParams(window.location.search).get("product") || "";
+    const summary = qs("[data-reservation-selected]");
+    const form = qs("[data-reservation-form]");
+    const sizeSelect = qs("[data-reservation-size-select]");
+
+    if (!handle || !summary || !form || !sizeSelect) {
+      return;
+    }
+
+    getCatalog().then((catalog) => {
+      const product = catalog.find((entry) => entry.handle === handle);
+      if (!product) {
+        return;
+      }
+
+      form.dataset.productHandle = handle;
+      summary.innerHTML = `
+        <div class="reservation-selected">
+          <img src="${escapeHtml(product.primaryMedia?.src || "")}" alt="${escapeHtml(product.title)}" />
+          <div>
+            <span class="availability-copy ${product.isExclusive ? "availability-copy--exclusive" : ""}">${escapeHtml(product.availabilityLabel)}</span>
+            <h3>${escapeHtml(product.title)}</h3>
+            <p>${escapeHtml(product.bodyText || "")}</p>
+          </div>
         </div>
       `;
-      initReveal();
-      return;
-    }
 
-    document.title = `${config.brandName || "Eleganza"} | ${product.name}`;
-    target.innerHTML = productExperienceMarkup(product);
-    bindProductInteractions(product);
-    renderGrid("[data-related-products]", products.filter((item) => item.slug !== product.slug).slice(0, 3));
-    initReveal();
-  }
-
-  function renderExclusivePage() {
-    const editorialTarget = document.querySelector("[data-exclusive-editorial]");
-    const gridTarget = document.querySelector("[data-exclusive-grid]");
-    const list = products.filter((item) => item.mode === "exclusive");
-
-    if (editorialTarget) {
-      editorialTarget.innerHTML = collectionSpotlight(list.slice(0, 3));
-    }
-
-    if (gridTarget) {
-      gridTarget.innerHTML = list.slice(3).map(productCard).join("");
-    }
-
-    initReveal();
-  }
-
-  function bookingPreviewMarkup(product) {
-    return `
-      <div class="reservation-preview__media">
-        <img src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" loading="lazy" />
-      </div>
-      <div class="reservation-preview__copy">
-        <div class="chip-row">
-          <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-          <span class="chip chip--line">${escapeHtml(product.sku)}</span>
-        </div>
-        <h2>${escapeHtml(product.name)}</h2>
-        <p>${escapeHtml(product.shortDescription)}</p>
-        <ul class="bullet-list">
-          <li>${escapeHtml(getLeadTimeLabel(product))}</li>
-          <li>${escapeHtml(getPaymentLabel(product))}</li>
-          <li>${escapeHtml(getAvailabilityCopy(product))}</li>
-        </ul>
-      </div>
-    `;
-  }
-
-  function renderBookingPage() {
-    const form = document.querySelector("[data-booking-form]");
-    const productSelect = document.querySelector("[data-booking-product]");
-    const sizeSelect = form ? form.querySelector("[name='size']") : null;
-    const preview = document.querySelector("[data-booking-preview]");
-    const checkoutLink = document.querySelector("[data-booking-checkout]");
-
-    if (!form || !productSelect || !sizeSelect || !preview) {
-      return;
-    }
-
-    productSelect.innerHTML = products
-      .map(
-        (product) =>
-          `<option value="${escapeHtml(product.slug)}">${escapeHtml(product.name)} — ${getModeLabel(product.mode)}</option>`
-      )
-      .join("");
-
-    const initialProduct = getParam("product");
-
-    if (initialProduct && productMap.has(initialProduct)) {
-      productSelect.value = initialProduct;
-    }
-
-    const syncPreview = () => {
-      const selected = productMap.get(productSelect.value) || products[0];
-      sizeSelect.innerHTML = selected.sizes
+      sizeSelect.innerHTML = product.sizes
         .map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`)
         .join("");
 
-      preview.innerHTML = bookingPreviewMarkup(selected);
-
-      if (checkoutLink) {
-        checkoutLink.href = `checkout.html?slug=${encodeURIComponent(selected.slug)}`;
+      if (!sizeSelect.innerHTML) {
+        sizeSelect.innerHTML = '<option value="Made to measure">Made to measure</option>';
       }
-
-      initReveal();
-    };
-
-    productSelect.addEventListener("change", syncPreview);
-    syncPreview();
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const selected = productMap.get(productSelect.value) || products[0];
-      const message = createMessage(selected, {
-        intent:
-          selected.mode === "exclusive"
-            ? "أرغب في بدء حجز مسبق لقطعة حصرية مع تنسيق خاص."
-            : "أرغب في بدء طلب خاص لقطعة من المقتنيات الحالية.",
-        size: form.querySelector("[name='size']").value,
-        city: form.querySelector("[name='city']").value.trim(),
-        name: form.querySelector("[name='customerName']").value.trim(),
-        phone: form.querySelector("[name='phone']").value.trim(),
-        eventDate: form.querySelector("[name='eventDate']").value.trim(),
-        notes: form.querySelector("[name='notes']").value.trim()
-      });
-
-      window.open(buildWhatsAppUrl(message), "_blank", "noopener");
     });
-
-    initReveal();
   }
 
-  function checkoutMarkup(product) {
-    return `
-      <div class="checkout-layout" data-reveal>
-        <div class="checkout-summary">
-          <div class="checkout-summary__media">
-            <img src="${escapeHtml(product.images[0].src)}" alt="${escapeHtml(product.images[0].alt)}" loading="lazy" />
-          </div>
-          <div class="checkout-summary__copy">
-            <div class="chip-row">
-              <span class="${getModeTone(product.mode)}">${getModeLabel(product.mode)}</span>
-              <span class="chip chip--line">${escapeHtml(product.sku)}</span>
-            </div>
-            <h2>${escapeHtml(product.name)}</h2>
-            <p>${escapeHtml(product.description)}</p>
-            <div class="checkout-facts">
-              <div class="fact-card">
-                <span>السعر</span>
-                <strong>${escapeHtml(product.priceLabel)}</strong>
-              </div>
-              <div class="fact-card">
-                <span>مدة التجهيز</span>
-                <strong>${escapeHtml(getLeadTimeLabel(product))}</strong>
-              </div>
-              <div class="fact-card">
-                <span>اعتماد الطلب</span>
-                <strong>${escapeHtml(getPaymentLabel(product))}</strong>
-              </div>
-            </div>
-            <p class="availability-note">${escapeHtml(
-              product.mode === "exclusive"
-                ? "هذا المسار لا يشبه checkout تقليدياً. هو جلسة اعتماد نهائية للقطعة قبل بدء التنفيذ الخاص."
-                : "تم تصميم هذه الصفحة لتشبه استكمال جلسة خاصة أكثر من كونها سلة شراء تقليدية."
-            )}</p>
-          </div>
-        </div>
-        <div class="checkout-form-wrap">
-          <span class="eyebrow">الاعتماد النهائي</span>
-          <h2>جلسة طلب بهدوء يليق بالقطعة</h2>
-          <p class="checkout-note">
-            نحتاج فقط إلى التفاصيل الأساسية لاعتماد المسار المناسب ثم فتح المحادثة الخاصة عبر واتساب.
-          </p>
-          <form class="form-stack" data-checkout-form>
-            <label class="field">
-              <span>الاسم الكامل</span>
-              <input type="text" name="customerName" required placeholder="الاسم كما تفضلين" />
-            </label>
-            <label class="field">
-              <span>رقم التواصل</span>
-              <input type="text" name="phone" required placeholder="رقم الهاتف أو واتساب" />
-            </label>
-            <div class="selection-grid">
-              <label class="field">
-                <span>المدينة</span>
-                <input type="text" name="city" value="${escapeHtml(getParam("city") || "")}" required placeholder="مثال: طرابلس" />
-              </label>
-              <label class="field">
-                <span>المقاس</span>
-                <select name="size" data-checkout-size>
-                  ${product.sizes
-                    .map((size) => {
-                      const selected = getParam("size") === size ? " selected" : "";
-                      return `<option value="${escapeHtml(size)}"${selected}>${escapeHtml(size)}</option>`;
-                    })
-                    .join("")}
-                </select>
-              </label>
-            </div>
-            <label class="field">
-              <span>تاريخ المناسبة</span>
-              <input type="text" name="eventDate" placeholder="اختياري: تاريخ الحفل أو المناسبة" />
-            </label>
-            <label class="field">
-              <span>ملاحظات خاصة</span>
-              <textarea name="notes" placeholder="أي ملاحظة تساعد الفريق على ترتيب التجربة لك بشكل أدق"></textarea>
-            </label>
-            <div class="button-row">
-              <button class="button button--dark" type="submit">إرسال الطلب الخاص عبر واتساب</button>
-              <a class="button button--ghost" href="product.html?slug=${encodeURIComponent(product.slug)}">العودة إلى القطعة</a>
-            </div>
-          </form>
-          <div class="checkout-guarantee">
-            <strong>${product.mode === "exclusive" ? "القطعة تُنفذ عند الاعتماد" : "التنسيق يتم مباشرة بعد الاستلام"}</strong>
-            <span>${escapeHtml(
-              product.mode === "exclusive"
-                ? "للقطع الحصرية، يُراجع التوفر الجغرافي أولاً، ثم يتم تثبيت القطعة ضمن نطاق محدود لكل منطقة."
-                : "للمقتنيات المنتظمة، يتم تأكيد المقاس والتوفر عبر المحادثة مع الحفاظ على لغة تجربة هادئة وغير مزدحمة."
-            )}</span>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderCheckoutPage() {
-    const target = document.querySelector("[data-checkout-root]");
-
-    if (!target) {
-      return;
-    }
-
-    const slug = getParam("slug") || "ss257-champagne";
-    const product = productMap.get(slug) || products[0];
-    const formIntent =
-      product.mode === "exclusive"
-        ? "أرغب في اعتماد جلسة طلب خاصة لقطعة حصرية."
-        : "أرغب في استكمال الطلب الخاص لهذه القطعة.";
-
-    target.innerHTML = checkoutMarkup(product);
-
-    const form = target.querySelector("[data-checkout-form]");
-
-    if (form) {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const message = createMessage(product, {
-          intent: formIntent,
-          size: form.querySelector("[name='size']").value,
-          city: form.querySelector("[name='city']").value.trim(),
-          name: form.querySelector("[name='customerName']").value.trim(),
-          phone: form.querySelector("[name='phone']").value.trim(),
-          eventDate: form.querySelector("[name='eventDate']").value.trim(),
-          notes: form.querySelector("[name='notes']").value.trim()
-        });
-
-        window.open(buildWhatsAppUrl(message), "_blank", "noopener");
-      });
-    }
-
-    initReveal();
-  }
-
-  function renderContactPage() {
-    document.querySelectorAll("[data-whatsapp-link]").forEach((button) => {
-      button.href = buildWhatsAppUrl(config.whatsappDefaultNote || "");
-    });
-    initReveal();
-  }
-
-  function initPage() {
-    renderHeader();
-    renderFooter();
-
-    const page = document.body.dataset.page;
-
-    if (page === "home") {
-      renderHomePage();
-    }
-
-    if (page === "shop") {
-      renderShopPage();
-    }
-
-    if (page === "product") {
-      renderProductPage();
-    }
-
-    if (page === "exclusive") {
-      renderExclusivePage();
-    }
-
-    if (page === "booking") {
-      renderBookingPage();
-    }
-
-    if (page === "checkout") {
-      renderCheckoutPage();
-    }
-
-    if (page === "contact") {
-      renderContactPage();
-    }
-
-    initReveal();
-  }
-
-  document.addEventListener("DOMContentLoaded", initPage);
+  initMobileMenu();
+  initNewsletterForm();
+  initHeroSlideshow();
+  initQuickView();
+  initCollectionPage();
+  initProductPage();
+  initReservationForms();
+  initReservationPage();
 })();

@@ -1,0 +1,311 @@
+[
+  {
+    "label": "NEW IN",
+    "href": "/ar/collections/2026-evening-dresses",
+    "slug": "2026-evening-dresses",
+    "groups": [
+      {
+        "label": "CATEGORIES",
+        "href": "/ar/collections/new-arrivals",
+        "slug": "new-arrivals",
+        "items": [
+          {
+            "label": "New Arrivals",
+            "href": "/ar/collections/new-arrivals",
+            "slug": "new-arrivals"
+          },
+          {
+            "label": "2026 Evening Dresses",
+            "href": "/ar/collections/2026-evening-dresses",
+            "slug": "2026-evening-dresses"
+          },
+          {
+            "label": "2025 Evening Dresses",
+            "href": "/ar/collections/2025-new-collection",
+            "slug": "2025-new-collection"
+          },
+          {
+            "label": "SS Series",
+            "href": "/ar/collections/ss-series",
+            "slug": "ss-series"
+          },
+          {
+            "label": "SF Series",
+            "href": "/ar/collections/sf-evening-dress",
+            "slug": "sf-evening-dress"
+          },
+          {
+            "label": "Wedding Dresses",
+            "href": "/ar/collections/wedding-dress",
+            "slug": "wedding-dress"
+          },
+          {
+            "label": "Plus Size",
+            "href": "/ar/collections/plus-size-evening-dresses",
+            "slug": "plus-size-evening-dresses"
+          },
+          {
+            "label": "Cocktail Dresses",
+            "href": "/ar/collections/short-party-cocktail-dresses",
+            "slug": "short-party-cocktail-dresses"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "فساتين السهرة",
+    "href": "/ar/collections/luxury-evening-dresses",
+    "slug": "luxury-evening-dresses",
+    "groups": [
+      {
+        "label": "🔥 FEATURED",
+        "href": "/ar/collections/hot-selling",
+        "slug": "hot-selling",
+        "items": [
+          {
+            "label": "All Dresses",
+            "href": "/ar/collections/all",
+            "slug": "all"
+          },
+          {
+            "label": "Best Sellers",
+            "href": "/ar/collections/hot-selling",
+            "slug": "hot-selling"
+          },
+          {
+            "label": "New In",
+            "href": "/ar/collections/new-arrivals",
+            "slug": "new-arrivals"
+          },
+          {
+            "label": "Ready To Ship",
+            "href": "/ar/collections/ready-to-ship",
+            "slug": "ready-to-ship"
+          },
+          {
+            "label": "Made To Order",
+            "href": "/ar/collections/made-to-order",
+            "slug": "made-to-order"
+          },
+          {
+            "label": "Trending Now",
+            "href": "/ar/collections/trending-now",
+            "slug": "trending-now"
+          }
+        ]
+      },
+      {
+        "label": "SHOP BY STYLE",
+        "href": "/ar",
+        "slug": "",
+        "items": [
+          {
+            "label": "Arabic Evening Dresses",
+            "href": "/ar/collections/arabic-evening-dresses-1",
+            "slug": "arabic-evening-dresses-1"
+          },
+          {
+            "label": "Middle East Collection",
+            "href": "/ar/collections/middle-east-collection",
+            "slug": "middle-east-collection"
+          },
+          {
+            "label": "Turkish Evening Gowns",
+            "href": "/ar/collections/turkish-evening-gowns",
+            "slug": "turkish-evening-gowns"
+          },
+          {
+            "label": "Modest Evening Dresses",
+            "href": "/ar/collections/modest-evening-dresses",
+            "slug": "modest-evening-dresses"
+          },
+          {
+            "label": "Luxury Evening Dresses",
+            "href": "/ar/collections/luxury-evening-dresses",
+            "slug": "luxury-evening-dresses"
+          },
+          {
+            "label": "Mermaid Evening Dresses",
+            "href": "/ar/collections/mermaid-style",
+            "slug": "mermaid-style"
+          },
+          {
+            "label": "A-Line Evening Dresses",
+            "href": "/ar/collections/a-line-dresses",
+            "slug": "a-line-dresses"
+          },
+          {
+            "label": "Ball Gown Evening Dresses",
+            "href": "/ar/collections/ball-gown-evening-dress",
+            "slug": "ball-gown-evening-dress"
+          },
+          {
+            "label": "Sheath Evening Dresses",
+            "href": "/ar/collections/sheath-evening-dresses",
+            "slug": "sheath-evening-dresses"
+          },
+          {
+            "label": "High Low Evening Dresses",
+            "href": "/ar/collections/high-low-evening-dresses",
+            "slug": "high-low-evening-dresses"
+          }
+        ]
+      },
+      {
+        "label": "SHOP BY COLOR",
+        "href": "/ar",
+        "slug": "",
+        "items": [
+          {
+            "label": "Black",
+            "href": "/ar/collections/black-evening-dresses",
+            "slug": "black-evening-dresses"
+          },
+          {
+            "label": "Red",
+            "href": "/ar/collections/red-evening-dress",
+            "slug": "red-evening-dress"
+          },
+          {
+            "label": "Green",
+            "href": "/ar/collections/sage-green-dress",
+            "slug": "sage-green-dress"
+          },
+          {
+            "label": "Pink",
+            "href": "/ar/collections/pink-evening-dresses",
+            "slug": "pink-evening-dresses"
+          },
+          {
+            "label": "Gold",
+            "href": "/ar/collections/gold-evening-dresses",
+            "slug": "gold-evening-dresses"
+          },
+          {
+            "label": "Blue",
+            "href": "/ar/collections/blue-evening-dresses",
+            "slug": "blue-evening-dresses"
+          },
+          {
+            "label": "Champagne",
+            "href": "/ar/collections/champagne-dresses",
+            "slug": "champagne-dresses"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "فساتين حفلة موسيقية",
+    "href": "/ar/collections/wedding-dress",
+    "slug": "wedding-dress",
+    "groups": [
+      {
+        "label": "WEDDING DRESSES",
+        "href": "/ar/collections/wedding-dress",
+        "slug": "wedding-dress",
+        "items": [
+          {
+            "label": "Ball Gown Wedding Dresses",
+            "href": "/ar/collections/ball-gown-wedding-dress",
+            "slug": "ball-gown-wedding-dress"
+          },
+          {
+            "label": "Mermaid Wedding Dresses",
+            "href": "/ar/collections/mermaid-wedding-dresses",
+            "slug": "mermaid-wedding-dresses"
+          },
+          {
+            "label": "3D Floral Wedding Dresses",
+            "href": "/ar/collections/3d-floral-wedding-dresses",
+            "slug": "3d-floral-wedding-dresses"
+          },
+          {
+            "label": "Long Sleeve Wedding Dresses",
+            "href": "/ar/collections/long-sleeve-wedding-dress",
+            "slug": "long-sleeve-wedding-dress"
+          },
+          {
+            "label": "Luxury Beaded Wedding Dresses",
+            "href": "/ar/collections/luxury-beaded-wedding-dresses-1",
+            "slug": "luxury-beaded-wedding-dresses-1"
+          },
+          {
+            "label": "A-Line Wedding Dresses",
+            "href": "/ar/collections/a-line-wedding-dresses",
+            "slug": "a-line-wedding-dresses"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "OCCASION",
+    "href": "/ar/collections/short-party-cocktail-dresses",
+    "slug": "short-party-cocktail-dresses",
+    "groups": [
+      {
+        "label": "SHOP BY OCCASION",
+        "href": "/ar/collections/formal-party-dresses",
+        "slug": "formal-party-dresses",
+        "items": [
+          {
+            "label": "Formal Party Dresses",
+            "href": "/ar/collections/formal-party-dresses",
+            "slug": "formal-party-dresses"
+          },
+          {
+            "label": "Wedding Guest Dresses",
+            "href": "/ar/collections/wedding-guest-dresses",
+            "slug": "wedding-guest-dresses"
+          },
+          {
+            "label": "Cocktail Dresses",
+            "href": "/ar/collections/short-party-cocktail-dresses",
+            "slug": "short-party-cocktail-dresses"
+          },
+          {
+            "label": "Gala Dresses",
+            "href": "/ar/collections/gala-dresses",
+            "slug": "gala-dresses"
+          },
+          {
+            "label": "Red Carpet Dresses",
+            "href": "/ar/collections/red-carpet-dresses",
+            "slug": "red-carpet-dresses"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "SALE",
+    "href": "/ar/collections/clearance-promotion",
+    "slug": "clearance-promotion",
+    "groups": [
+      {
+        "label": "EXCLUSIVE SALE PICKS",
+        "href": "/ar/collections/clearance-promotion",
+        "slug": "clearance-promotion",
+        "items": [
+          {
+            "label": "Final Sale Evening Dresses",
+            "href": "/ar/collections/clearance-promotion",
+            "slug": "clearance-promotion"
+          },
+          {
+            "label": "Under $199",
+            "href": "/ar/collections/under-199",
+            "slug": "under-199"
+          },
+          {
+            "label": "Last Chance Sizes",
+            "href": "/ar/collections/last-chance-sizes",
+            "slug": "last-chance-sizes"
+          }
+        ]
+      }
+    ]
+  }
+]

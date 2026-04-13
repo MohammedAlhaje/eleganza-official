@@ -1,0 +1,14 @@
+{
+  "name": "eleganza-reference-rebuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extract": "node scripts/extract-reference.mjs",
+    "build": "node scripts/build-site.mjs",
+    "refresh": "npm run extract && npm run build",
+    "serve": "python3 -m http.server 8080 -d site"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2"
+  }
+}

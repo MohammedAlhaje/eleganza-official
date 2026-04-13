@@ -1,0 +1,63 @@
+{
+  "heroSlides": [
+    {
+      "href": "/ar/collections/2026-evening-dresses",
+      "desktopImage": "https://www.sharonsaid.net/cdn/shop/files/3_77984cc3-84a9-4e6d-a9d2-2daa682de727.jpg?v=1772161609&width=2400",
+      "mobileImage": "https://www.sharonsaid.net/cdn/shop/files/3_fdbffb66-c5de-4f79-8cc5-821ed789c39f.jpg?v=1772186606&width=2400"
+    },
+    {
+      "href": "/ar/collections/ready-to-ship",
+      "desktopImage": "https://www.sharonsaid.net/cdn/shop/files/2_00072367-0f95-459d-974f-99151f64c764.jpg?v=1772161701&width=2400",
+      "mobileImage": "https://www.sharonsaid.net/cdn/shop/files/2-1.jpg?v=1772186605&width=2400"
+    },
+    {
+      "href": "/ar/collections/luxury-evening-dresses",
+      "desktopImage": "https://www.sharonsaid.net/cdn/shop/files/1_61b4a7e8-f3f0-4ec9-92e2-ae894fd5b71e.jpg?v=1772161712&width=2400",
+      "mobileImage": "https://www.sharonsaid.net/cdn/shop/files/1-1.jpg?v=1772186604&width=2400"
+    }
+  ],
+  "featuredSections": [
+    {
+      "kind": "grid",
+      "heading": "مجموعة مميزة",
+      "href": "/ar/collections/sf-evening-dress",
+      "slug": "sf-evening-dress"
+    },
+    {
+      "kind": "carousel",
+      "heading": "مجموعة مميزة",
+      "href": "/ar/collections/ready-to-ship",
+      "slug": "ready-to-ship"
+    }
+  ],
+  "secondaryBanner": {
+    "href": "/ar/collections/hot-selling",
+    "desktopImage": "https://www.sharonsaid.net/cdn/shop/files/4_dfa272a5-9249-4f95-81cb-f58946a59e84.jpg?v=1772161714&width=2400",
+    "mobileImage": "https://www.sharonsaid.net/cdn/shop/files/4_94ecc154-6da0-4d12-bce6-46c70a2b2513.jpg?v=1772161725&width=2400"
+  },
+  "video": {
+    "embedUrl": "https://www.youtube.com/embed/cG7yrCIQf3o?rel=0&showinfo=0&vq=720"
+  },
+  "reviews": {
+    "heading": "CUSTOMERS ARE SAYING",
+    "rating": 4.97,
+    "count": 3659,
+    "cards": [
+      {
+        "name": "Layla",
+        "location": "Tripoli",
+        "quote": "The showroom flow feels calm, exclusive, and very couture. The reservation path is far more premium than a regular cart."
+      },
+      {
+        "name": "Noura",
+        "location": "Benghazi",
+        "quote": "I loved being able to review the silhouette, colors, and sizing first, then continue the request privately with the atelier."
+      },
+      {
+        "name": "Maya",
+        "location": "Misrata",
+        "quote": "The presentation feels identical to a luxury boutique, but adapted beautifully for a reservation-only experience."
+      }
+    ]
+  }
+}

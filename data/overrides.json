@@ -1,0 +1,55 @@
+{
+  "brandName": "ELEGANZA",
+  "brandArabic": "إيليجانزا",
+  "brandTagline": "دار المقتنيات الخاصة وفساتين السهرة الرفيعة",
+  "brandAuthority": "VIP Reservation Atelier",
+  "facebookUrl": "https://www.facebook.com/EleganzaOfficiall/",
+  "whatsappNumber": "",
+  "logoPath": "assets/images/brand-mark-320.png",
+  "logoAlt": "شعار إيليجانزا الرسمي",
+  "homepageTitle": "Eleganza | صالة الحجز الخاصة لفساتين السهرة",
+  "homepageDescription": "Eleganza تعيد تقديم تجربة صالة الحجز الخاصة لفساتين السهرة والمقتنيات الفاخرة بنموذج VIP reservation فقط.",
+  "announcementMessages": [
+    "VIP RESERVATION ATELIER | ELEGANZA",
+    "AVAILABLE UPON REQUEST | PRIVATE SHOWROOM",
+    "MADE FOR YOU | BOOK THIS PIECE"
+  ],
+  "newsletterHeading": "انضمي إلى قائمة Eleganza الخاصة",
+  "newsletterText": "اشتركي لتصلك تحديثات المقتنيات الجديدة، جلسات الحجز الخاصة، والتنبيهات المحدودة قبل الإطلاق العام.",
+  "reservationHeading": "جلسة الحجز الخاصة",
+  "availabilityLabel": "Available upon request",
+  "exclusiveLabel": "Exclusive piece",
+  "primaryCTA": "Request Reservation",
+  "secondaryCTA": "Book This Piece",
+  "submitLabel": "Submit Reservation Request",
+  "reservationNote": "طلب الحجز يتم عبر واتساب بصياغة خاصة تتضمن بياناتك والقطعة المختارة.",
+  "shippingTabHtml": "<h5 style=\"text-align:right;direction:rtl\">وقت التجهيز والشحن</h5><p style=\"text-align:right;direction:rtl\">كل قطعة في Eleganza تُجهّز ضمن مسار حجز خاص. يتم تأكيد مدة التجهيز والشحن أثناء جلسة الحجز بحسب التصميم والمقاس والمدينة.</p><p style=\"text-align:right;direction:rtl\">للطلبات المستعجلة، سيتم توضيح أقرب موعد متاح مباشرة عبر واتساب قبل تثبيت الحجز.</p>",
+  "reservationTabHtml": "<h5 style=\"text-align:right;direction:rtl\">سياسة الحجز</h5><p style=\"text-align:right;direction:rtl\">لا يعتمد هذا الموقع على سلة شراء تقليدية. كل طلب يبدأ عبر نموذج الحجز ثم ينتقل إلى واتساب لتأكيد المقاس والمدينة والتفاصيل الخاصة بالقطعة.</p><p style=\"text-align:right;direction:rtl\">القطع المميزة يمكن وسمها كـ Exclusive piece من خلال ملف overrides دون تغيير بنية الصفحة.</p>",
+  "reviewCards": [
+    {
+      "name": "Layla",
+      "location": "Tripoli",
+      "quote": "The showroom flow feels calm, exclusive, and very couture. The reservation path is far more premium than a regular cart."
+    },
+    {
+      "name": "Noura",
+      "location": "Benghazi",
+      "quote": "I loved being able to review the silhouette, colors, and sizing first, then continue the request privately with the atelier."
+    },
+    {
+      "name": "Maya",
+      "location": "Misrata",
+      "quote": "The presentation feels identical to a luxury boutique, but adapted beautifully for a reservation-only experience."
+    }
+  ],
+  "exclusiveHandles": [
+    "elegant-pink-3d-flowers-off-shoulder-evening-dress-sf383",
+    "luxury-black-strapless-ruffled-satin-mermaid-evening-dress",
+    "romantic-white-v-neck-ruched-feather-chiffon-evening-dress",
+    "luxury-sage-green-off-the-shoulder-feather-evening-dress-with-cape-sleeve",
+    "luxury-burgundy-satin-strapless-draped-train-evening-dress",
+    "luxury-lavender-strapless-corset-tulle-evening-dress"
+  ],
+  "availabilityLabels": {},
+  "reservationLabels": {}
+}

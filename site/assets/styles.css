@@ -3305,6 +3305,7 @@ body.theme-openai,
 .theme-openai .button .button-copy,
 .theme-openai .newsletter__submit .button-copy,
 .theme-openai .pagination__button .button-copy {
+  display: grid;
   justify-items: center;
   text-align: center;
 }
@@ -3315,6 +3316,34 @@ body.theme-openai,
 .theme-openai .newsletter__submit .button-copy__ar,
 .theme-openai .newsletter__submit .button-copy__single,
 .theme-openai .newsletter__submit .button-copy__en,
+.theme-openai .pagination__button .button-copy__ar,
+.theme-openai .pagination__button .button-copy__single,
+.theme-openai .pagination__button .button-copy__en {
+  display: block;
+  color: inherit;
+}
+
+.theme-openai .button--dark .button-copy__ar,
+.theme-openai .button--dark .button-copy__single,
+.theme-openai .newsletter__submit .button-copy__ar,
+.theme-openai .newsletter__submit .button-copy__single,
+.theme-openai .pagination__button.is-active .button-copy__ar,
+.theme-openai .pagination__button.is-active .button-copy__single {
+  color: #ffffff;
+}
+
+.theme-openai .button--dark .button-copy__en,
+.theme-openai .newsletter__submit .button-copy__en,
+.theme-openai .pagination__button.is-active .button-copy__en {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-openai .button--ghost .button-copy__ar,
+.theme-openai .button--ghost .button-copy__single,
+.theme-openai .button--ghost .button-copy__en,
+.theme-openai .button--text .button-copy__ar,
+.theme-openai .button--text .button-copy__single,
+.theme-openai .button--text .button-copy__en,
 .theme-openai .pagination__button .button-copy__ar,
 .theme-openai .pagination__button .button-copy__single,
 .theme-openai .pagination__button .button-copy__en {
